@@ -1,0 +1,2329 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- ============================================================
+       SEO & META
+  ============================================================ -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Lumiq — AI-powered analytics that turns raw data into decisions. Real-time insights, predictive intelligence, and beautiful dashboards for modern teams."
+    />
+    <meta
+      name="keywords"
+      content="AI analytics, SaaS analytics, business intelligence, data insights, predictive analytics, dashboard"
+    />
+    <meta name="author" content="Lumiq Inc." />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#0d0d0d" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://lumiq.app/" />
+    <meta property="og:title" content="Lumiq — Analytics That Think Ahead" />
+    <meta
+      property="og:description"
+      content="Turn raw data into strategic decisions with AI-powered analytics. Built for speed. Designed for clarity."
+    />
+    <meta property="og:image" content="https://lumiq.app/og-image.png" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@lumiqapp" />
+    <meta name="twitter:title" content="Lumiq — Analytics That Think Ahead" />
+    <meta
+      name="twitter:description"
+      content="Turn raw data into strategic decisions with AI-powered analytics."
+    />
+    <meta name="twitter:image" content="https://lumiq.app/twitter-card.png" />
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://lumiq.app/" />
+
+    <!-- Favicon placeholder -->
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%23f59e0b'/><text y='24' x='4' font-size='22' font-family='sans-serif' font-weight='900' fill='%230d0d0d'>L</text></svg>"
+    />
+
+    <title>Lumiq — Analytics That Think Ahead</title>
+
+    <!-- ============================================================
+       FONTS
+  ============================================================ -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=DM+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- ============================================================
+       TAILWIND CSS (CDN)
+  ============================================================ -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              display: ['"Bebas Neue"', "cursive"],
+              serif: ['"Libre Baskerville"', "Georgia", "serif"],
+              mono: ['"DM Mono"', "monospace"],
+            },
+            colors: {
+              obsidian: "#0d0d0d",
+              ember: "#f59e0b",
+              "ember-light": "#fcd34d",
+              "ember-dim": "#92400e",
+              ash: "#1a1a1a",
+              "ash-2": "#252525",
+              "ash-3": "#333333",
+              mist: "#a3a3a3",
+              snow: "#f5f5f0",
+            },
+            letterSpacing: {
+              widest2: "0.25em",
+              widest3: "0.35em",
+            },
+            animation: {
+              "fade-up": "fadeUp 0.7s ease forwards",
+              "fade-in": "fadeIn 0.6s ease forwards",
+              "pulse-slow": "pulse 4s cubic-bezier(0.4,0,0.6,1) infinite",
+              "spin-slow": "spin 12s linear infinite",
+              ticker: "ticker 28s linear infinite",
+            },
+            keyframes: {
+              fadeUp: {
+                "0%": { opacity: "0", transform: "translateY(28px)" },
+                "100%": { opacity: "1", transform: "translateY(0)" },
+              },
+              fadeIn: {
+                "0%": { opacity: "0" },
+                "100%": { opacity: "1" },
+              },
+              ticker: {
+                "0%": { transform: "translateX(0)" },
+                "100%": { transform: "translateX(-50%)" },
+              },
+            },
+          },
+        },
+      };
+    </script>
+
+    <!-- ============================================================
+       ANALYTICS PLACEHOLDERS
+  ============================================================ -->
+    <!-- Google Tag Manager — replace GTM-XXXXXXX with your container ID -->
+    <!--
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-XXXXXXX');</script>
+  -->
+
+    <!-- Segment Analytics — replace YOUR_WRITE_KEY -->
+    <!--
+  <script>
+    !function(){var analytics=window.analytics=window.analytics||[];
+    analytics.load("YOUR_WRITE_KEY");analytics.page();}();
+  </script>
+  -->
+
+    <!-- Hotjar — replace hjid and hjsv -->
+    <!--
+  <script>
+    (function(h,o,t,j,a,r){h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+    h._hjSettings={hjid:XXXXXXX,hjsv:6};a=o.getElementsByTagName('head')[0];
+    r=o.createElement('script');r.async=1;r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+    a.appendChild(r)})(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+  </script>
+  -->
+
+    <!-- ============================================================
+       PAGE STYLES
+  ============================================================ -->
+    <style>
+      /* Base */
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        background-color: #0d0d0d;
+        color: #f5f5f0;
+        font-family: "Libre Baskerville", Georgia, serif;
+        overflow-x: hidden;
+      }
+
+      /* Noise overlay for texture */
+      body::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E");
+        opacity: 0.032;
+        pointer-events: none;
+        z-index: 9999;
+      }
+
+      /* Scrollbar */
+      ::-webkit-scrollbar {
+        width: 4px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #0d0d0d;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #f59e0b;
+        border-radius: 2px;
+      }
+
+      /* Selection */
+      ::selection {
+        background: #f59e0b;
+        color: #0d0d0d;
+      }
+
+      /* Reveal animation utility */
+      .reveal {
+        opacity: 0;
+        transform: translateY(30px);
+        transition:
+          opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1),
+          transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      .reveal.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .reveal-delay-1 {
+        transition-delay: 0.1s;
+      }
+      .reveal-delay-2 {
+        transition-delay: 0.2s;
+      }
+      .reveal-delay-3 {
+        transition-delay: 0.3s;
+      }
+      .reveal-delay-4 {
+        transition-delay: 0.45s;
+      }
+      .reveal-delay-5 {
+        transition-delay: 0.6s;
+      }
+
+      /* Gradient mesh backgrounds */
+      .mesh-amber {
+        background:
+          radial-gradient(
+            ellipse 60% 50% at 20% 50%,
+            rgba(245, 158, 11, 0.12) 0%,
+            transparent 70%
+          ),
+          radial-gradient(
+            ellipse 40% 60% at 80% 20%,
+            rgba(245, 158, 11, 0.07) 0%,
+            transparent 60%
+          ),
+          #0d0d0d;
+      }
+      .mesh-subtle {
+        background:
+          radial-gradient(
+            ellipse 80% 50% at 50% 0%,
+            rgba(245, 158, 11, 0.06) 0%,
+            transparent 60%
+          ),
+          #0d0d0d;
+      }
+
+      /* Ember glow line */
+      .ember-line {
+        height: 1px;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          #f59e0b 40%,
+          #f59e0b 60%,
+          transparent
+        );
+      }
+
+      /* Hero display text */
+      .hero-title {
+        font-family: "Bebas Neue", cursive;
+        line-height: 0.92;
+        letter-spacing: 0.01em;
+      }
+
+      /* Floating stat cards */
+      .stat-card {
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(245, 158, 11, 0.15);
+        backdrop-filter: blur(12px);
+        transition:
+          border-color 0.3s,
+          background 0.3s;
+      }
+      .stat-card:hover {
+        border-color: rgba(245, 158, 11, 0.5);
+        background: rgba(245, 158, 11, 0.04);
+      }
+
+      /* Feature card */
+      .feature-card {
+        background: #1a1a1a;
+        border: 1px solid #252525;
+        transition:
+          border-color 0.3s,
+          transform 0.3s;
+      }
+      .feature-card:hover {
+        border-color: rgba(245, 158, 11, 0.35);
+        transform: translateY(-3px);
+      }
+
+      /* Pricing cards */
+      .pricing-card {
+        border: 1px solid #252525;
+        transition:
+          border-color 0.3s,
+          transform 0.3s;
+      }
+      .pricing-card:hover {
+        transform: translateY(-4px);
+      }
+      .pricing-featured {
+        border-color: #f59e0b !important;
+        background: linear-gradient(
+          160deg,
+          rgba(245, 158, 11, 0.08) 0%,
+          rgba(245, 158, 11, 0.02) 100%
+        );
+      }
+
+      /* Testimonial */
+      .testimonial-card {
+        background: #1a1a1a;
+        border: 1px solid #252525;
+        transition: border-color 0.3s;
+      }
+      .testimonial-card:hover {
+        border-color: rgba(245, 158, 11, 0.3);
+      }
+
+      /* CTA section */
+      .cta-bg {
+        background:
+          radial-gradient(
+            ellipse 70% 80% at 50% 50%,
+            rgba(245, 158, 11, 0.1) 0%,
+            transparent 70%
+          ),
+          #111111;
+        border: 1px solid rgba(245, 158, 11, 0.12);
+      }
+
+      /* Navlink underline */
+      .nav-link {
+        position: relative;
+        transition: color 0.2s;
+      }
+      .nav-link::after {
+        content: "";
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 0;
+        height: 1px;
+        background: #f59e0b;
+        transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      .nav-link:hover::after {
+        width: 100%;
+      }
+      .nav-link:hover {
+        color: #f5f5f0;
+      }
+
+      /* Primary button */
+      .btn-primary {
+        background: #f59e0b;
+        color: #0d0d0d;
+        font-family: "DM Mono", monospace;
+        font-weight: 500;
+        letter-spacing: 0.06em;
+        transition:
+          background 0.2s,
+          transform 0.15s,
+          box-shadow 0.2s;
+      }
+      .btn-primary:hover {
+        background: #fcd34d;
+        transform: translateY(-1px);
+        box-shadow: 0 8px 30px rgba(245, 158, 11, 0.35);
+      }
+      .btn-primary:active {
+        transform: translateY(0);
+      }
+
+      /* Ghost button */
+      .btn-ghost {
+        border: 1px solid rgba(245, 158, 11, 0.4);
+        color: #f59e0b;
+        font-family: "DM Mono", monospace;
+        font-weight: 400;
+        letter-spacing: 0.06em;
+        transition:
+          border-color 0.2s,
+          background 0.2s,
+          color 0.2s;
+      }
+      .btn-ghost:hover {
+        border-color: #f59e0b;
+        background: rgba(245, 158, 11, 0.08);
+        color: #fcd34d;
+      }
+
+      /* Mobile menu */
+      #mobile-menu {
+        transition:
+          max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+          opacity 0.3s;
+        max-height: 0;
+        opacity: 0;
+        overflow: hidden;
+      }
+      #mobile-menu.open {
+        max-height: 400px;
+        opacity: 1;
+      }
+
+      /* Divider dots */
+      .dot-divider::before {
+        content: "· · ·";
+        letter-spacing: 0.4em;
+        color: #f59e0b;
+        font-family: "DM Mono", monospace;
+      }
+
+      /* Horizontal ticker */
+      .ticker-inner {
+        display: flex;
+        width: max-content;
+      }
+
+      /* Dashboard mockup lines */
+      .mock-bar {
+        background: linear-gradient(90deg, #f59e0b, rgba(245, 158, 11, 0.2));
+        border-radius: 2px;
+        transition: width 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+
+      /* Glow dot */
+      .glow-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: #f59e0b;
+        box-shadow: 0 0 8px 2px rgba(245, 158, 11, 0.6);
+        animation: pulse 2s ease-in-out infinite;
+      }
+      @keyframes pulse {
+        0%,
+        100% {
+          box-shadow: 0 0 8px 2px rgba(245, 158, 11, 0.6);
+        }
+        50% {
+          box-shadow: 0 0 18px 6px rgba(245, 158, 11, 0.3);
+        }
+      }
+
+      /* Accordion */
+      .accordion-content {
+        max-height: 0;
+        overflow: hidden;
+        transition:
+          max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+          padding 0.3s;
+      }
+      .accordion-content.open {
+        max-height: 300px;
+      }
+
+      /* Step connector line */
+      .step-line {
+        position: absolute;
+        top: 20px;
+        left: calc(50% + 20px);
+        width: calc(100% - 40px);
+        height: 1px;
+        background: linear-gradient(
+          90deg,
+          rgba(245, 158, 11, 0.5),
+          rgba(245, 158, 11, 0.1)
+        );
+      }
+
+      @media (max-width: 768px) {
+        .hero-title {
+          font-size: clamp(4rem, 18vw, 10rem);
+        }
+        .step-line {
+          display: none;
+        }
+      }
+    </style>
+
+    <!-- Structured Data / JSON-LD -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Lumiq",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Web",
+        "description": "AI-powered analytics platform that turns raw data into strategic decisions in real time.",
+        "offers": {
+          "@type": "Offer",
+          "price": "49",
+          "priceCurrency": "USD"
+        },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.9",
+          "reviewCount": "1247"
+        }
+      }
+    </script>
+  </head>
+
+  <body class="antialiased">
+    <!-- ============================================================
+       GTM NOSCRIPT (place immediately after <body>)
+  ============================================================ -->
+    <!-- <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript> -->
+
+    <!-- ============================================================
+       NAVIGATION
+  ============================================================ -->
+    <header
+      id="navbar"
+      class="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
+    >
+      <nav
+        class="max-w-7xl mx-auto px-6 lg:px-8 py-5 flex items-center justify-between"
+      >
+        <!-- Logo -->
+        <a
+          href="#"
+          class="flex items-center gap-2.5 group"
+          aria-label="Lumiq Home"
+        >
+          <div
+            class="w-8 h-8 bg-ember rounded-md flex items-center justify-center"
+          >
+            <span class="font-display text-obsidian text-xl leading-none"
+              >L</span
+            >
+          </div>
+          <span class="font-display text-2xl text-snow tracking-widest"
+            >LUMIQ</span
+          >
+        </a>
+
+        <!-- Desktop nav links -->
+        <ul
+          class="hidden md:flex items-center gap-8"
+          role="navigation"
+          aria-label="Main navigation"
+        >
+          <li>
+            <a
+              href="#features"
+              class="nav-link text-mist text-sm font-mono tracking-wide"
+              >Features</a
+            >
+          </li>
+          <li>
+            <a
+              href="#how-it-works"
+              class="nav-link text-mist text-sm font-mono tracking-wide"
+              >How It Works</a
+            >
+          </li>
+          <li>
+            <a
+              href="#pricing"
+              class="nav-link text-mist text-sm font-mono tracking-wide"
+              >Pricing</a
+            >
+          </li>
+          <li>
+            <a
+              href="#testimonials"
+              class="nav-link text-mist text-sm font-mono tracking-wide"
+              >Customers</a
+            >
+          </li>
+          <li>
+            <a
+              href="#faq"
+              class="nav-link text-mist text-sm font-mono tracking-wide"
+              >FAQ</a
+            >
+          </li>
+        </ul>
+
+        <!-- Desktop CTA -->
+        <div class="hidden md:flex items-center gap-4">
+          <a
+            href="#"
+            class="text-mist hover:text-snow text-sm font-mono tracking-wide transition-colors"
+            >Log in</a
+          >
+          <a href="#pricing" class="btn-primary px-5 py-2.5 rounded-md text-sm"
+            >Start free →</a
+          >
+        </div>
+
+        <!-- Mobile hamburger -->
+        <button
+          id="menu-toggle"
+          class="md:hidden flex flex-col gap-1.5 p-2"
+          aria-label="Toggle mobile menu"
+          aria-expanded="false"
+        >
+          <span
+            class="menu-bar block w-6 h-px bg-snow transition-all duration-300"
+          ></span>
+          <span
+            class="menu-bar block w-6 h-px bg-snow transition-all duration-300"
+          ></span>
+          <span
+            class="menu-bar block w-4 h-px bg-ember transition-all duration-300"
+          ></span>
+        </button>
+      </nav>
+
+      <!-- Mobile menu -->
+      <div id="mobile-menu" class="md:hidden bg-ash border-t border-ash-3 px-6">
+        <ul class="py-6 space-y-5">
+          <li>
+            <a
+              href="#features"
+              class="block text-mist font-mono text-sm tracking-wide hover:text-snow transition-colors"
+              onclick="closeMobileMenu()"
+              >Features</a
+            >
+          </li>
+          <li>
+            <a
+              href="#how-it-works"
+              class="block text-mist font-mono text-sm tracking-wide hover:text-snow transition-colors"
+              onclick="closeMobileMenu()"
+              >How It Works</a
+            >
+          </li>
+          <li>
+            <a
+              href="#pricing"
+              class="block text-mist font-mono text-sm tracking-wide hover:text-snow transition-colors"
+              onclick="closeMobileMenu()"
+              >Pricing</a
+            >
+          </li>
+          <li>
+            <a
+              href="#testimonials"
+              class="block text-mist font-mono text-sm tracking-wide hover:text-snow transition-colors"
+              onclick="closeMobileMenu()"
+              >Customers</a
+            >
+          </li>
+          <li>
+            <a
+              href="#faq"
+              class="block text-mist font-mono text-sm tracking-wide hover:text-snow transition-colors"
+              onclick="closeMobileMenu()"
+              >FAQ</a
+            >
+          </li>
+          <li class="pt-2 border-t border-ash-3">
+            <a
+              href="#pricing"
+              class="btn-primary block text-center py-3 rounded-md text-sm"
+              onclick="closeMobileMenu()"
+              >Start free →</a
+            >
+          </li>
+        </ul>
+      </div>
+    </header>
+
+    <!-- ============================================================
+       HERO
+  ============================================================ -->
+    <section
+      class="mesh-amber min-h-screen flex flex-col justify-center pt-24 pb-16 relative overflow-hidden"
+      aria-labelledby="hero-heading"
+    >
+      <!-- Background grid -->
+      <div
+        class="absolute inset-0 opacity-[0.035]"
+        style="
+          background-image:
+            linear-gradient(rgba(245, 158, 11, 1) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(245, 158, 11, 1) 1px, transparent 1px);
+          background-size: 60px 60px;
+        "
+      ></div>
+
+      <!-- Floating ambient circles -->
+      <div
+        class="absolute top-32 right-12 w-72 h-72 rounded-full opacity-[0.06]"
+        style="background: radial-gradient(circle, #f59e0b, transparent 70%)"
+      ></div>
+      <div
+        class="absolute bottom-20 left-8 w-48 h-48 rounded-full opacity-[0.04]"
+        style="background: radial-gradient(circle, #f59e0b, transparent 70%)"
+      ></div>
+
+      <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+        <!-- Eyebrow -->
+        <div class="reveal flex items-center gap-3 mb-8">
+          <div class="glow-dot"></div>
+          <span class="font-mono text-ember text-xs tracking-widest3 uppercase"
+            >AI-Powered Analytics Platform</span
+          >
+        </div>
+
+        <!-- Main headline -->
+        <h1
+          id="hero-heading"
+          class="hero-title reveal reveal-delay-1 text-snow"
+          style="font-size: clamp(5rem, 14vw, 13rem)"
+        >
+          Analytics<br />
+          <span class="text-ember">That Think</span><br />
+          Ahead.
+        </h1>
+
+        <!-- Subheadline -->
+        <p
+          class="reveal reveal-delay-2 mt-8 max-w-xl text-mist text-lg leading-relaxed font-serif italic"
+        >
+          Lumiq transforms raw business data into clear, actionable
+          intelligence—so your team spends less time querying and more time
+          deciding.
+        </p>
+
+        <!-- CTAs -->
+        <div
+          class="reveal reveal-delay-3 mt-10 flex flex-wrap items-center gap-4"
+        >
+          <a href="#pricing" class="btn-primary px-8 py-4 rounded-md text-sm">
+            Start free — no card needed
+          </a>
+          <a
+            href="#how-it-works"
+            class="btn-ghost px-7 py-4 rounded-md text-sm flex items-center gap-2"
+          >
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+              <path
+                fill-rule="evenodd"
+                d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z"
+                clip-rule="evenodd"
+              />
+            </svg>
+            See how it works
+          </a>
+        </div>
+
+        <!-- Social proof bar -->
+        <div
+          class="reveal reveal-delay-4 mt-16 flex flex-wrap items-center gap-6"
+        >
+          <div class="flex -space-x-2">
+            <!-- Avatar initials -->
+            <div
+              class="w-9 h-9 rounded-full bg-ash-2 border-2 border-obsidian flex items-center justify-center font-mono text-xs text-ember"
+            >
+              AK
+            </div>
+            <div
+              class="w-9 h-9 rounded-full bg-ash-3 border-2 border-obsidian flex items-center justify-center font-mono text-xs text-snow"
+            >
+              MR
+            </div>
+            <div
+              class="w-9 h-9 rounded-full bg-ash-2 border-2 border-obsidian flex items-center justify-center font-mono text-xs text-ember"
+            >
+              SL
+            </div>
+            <div
+              class="w-9 h-9 rounded-full bg-ash-3 border-2 border-obsidian flex items-center justify-center font-mono text-xs text-snow"
+            >
+              +
+            </div>
+          </div>
+          <div>
+            <div class="flex items-center gap-1 mb-0.5">
+              <span class="text-ember text-sm">★★★★★</span>
+            </div>
+            <p class="text-mist text-xs font-mono">
+              <span class="text-snow font-medium">4,200+ teams</span> already
+              use Lumiq
+            </p>
+          </div>
+          <div class="h-8 w-px bg-ash-3 hidden sm:block"></div>
+          <div class="hidden sm:flex items-center gap-2">
+            <svg
+              class="w-4 h-4 text-ember"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M10 1l2.39 4.843L18 6.927l-4 3.897.944 5.506L10 13.902l-4.944 2.428L6 10.824 2 6.927l5.61-1.084L10 1z"
+                clip-rule="evenodd"
+              />
+            </svg>
+            <span class="text-mist text-xs font-mono"
+              ><span class="text-snow">#1 Product of the Month</span> — Product
+              Hunt</span
+            >
+          </div>
+        </div>
+      </div>
+
+      <!-- Dashboard mockup floating -->
+      <div
+        class="reveal reveal-delay-5 max-w-7xl mx-auto px-6 lg:px-8 mt-20 relative z-10"
+      >
+        <div class="relative max-w-4xl">
+          <!-- Mock browser frame -->
+          <div
+            class="bg-ash-2 rounded-xl border border-ash-3 overflow-hidden shadow-2xl"
+            style="
+              box-shadow:
+                0 40px 80px rgba(0, 0, 0, 0.6),
+                0 0 0 1px rgba(245, 158, 11, 0.08);
+            "
+          >
+            <!-- Browser chrome -->
+            <div
+              class="bg-ash border-b border-ash-3 px-4 py-3 flex items-center gap-3"
+            >
+              <div class="flex gap-1.5">
+                <div class="w-3 h-3 rounded-full bg-ash-3"></div>
+                <div class="w-3 h-3 rounded-full bg-ash-3"></div>
+                <div class="w-3 h-3 rounded-full bg-ash-3"></div>
+              </div>
+              <div
+                class="flex-1 bg-obsidian rounded-md px-3 py-1 font-mono text-xs text-mist"
+              >
+                app.lumiq.io/dashboard
+              </div>
+              <div class="glow-dot"></div>
+            </div>
+
+            <!-- Dashboard content -->
+            <div class="p-5 md:p-7 grid grid-cols-3 gap-4">
+              <!-- Stat tiles -->
+              <div class="stat-card rounded-lg p-4">
+                <p class="font-mono text-mist text-xs tracking-wide mb-1">
+                  Revenue (MTD)
+                </p>
+                <p class="font-display text-3xl text-snow">$284K</p>
+                <p class="font-mono text-xs text-green-400 mt-1">↑ 18.4%</p>
+              </div>
+              <div class="stat-card rounded-lg p-4">
+                <p class="font-mono text-mist text-xs tracking-wide mb-1">
+                  Active Users
+                </p>
+                <p class="font-display text-3xl text-snow">12,841</p>
+                <p class="font-mono text-xs text-green-400 mt-1">↑ 7.2%</p>
+              </div>
+              <div class="stat-card rounded-lg p-4">
+                <p class="font-mono text-mist text-xs tracking-wide mb-1">
+                  Churn Rate
+                </p>
+                <p class="font-display text-3xl text-ember">1.8%</p>
+                <p class="font-mono text-xs text-green-400 mt-1">↓ 0.3%</p>
+              </div>
+
+              <!-- Bar chart mock (spans 2 cols) -->
+              <div class="col-span-2 stat-card rounded-lg p-4">
+                <p class="font-mono text-mist text-xs tracking-wide mb-4">
+                  Weekly Revenue
+                </p>
+                <div class="flex items-end gap-2 h-20">
+                  <div class="flex-1 mock-bar" style="height: 45%"></div>
+                  <div class="flex-1 mock-bar" style="height: 60%"></div>
+                  <div class="flex-1 mock-bar" style="height: 35%"></div>
+                  <div class="flex-1 mock-bar" style="height: 80%"></div>
+                  <div class="flex-1 mock-bar" style="height: 65%"></div>
+                  <div class="flex-1 mock-bar" style="height: 90%"></div>
+                  <div class="flex-1 mock-bar" style="height: 75%"></div>
+                </div>
+                <div class="flex justify-between mt-2">
+                  <span class="font-mono text-xs text-ash-3">Mon</span>
+                  <span class="font-mono text-xs text-ash-3">Sun</span>
+                </div>
+              </div>
+
+              <!-- AI insight card (spans 1 col) -->
+              <div
+                class="col-span-1 rounded-lg p-4"
+                style="
+                  background: rgba(245, 158, 11, 0.07);
+                  border: 1px solid rgba(245, 158, 11, 0.25);
+                "
+              >
+                <div class="flex items-center gap-2 mb-3">
+                  <div
+                    class="w-5 h-5 bg-ember rounded flex items-center justify-center"
+                  >
+                    <svg
+                      class="w-3 h-3 text-obsidian"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                  </div>
+                  <span class="font-mono text-ember text-xs">AI Insight</span>
+                </div>
+                <p class="text-snow text-xs leading-relaxed font-serif">
+                  Thursday conversions are
+                  <strong class="text-ember">2.3×</strong> higher. Consider
+                  shifting ad spend mid-week.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Decorative glow under mockup -->
+          <div
+            class="absolute -bottom-8 left-1/2 -translate-x-1/2 w-3/4 h-16 opacity-20"
+            style="
+              background: radial-gradient(ellipse, #f59e0b, transparent 70%);
+              filter: blur(20px);
+            "
+          ></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+       TICKER / LOGOS
+  ============================================================ -->
+    <div
+      class="border-y border-ash-3 py-5 overflow-hidden bg-ash"
+      aria-hidden="true"
+    >
+      <div class="ticker-inner animate-ticker select-none">
+        <div class="flex items-center gap-16 px-8 whitespace-nowrap">
+          <span class="font-mono text-ash-3 text-sm tracking-widest uppercase"
+            >Trusted by</span
+          >
+          <span class="font-display text-2xl text-ash-3 tracking-widest"
+            >MERIDIAN</span
+          >
+          <span class="text-ash-3">·</span>
+          <span class="font-display text-2xl text-ash-3 tracking-widest"
+            >VECTARA</span
+          >
+          <span class="text-ash-3">·</span>
+          <span class="font-display text-2xl text-ash-3 tracking-widest"
+            >FOLIO</span
+          >
+          <span class="text-ash-3">·</span>
+          <span class="font-display text-2xl text-ash-3 tracking-widest"
+            >KRESCENT</span
+          >
+          <span class="text-ash-3">·</span>
+          <span class="font-display text-2xl text-ash-3 tracking-widest"
+            >AXELION</span
+          >
+          <span class="text-ash-3">·</span>
+          <span class="font-display text-2xl text-ash-3 tracking-widest"
+            >PHASIO</span
+          >
+          <span class="text-ash-3">·</span>
+          <span class="font-display text-2xl text-ash-3 tracking-widest"
+            >STRATUM</span
+          >
+          <span class="text-ash-3">·</span>
+          <span class="font-display text-2xl text-ash-3 tracking-widest"
+            >NOVAQ</span
+          >
+          <span class="text-ash-3">·</span>
+        </div>
+        <!-- Duplicate for seamless loop -->
+        <div
+          class="flex items-center gap-16 px-8 whitespace-nowrap"
+          aria-hidden="true"
+        >
+          <span class="font-mono text-ash-3 text-sm tracking-widest uppercase"
+            >Trusted by</span
+          >
+          <span class="font-display text-2xl text-ash-3 tracking-widest"
+            >MERIDIAN</span
+          >
+          <span class="text-ash-3">·</span>
+          <span class="font-display text-2xl text-ash-3 tracking-widest"
+            >VECTARA</span
+          >
+          <span class="text-ash-3">·</span>
+          <span class="font-display text-2xl text-ash-3 tracking-widest"
+            >FOLIO</span
+          >
+          <span class="text-ash-3">·</span>
+          <span class="font-display text-2xl text-ash-3 tracking-widest"
+            >KRESCENT</span
+          >
+          <span class="text-ash-3">·</span>
+          <span class="font-display text-2xl text-ash-3 tracking-widest"
+            >AXELION</span
+          >
+          <span class="text-ash-3">·</span>
+          <span class="font-display text-2xl text-ash-3 tracking-widest"
+            >PHASIO</span
+          >
+          <span class="text-ash-3">·</span>
+          <span class="font-display text-2xl text-ash-3 tracking-widest"
+            >STRATUM</span
+          >
+          <span class="text-ash-3">·</span>
+          <span class="font-display text-2xl text-ash-3 tracking-widest"
+            >NOVAQ</span
+          >
+          <span class="text-ash-3">·</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============================================================
+       FEATURES
+  ============================================================ -->
+    <section
+      id="features"
+      class="py-28 lg:py-36 max-w-7xl mx-auto px-6 lg:px-8"
+      aria-labelledby="features-heading"
+    >
+      <!-- Section header -->
+      <div class="max-w-2xl mb-20">
+        <p
+          class="reveal font-mono text-ember text-xs tracking-widest3 uppercase mb-4"
+        >
+          What you get
+        </p>
+        <h2
+          id="features-heading"
+          class="reveal reveal-delay-1 font-display text-5xl md:text-6xl lg:text-7xl text-snow leading-none tracking-wide"
+        >
+          Everything your<br />data deserves.
+        </h2>
+        <p class="reveal reveal-delay-2 mt-6 text-mist leading-relaxed">
+          A complete intelligence layer for your business—from ingestion to
+          prediction, all under one roof.
+        </p>
+      </div>
+
+      <!-- Feature grid -->
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+        <!-- Feature 1 -->
+        <div class="feature-card reveal rounded-xl p-7 lg:col-span-2">
+          <div
+            class="w-11 h-11 rounded-lg bg-ash-3 flex items-center justify-center mb-6"
+          >
+            <svg
+              class="w-5 h-5 text-ember"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"
+              />
+            </svg>
+          </div>
+          <h3 class="font-display text-3xl text-snow tracking-wide mb-3">
+            Real-Time Intelligence
+          </h3>
+          <p class="text-mist leading-relaxed">
+            Data streams process in under 200ms. Every dashboard refreshes live,
+            so decisions are based on what's happening now—not an hour ago.
+          </p>
+          <div class="mt-6 flex items-center gap-3">
+            <span
+              class="font-mono text-xs text-ember bg-ember/10 px-3 py-1 rounded-full border border-ember/20"
+              >&lt;200ms latency</span
+            >
+            <span
+              class="font-mono text-xs text-mist bg-ash-3/40 px-3 py-1 rounded-full"
+              >Always live</span
+            >
+          </div>
+        </div>
+
+        <!-- Feature 2 -->
+        <div class="feature-card reveal reveal-delay-1 rounded-xl p-7">
+          <div
+            class="w-11 h-11 rounded-lg bg-ash-3 flex items-center justify-center mb-6"
+          >
+            <svg
+              class="w-5 h-5 text-ember"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z"
+              />
+            </svg>
+          </div>
+          <h3 class="font-display text-2xl text-snow tracking-wide mb-3">
+            Predictive AI
+          </h3>
+          <p class="text-mist leading-relaxed text-sm">
+            Lumiq's models forecast churn, revenue, and anomalies before they
+            impact your business.
+          </p>
+        </div>
+
+        <!-- Feature 3 -->
+        <div class="feature-card reveal reveal-delay-2 rounded-xl p-7">
+          <div
+            class="w-11 h-11 rounded-lg bg-ash-3 flex items-center justify-center mb-6"
+          >
+            <svg
+              class="w-5 h-5 text-ember"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M13.5 16.875h3.375m0 0h3.375m-3.375 0V13.5m0 3.375v3.375M6 10.5h2.25a2.25 2.25 0 002.25-2.25V6a2.25 2.25 0 00-2.25-2.25H6A2.25 2.25 0 003.75 6v2.25A2.25 2.25 0 006 10.5zm0 9.75h2.25A2.25 2.25 0 0010.5 18v-2.25a2.25 2.25 0 00-2.25-2.25H6a2.25 2.25 0 00-2.25 2.25V18A2.25 2.25 0 006 20.25zm9.75-9.75H18a2.25 2.25 0 002.25-2.25V6A2.25 2.25 0 0018 3.75h-2.25A2.25 2.25 0 0013.5 6v2.25a2.25 2.25 0 002.25 2.25z"
+              />
+            </svg>
+          </div>
+          <h3 class="font-display text-2xl text-snow tracking-wide mb-3">
+            250+ Integrations
+          </h3>
+          <p class="text-mist leading-relaxed text-sm">
+            Connect Salesforce, Stripe, Shopify, PostgreSQL, Hubspot and 245
+            more in minutes—no engineering required.
+          </p>
+        </div>
+
+        <!-- Feature 4 -->
+        <div class="feature-card reveal reveal-delay-1 rounded-xl p-7">
+          <div
+            class="w-11 h-11 rounded-lg bg-ash-3 flex items-center justify-center mb-6"
+          >
+            <svg
+              class="w-5 h-5 text-ember"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M7.5 14.25v2.25m3-4.5v4.5m3-6.75v6.75m3-9v9M6 20.25h12A2.25 2.25 0 0020.25 18V6A2.25 2.25 0 0018 3.75H6A2.25 2.25 0 003.75 6v12A2.25 2.25 0 006 20.25z"
+              />
+            </svg>
+          </div>
+          <h3 class="font-display text-2xl text-snow tracking-wide mb-3">
+            Custom Dashboards
+          </h3>
+          <p class="text-mist leading-relaxed text-sm">
+            Drag, drop, and publish dashboards in minutes. Share with
+            stakeholders with a single link—no logins needed for viewers.
+          </p>
+        </div>
+
+        <!-- Feature 5 -->
+        <div class="feature-card reveal reveal-delay-2 rounded-xl p-7">
+          <div
+            class="w-11 h-11 rounded-lg bg-ash-3 flex items-center justify-center mb-6"
+          >
+            <svg
+              class="w-5 h-5 text-ember"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z"
+              />
+            </svg>
+          </div>
+          <h3 class="font-display text-2xl text-snow tracking-wide mb-3">
+            SOC 2 Compliant
+          </h3>
+          <p class="text-mist leading-relaxed text-sm">
+            Enterprise-grade security baked in. Role-based access, audit logs,
+            SSO, and data residency controls included on every plan.
+          </p>
+        </div>
+
+        <!-- Feature 6 — wide -->
+        <div
+          class="feature-card reveal lg:col-span-3 rounded-xl p-7 flex flex-col md:flex-row gap-8 items-start"
+        >
+          <div
+            class="flex-shrink-0 w-11 h-11 rounded-lg bg-ash-3 flex items-center justify-center"
+          >
+            <svg
+              class="w-5 h-5 text-ember"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M8.625 9.75a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H8.25m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H12m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0h-.375m-13.5 3.01c0 1.6 1.123 2.994 2.707 3.227 1.087.16 2.185.283 3.293.369V21l4.184-4.183a1.14 1.14 0 01.778-.332 48.294 48.294 0 005.83-.498c1.585-.233 2.708-1.626 2.708-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0012 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018z"
+              />
+            </svg>
+          </div>
+          <div class="flex-1">
+            <h3 class="font-display text-3xl text-snow tracking-wide mb-3">
+              Ask Lumiq Anything
+            </h3>
+            <p class="text-mist leading-relaxed max-w-2xl">
+              Our natural language query engine means anyone on your team can
+              get answers. Type
+              <span class="font-mono text-ember text-sm"
+                >"What drove churn in Q3?"</span
+              >
+              and get a chart—no SQL required.
+            </p>
+          </div>
+          <!-- Query demo pill -->
+          <div
+            class="bg-obsidian border border-ash-3 rounded-xl px-5 py-4 font-mono text-sm min-w-64"
+          >
+            <p class="text-mist text-xs mb-2">Ask Lumiq:</p>
+            <p class="text-snow" id="query-demo">
+              Show revenue by channel this month
+            </p>
+            <div class="mt-3 h-px bg-ash-3"></div>
+            <p class="text-ember text-xs mt-2">↳ Chart generated in 0.8s</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+       STATS BAND
+  ============================================================ -->
+    <div class="border-y border-ash-3 bg-ash py-14">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+          <div class="reveal">
+            <p
+              class="font-display text-5xl text-ember tracking-wide"
+              data-count="4200"
+              data-suffix="+"
+            >
+              0+
+            </p>
+            <p class="font-mono text-mist text-xs tracking-wide mt-2 uppercase">
+              Teams
+            </p>
+          </div>
+          <div class="reveal reveal-delay-1">
+            <p
+              class="font-display text-5xl text-ember tracking-wide"
+              data-count="98"
+              data-suffix="%"
+            >
+              0%
+            </p>
+            <p class="font-mono text-mist text-xs tracking-wide mt-2 uppercase">
+              Uptime SLA
+            </p>
+          </div>
+          <div class="reveal reveal-delay-2">
+            <p
+              class="font-display text-5xl text-ember tracking-wide"
+              data-count="200"
+              data-suffix="ms"
+            >
+              &lt;0ms
+            </p>
+            <p class="font-mono text-mist text-xs tracking-wide mt-2 uppercase">
+              Query Latency
+            </p>
+          </div>
+          <div class="reveal reveal-delay-3">
+            <p
+              class="font-display text-5xl text-ember tracking-wide"
+              data-count="250"
+              data-suffix="+"
+            >
+              0+
+            </p>
+            <p class="font-mono text-mist text-xs tracking-wide mt-2 uppercase">
+              Integrations
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============================================================
+       HOW IT WORKS
+  ============================================================ -->
+    <section
+      id="how-it-works"
+      class="py-28 lg:py-36 mesh-subtle"
+      aria-labelledby="how-heading"
+    >
+      <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <!-- Header -->
+        <div class="max-w-xl mb-20">
+          <p
+            class="reveal font-mono text-ember text-xs tracking-widest3 uppercase mb-4"
+          >
+            Process
+          </p>
+          <h2
+            id="how-heading"
+            class="reveal reveal-delay-1 font-display text-5xl md:text-6xl text-snow leading-none tracking-wide"
+          >
+            Up and running<br />in 15 minutes.
+          </h2>
+        </div>
+
+        <!-- Steps -->
+        <div class="grid md:grid-cols-4 gap-8 relative">
+          <div class="reveal step relative">
+            <div class="step-line hidden md:block"></div>
+            <div
+              class="w-10 h-10 rounded-full border border-ember/40 flex items-center justify-center font-mono text-ember text-sm mb-5 relative z-10 bg-obsidian"
+            >
+              01
+            </div>
+            <h3 class="font-display text-2xl text-snow tracking-wide mb-3">
+              Connect
+            </h3>
+            <p class="text-mist text-sm leading-relaxed">
+              Pick from 250+ native integrations or bring your own via REST API
+              or webhook.
+            </p>
+          </div>
+
+          <div class="reveal reveal-delay-1 step relative">
+            <div class="step-line hidden md:block"></div>
+            <div
+              class="w-10 h-10 rounded-full border border-ember/40 flex items-center justify-center font-mono text-ember text-sm mb-5 relative z-10 bg-obsidian"
+            >
+              02
+            </div>
+            <h3 class="font-display text-2xl text-snow tracking-wide mb-3">
+              Model
+            </h3>
+            <p class="text-mist text-sm leading-relaxed">
+              Lumiq auto-maps your schema and suggests KPIs based on your
+              industry and data shape.
+            </p>
+          </div>
+
+          <div class="reveal reveal-delay-2 step relative">
+            <div class="step-line hidden md:block"></div>
+            <div
+              class="w-10 h-10 rounded-full border border-ember/40 flex items-center justify-center font-mono text-ember text-sm mb-5 relative z-10 bg-obsidian"
+            >
+              03
+            </div>
+            <h3 class="font-display text-2xl text-snow tracking-wide mb-3">
+              Visualise
+            </h3>
+            <p class="text-mist text-sm leading-relaxed">
+              Build dashboards with drag-and-drop or let AI generate them
+              instantly from a description.
+            </p>
+          </div>
+
+          <div class="reveal reveal-delay-3 step">
+            <div
+              class="w-10 h-10 rounded-full bg-ember flex items-center justify-center font-mono text-obsidian text-sm mb-5 font-medium"
+            >
+              04
+            </div>
+            <h3 class="font-display text-2xl text-snow tracking-wide mb-3">
+              Decide
+            </h3>
+            <p class="text-mist text-sm leading-relaxed">
+              Get AI-generated summaries, alerts, and predictions delivered to
+              your inbox or Slack.
+            </p>
+          </div>
+        </div>
+
+        <!-- CTA beneath steps -->
+        <div class="mt-16 reveal">
+          <a
+            href="#pricing"
+            class="btn-primary inline-block px-8 py-4 rounded-md text-sm"
+            >Get started free →</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+       TESTIMONIALS
+  ============================================================ -->
+    <section
+      id="testimonials"
+      class="py-28 lg:py-36 max-w-7xl mx-auto px-6 lg:px-8"
+      aria-labelledby="testimonials-heading"
+    >
+      <div class="mb-16">
+        <p
+          class="reveal font-mono text-ember text-xs tracking-widest3 uppercase mb-4"
+        >
+          Customers
+        </p>
+        <h2
+          id="testimonials-heading"
+          class="reveal reveal-delay-1 font-display text-5xl md:text-6xl text-snow leading-none tracking-wide"
+        >
+          Real teams.<br />Real results.
+        </h2>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-5">
+        <div class="testimonial-card reveal rounded-xl p-7">
+          <div class="flex items-center gap-1 mb-5 text-ember text-sm">
+            ★★★★★
+          </div>
+          <blockquote class="font-serif italic text-snow leading-relaxed mb-6">
+            "We cut our weekly reporting cycle from two days to under an hour.
+            Lumiq surfaced a pricing issue we'd been missing for months."
+          </blockquote>
+          <div class="flex items-center gap-3">
+            <div
+              class="w-9 h-9 rounded-full bg-ash-3 flex items-center justify-center font-mono text-xs text-ember"
+            >
+              SB
+            </div>
+            <div>
+              <p class="text-snow text-sm font-medium">Sarah Bloom</p>
+              <p class="text-mist text-xs font-mono">VP Growth · Meridian</p>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="testimonial-card reveal reveal-delay-1 rounded-xl p-7"
+          style="border-color: rgba(245, 158, 11, 0.25)"
+        >
+          <div class="flex items-center gap-1 mb-5 text-ember text-sm">
+            ★★★★★
+          </div>
+          <blockquote class="font-serif italic text-snow leading-relaxed mb-6">
+            "The AI insight cards are genuinely magical. It's like having a data
+            analyst in every meeting who already read the numbers."
+          </blockquote>
+          <div class="flex items-center gap-3">
+            <div
+              class="w-9 h-9 rounded-full bg-ash-3 flex items-center justify-center font-mono text-xs text-ember"
+            >
+              MR
+            </div>
+            <div>
+              <p class="text-snow text-sm font-medium">Marcus Reid</p>
+              <p class="text-mist text-xs font-mono">CEO · Folio Labs</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card reveal reveal-delay-2 rounded-xl p-7">
+          <div class="flex items-center gap-1 mb-5 text-ember text-sm">
+            ★★★★★
+          </div>
+          <blockquote class="font-serif italic text-snow leading-relaxed mb-6">
+            "Switched from a BI tool we'd used for three years. Onboarding the
+            whole team took an afternoon. The dashboards are just beautiful."
+          </blockquote>
+          <div class="flex items-center gap-3">
+            <div
+              class="w-9 h-9 rounded-full bg-ash-3 flex items-center justify-center font-mono text-xs text-ember"
+            >
+              AL
+            </div>
+            <div>
+              <p class="text-snow text-sm font-medium">Amara Leke</p>
+              <p class="text-mist text-xs font-mono">Head of Ops · Stratum</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+       PRICING
+  ============================================================ -->
+    <section
+      id="pricing"
+      class="py-28 lg:py-36 bg-ash border-y border-ash-3"
+      aria-labelledby="pricing-heading"
+    >
+      <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <!-- Header -->
+        <div class="text-center mb-16">
+          <p
+            class="reveal font-mono text-ember text-xs tracking-widest3 uppercase mb-4"
+          >
+            Pricing
+          </p>
+          <h2
+            id="pricing-heading"
+            class="reveal reveal-delay-1 font-display text-5xl md:text-6xl text-snow leading-none tracking-wide"
+          >
+            Simple. Transparent.<br />No surprises.
+          </h2>
+          <p class="reveal reveal-delay-2 mt-5 text-mist max-w-lg mx-auto">
+            Start free and upgrade when you're ready. All plans include a 14-day
+            trial of our Pro features.
+          </p>
+
+          <!-- Toggle -->
+          <div
+            class="reveal reveal-delay-3 mt-8 inline-flex items-center gap-3 bg-ash-2 border border-ash-3 rounded-lg p-1.5"
+          >
+            <button
+              id="toggle-monthly"
+              class="pricing-toggle active px-4 py-2 rounded-md font-mono text-xs tracking-wide transition-all"
+              onclick="setPricing('monthly')"
+            >
+              Monthly
+            </button>
+            <button
+              id="toggle-annual"
+              class="pricing-toggle px-4 py-2 rounded-md font-mono text-xs tracking-wide text-mist transition-all"
+              onclick="setPricing('annual')"
+            >
+              Annual <span class="text-green-400">−20%</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Cards -->
+        <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          <!-- Starter -->
+          <div class="pricing-card reveal rounded-xl p-8 bg-obsidian">
+            <p
+              class="font-mono text-mist text-xs tracking-widest uppercase mb-3"
+            >
+              Starter
+            </p>
+            <div class="flex items-end gap-1 mb-1">
+              <span
+                class="font-display text-5xl text-snow tracking-wide price-value"
+                data-monthly="0"
+                data-annual="0"
+                >$0</span
+              >
+              <span class="font-mono text-mist text-sm mb-2">/mo</span>
+            </div>
+            <p class="text-mist text-xs font-mono mb-7">
+              Up to 3 seats · 5 dashboards
+            </p>
+            <a
+              href="#"
+              class="btn-ghost block text-center py-3 rounded-md text-sm mb-8"
+              >Get started free</a
+            >
+            <ul class="space-y-3 text-sm text-mist">
+              <li class="flex gap-2">
+                <span class="text-ember">✓</span> 3 data sources
+              </li>
+              <li class="flex gap-2">
+                <span class="text-ember">✓</span> 5 dashboards
+              </li>
+              <li class="flex gap-2">
+                <span class="text-ember">✓</span> 7-day data history
+              </li>
+              <li class="flex gap-2">
+                <span class="text-ember">✓</span> Community support
+              </li>
+              <li class="flex gap-2 line-through opacity-40">
+                <span>✗</span> AI Insights
+              </li>
+              <li class="flex gap-2 line-through opacity-40">
+                <span>✗</span> Predictive models
+              </li>
+            </ul>
+          </div>
+
+          <!-- Pro (featured) -->
+          <div
+            class="pricing-card pricing-featured reveal reveal-delay-1 rounded-xl p-8 relative"
+          >
+            <div
+              class="absolute -top-3 left-1/2 -translate-x-1/2 bg-ember text-obsidian font-mono text-xs px-4 py-1 rounded-full tracking-wide"
+            >
+              Most popular
+            </div>
+            <p
+              class="font-mono text-ember text-xs tracking-widest uppercase mb-3"
+            >
+              Pro
+            </p>
+            <div class="flex items-end gap-1 mb-1">
+              <span
+                class="font-display text-5xl text-snow tracking-wide price-value"
+                data-monthly="49"
+                data-annual="39"
+                >$49</span
+              >
+              <span class="font-mono text-mist text-sm mb-2">/mo</span>
+            </div>
+            <p class="text-mist text-xs font-mono mb-7">
+              Up to 10 seats · Unlimited dashboards
+            </p>
+            <a
+              href="#"
+              class="btn-primary block text-center py-3 rounded-md text-sm mb-8"
+              >Start 14-day trial</a
+            >
+            <ul class="space-y-3 text-sm text-mist">
+              <li class="flex gap-2">
+                <span class="text-ember">✓</span> Unlimited sources
+              </li>
+              <li class="flex gap-2">
+                <span class="text-ember">✓</span> Unlimited dashboards
+              </li>
+              <li class="flex gap-2">
+                <span class="text-ember">✓</span> 2-year data history
+              </li>
+              <li class="flex gap-2">
+                <span class="text-ember">✓</span>
+                <span class="text-snow">AI Insights & Alerts</span>
+              </li>
+              <li class="flex gap-2">
+                <span class="text-ember">✓</span>
+                <span class="text-snow">Predictive models</span>
+              </li>
+              <li class="flex gap-2">
+                <span class="text-ember">✓</span> Priority support
+              </li>
+            </ul>
+          </div>
+
+          <!-- Enterprise -->
+          <div
+            class="pricing-card reveal reveal-delay-2 rounded-xl p-8 bg-obsidian"
+          >
+            <p
+              class="font-mono text-mist text-xs tracking-widest uppercase mb-3"
+            >
+              Enterprise
+            </p>
+            <div class="flex items-end gap-1 mb-1">
+              <span class="font-display text-5xl text-snow tracking-wide"
+                >Custom</span
+              >
+            </div>
+            <p class="text-mist text-xs font-mono mb-7">
+              Unlimited seats · SLA guaranteed
+            </p>
+            <a
+              href="#"
+              class="btn-ghost block text-center py-3 rounded-md text-sm mb-8"
+              >Talk to sales</a
+            >
+            <ul class="space-y-3 text-sm text-mist">
+              <li class="flex gap-2">
+                <span class="text-ember">✓</span> Everything in Pro
+              </li>
+              <li class="flex gap-2">
+                <span class="text-ember">✓</span> Custom integrations
+              </li>
+              <li class="flex gap-2">
+                <span class="text-ember">✓</span> SSO / SAML
+              </li>
+              <li class="flex gap-2">
+                <span class="text-ember">✓</span> Data residency controls
+              </li>
+              <li class="flex gap-2">
+                <span class="text-ember">✓</span> SOC 2 audit docs
+              </li>
+              <li class="flex gap-2">
+                <span class="text-ember">✓</span> Dedicated CSM
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+       FAQ
+  ============================================================ -->
+    <section
+      id="faq"
+      class="py-28 lg:py-36 max-w-4xl mx-auto px-6 lg:px-8"
+      aria-labelledby="faq-heading"
+    >
+      <div class="mb-16">
+        <p
+          class="reveal font-mono text-ember text-xs tracking-widest3 uppercase mb-4"
+        >
+          FAQ
+        </p>
+        <h2
+          id="faq-heading"
+          class="reveal reveal-delay-1 font-display text-5xl md:text-6xl text-snow leading-none tracking-wide"
+        >
+          Got questions?
+        </h2>
+      </div>
+
+      <div class="space-y-2" id="faq-list">
+        <div
+          class="accordion-item border border-ash-3 rounded-lg overflow-hidden"
+        >
+          <button
+            class="accordion-trigger w-full flex items-center justify-between px-6 py-5 text-left hover:bg-ash transition-colors"
+            aria-expanded="false"
+          >
+            <span class="font-serif text-snow"
+              >Do I need to know SQL or code to use Lumiq?</span
+            >
+            <span
+              class="accordion-icon text-ember font-mono text-xl flex-shrink-0 ml-4 transition-transform"
+              >+</span
+            >
+          </button>
+          <div class="accordion-content">
+            <p class="px-6 pb-5 text-mist leading-relaxed text-sm">
+              Not at all. Lumiq is built for business users and analysts alike.
+              You can ask questions in plain English, use drag-and-drop to build
+              dashboards, and connect data sources without writing a single line
+              of code. SQL access is available for power users who want it.
+            </p>
+          </div>
+        </div>
+
+        <div
+          class="accordion-item border border-ash-3 rounded-lg overflow-hidden"
+        >
+          <button
+            class="accordion-trigger w-full flex items-center justify-between px-6 py-5 text-left hover:bg-ash transition-colors"
+            aria-expanded="false"
+          >
+            <span class="font-serif text-snow"
+              >How does the free plan work?</span
+            >
+            <span
+              class="accordion-icon text-ember font-mono text-xl flex-shrink-0 ml-4 transition-transform"
+              >+</span
+            >
+          </button>
+          <div class="accordion-content">
+            <p class="px-6 pb-5 text-mist leading-relaxed text-sm">
+              The free Starter plan gives you up to 3 seats, 3 data source
+              connections, and 5 dashboards with 7 days of data history—forever
+              free, no credit card required. When you sign up, you also
+              automatically start a 14-day trial of Pro features so you can
+              explore everything before committing.
+            </p>
+          </div>
+        </div>
+
+        <div
+          class="accordion-item border border-ash-3 rounded-lg overflow-hidden"
+        >
+          <button
+            class="accordion-trigger w-full flex items-center justify-between px-6 py-5 text-left hover:bg-ash transition-colors"
+            aria-expanded="false"
+          >
+            <span class="font-serif text-snow">Is my data secure?</span>
+            <span
+              class="accordion-icon text-ember font-mono text-xl flex-shrink-0 ml-4 transition-transform"
+              >+</span
+            >
+          </button>
+          <div class="accordion-content">
+            <p class="px-6 pb-5 text-mist leading-relaxed text-sm">
+              Yes. Lumiq is SOC 2 Type II certified. All data is encrypted at
+              rest (AES-256) and in transit (TLS 1.3). We support role-based
+              access control, audit logs, SSO/SAML on Enterprise, and data
+              residency options for EU and APAC regions. We never sell or share
+              your data with third parties.
+            </p>
+          </div>
+        </div>
+
+        <div
+          class="accordion-item border border-ash-3 rounded-lg overflow-hidden"
+        >
+          <button
+            class="accordion-trigger w-full flex items-center justify-between px-6 py-5 text-left hover:bg-ash transition-colors"
+            aria-expanded="false"
+          >
+            <span class="font-serif text-snow"
+              >Can I migrate from another BI tool?</span
+            >
+            <span
+              class="accordion-icon text-ember font-mono text-xl flex-shrink-0 ml-4 transition-transform"
+              >+</span
+            >
+          </button>
+          <div class="accordion-content">
+            <p class="px-6 pb-5 text-mist leading-relaxed text-sm">
+              We offer dedicated migration support for teams coming from
+              Tableau, Looker, Power BI, or Metabase. Our onboarding team will
+              help you map your existing dashboards and data models to Lumiq.
+              Enterprise customers get a white-glove migration service included
+              at no extra cost.
+            </p>
+          </div>
+        </div>
+
+        <div
+          class="accordion-item border border-ash-3 rounded-lg overflow-hidden"
+        >
+          <button
+            class="accordion-trigger w-full flex items-center justify-between px-6 py-5 text-left hover:bg-ash transition-colors"
+            aria-expanded="false"
+          >
+            <span class="font-serif text-snow"
+              >What integrations are available?</span
+            >
+            <span
+              class="accordion-icon text-ember font-mono text-xl flex-shrink-0 ml-4 transition-transform"
+              >+</span
+            >
+          </button>
+          <div class="accordion-content">
+            <p class="px-6 pb-5 text-mist leading-relaxed text-sm">
+              Lumiq supports 250+ native integrations including Salesforce,
+              HubSpot, Stripe, Shopify, PostgreSQL, MySQL, BigQuery, Snowflake,
+              Google Analytics, Facebook Ads, and more. We also offer a REST API
+              and webhook support for custom data sources. New integrations are
+              added monthly.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+       CTA SECTION
+  ============================================================ -->
+    <section
+      class="py-16 px-6 lg:px-8 mb-16 max-w-7xl mx-auto"
+      aria-labelledby="cta-heading"
+    >
+      <div
+        class="cta-bg rounded-2xl px-8 md:px-16 py-16 md:py-20 text-center reveal"
+      >
+        <p class="font-mono text-ember text-xs tracking-widest3 uppercase mb-5">
+          Ready to see it?
+        </p>
+
+        <h2
+          id="cta-heading"
+          class="font-display text-5xl md:text-7xl text-snow leading-none tracking-wide mb-6"
+        >
+          Your data has<br />
+          <span class="text-ember">answers waiting.</span>
+        </h2>
+
+        <p class="text-mist max-w-lg mx-auto leading-relaxed mb-10">
+          Join 4,200+ teams who replaced guesswork with clarity. Start free
+          today—no credit card, no setup calls, no nonsense.
+        </p>
+
+        <div
+          class="flex flex-col sm:flex-row items-center justify-center gap-4"
+        >
+          <a
+            href="#pricing"
+            class="btn-primary px-10 py-4 rounded-md text-sm w-full sm:w-auto"
+          >
+            Start free — takes 2 minutes
+          </a>
+          <a
+            href="#"
+            class="btn-ghost px-8 py-4 rounded-md text-sm w-full sm:w-auto"
+          >
+            Book a demo
+          </a>
+        </div>
+
+        <p class="mt-6 font-mono text-mist text-xs">
+          No credit card · 14-day Pro trial · Cancel anytime
+        </p>
+      </div>
+    </section>
+
+    <!-- ============================================================
+       FOOTER
+  ============================================================ -->
+    <footer class="border-t border-ash-3 bg-obsidian" role="contentinfo">
+      <!-- Main footer grid -->
+      <div
+        class="max-w-7xl mx-auto px-6 lg:px-8 py-16 grid grid-cols-2 md:grid-cols-5 gap-10"
+      >
+        <!-- Brand col -->
+        <div class="col-span-2">
+          <a
+            href="#"
+            class="flex items-center gap-2.5 mb-5"
+            aria-label="Lumiq Home"
+          >
+            <div
+              class="w-7 h-7 bg-ember rounded-md flex items-center justify-center"
+            >
+              <span class="font-display text-obsidian text-lg leading-none"
+                >L</span
+              >
+            </div>
+            <span class="font-display text-xl text-snow tracking-widest"
+              >LUMIQ</span
+            >
+          </a>
+          <p class="text-mist text-sm leading-relaxed max-w-xs">
+            AI-powered analytics for teams that move fast and decide smart.
+          </p>
+          <div class="flex items-center gap-4 mt-6">
+            <!-- Twitter/X -->
+            <a
+              href="#"
+              class="text-mist hover:text-ember transition-colors"
+              aria-label="Lumiq on Twitter"
+            >
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"
+                />
+              </svg>
+            </a>
+            <!-- LinkedIn -->
+            <a
+              href="#"
+              class="text-mist hover:text-ember transition-colors"
+              aria-label="Lumiq on LinkedIn"
+            >
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
+                />
+              </svg>
+            </a>
+            <!-- GitHub -->
+            <a
+              href="#"
+              class="text-mist hover:text-ember transition-colors"
+              aria-label="Lumiq on GitHub"
+            >
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"
+                />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Product -->
+        <div>
+          <h3
+            class="font-mono text-snow text-xs tracking-widest uppercase mb-5"
+          >
+            Product
+          </h3>
+          <ul class="space-y-3">
+            <li>
+              <a
+                href="#features"
+                class="text-mist hover:text-snow text-sm transition-colors"
+                >Features</a
+              >
+            </li>
+            <li>
+              <a
+                href="#pricing"
+                class="text-mist hover:text-snow text-sm transition-colors"
+                >Pricing</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="text-mist hover:text-snow text-sm transition-colors"
+                >Changelog</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="text-mist hover:text-snow text-sm transition-colors"
+                >Roadmap</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="text-mist hover:text-snow text-sm transition-colors"
+                >Status</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <!-- Company -->
+        <div>
+          <h3
+            class="font-mono text-snow text-xs tracking-widest uppercase mb-5"
+          >
+            Company
+          </h3>
+          <ul class="space-y-3">
+            <li>
+              <a
+                href="#"
+                class="text-mist hover:text-snow text-sm transition-colors"
+                >About</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="text-mist hover:text-snow text-sm transition-colors"
+                >Blog</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="text-mist hover:text-snow text-sm transition-colors"
+                >Careers</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="text-mist hover:text-snow text-sm transition-colors"
+                >Press</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="text-mist hover:text-snow text-sm transition-colors"
+                >Contact</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <!-- Legal -->
+        <div>
+          <h3
+            class="font-mono text-snow text-xs tracking-widest uppercase mb-5"
+          >
+            Legal
+          </h3>
+          <ul class="space-y-3">
+            <li>
+              <a
+                href="#"
+                class="text-mist hover:text-snow text-sm transition-colors"
+                >Privacy Policy</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="text-mist hover:text-snow text-sm transition-colors"
+                >Terms of Service</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="text-mist hover:text-snow text-sm transition-colors"
+                >Cookie Policy</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="text-mist hover:text-snow text-sm transition-colors"
+                >DPA</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="text-mist hover:text-snow text-sm transition-colors"
+                >Security</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bottom bar -->
+      <div class="border-t border-ash-3">
+        <div
+          class="max-w-7xl mx-auto px-6 lg:px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-3"
+        >
+          <p class="font-mono text-mist text-xs">
+            © 2025 Lumiq Inc. All rights reserved.
+          </p>
+          <p class="font-mono text-mist text-xs">
+            Built for teams who move fast.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- ============================================================
+       JAVASCRIPT
+  ============================================================ -->
+    <script>
+      // ─── Scroll-spy: navbar background ────────────────────────────────
+      const navbar = document.getElementById("navbar");
+      window.addEventListener(
+        "scroll",
+        () => {
+          if (window.scrollY > 60) {
+            navbar.style.background = "rgba(13,13,13,0.92)";
+            navbar.style.backdropFilter = "blur(16px)";
+            navbar.style.borderBottom = "1px solid rgba(37,37,37,0.8)";
+          } else {
+            navbar.style.background = "transparent";
+            navbar.style.backdropFilter = "none";
+            navbar.style.borderBottom = "none";
+          }
+        },
+        { passive: true },
+      );
+
+      // ─── Mobile menu toggle ────────────────────────────────────────────
+      const menuToggle = document.getElementById("menu-toggle");
+      const mobileMenu = document.getElementById("mobile-menu");
+      let menuOpen = false;
+
+      menuToggle.addEventListener("click", () => {
+        menuOpen = !menuOpen;
+        mobileMenu.classList.toggle("open", menuOpen);
+        menuToggle.setAttribute("aria-expanded", menuOpen);
+        const bars = menuToggle.querySelectorAll(".menu-bar");
+        if (menuOpen) {
+          bars[0].style.transform = "translateY(6px) rotate(45deg)";
+          bars[1].style.opacity = "0";
+          bars[2].style.transform = "translateY(-6px) rotate(-45deg)";
+          bars[2].style.width = "24px";
+        } else {
+          bars[0].style.transform = "";
+          bars[1].style.opacity = "1";
+          bars[2].style.transform = "";
+          bars[2].style.width = "";
+        }
+      });
+
+      function closeMobileMenu() {
+        menuOpen = false;
+        mobileMenu.classList.remove("open");
+        menuToggle.setAttribute("aria-expanded", false);
+        const bars = menuToggle.querySelectorAll(".menu-bar");
+        bars.forEach((b) => {
+          b.style.transform = "";
+          b.style.opacity = "1";
+          b.style.width = "";
+        });
+      }
+
+      // ─── Intersection Observer: scroll reveal ─────────────────────────
+      const revealObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+              revealObserver.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.12 },
+      );
+
+      document
+        .querySelectorAll(".reveal")
+        .forEach((el) => revealObserver.observe(el));
+
+      // ─── Counter animation ─────────────────────────────────────────────
+      function animateCounter(el) {
+        const target = parseInt(el.dataset.count, 10);
+        const suffix = el.dataset.suffix || "";
+        const prefix = el.dataset.prefix || "";
+        const duration = 1800;
+        const start = performance.now();
+
+        function update(now) {
+          const elapsed = now - start;
+          const progress = Math.min(elapsed / duration, 1);
+          const eased = 1 - Math.pow(1 - progress, 3);
+          const current = Math.round(eased * target);
+          el.textContent = prefix + current.toLocaleString() + suffix;
+          if (progress < 1) requestAnimationFrame(update);
+        }
+        requestAnimationFrame(update);
+      }
+
+      const counterObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              animateCounter(entry.target);
+              counterObserver.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.5 },
+      );
+
+      document
+        .querySelectorAll("[data-count]")
+        .forEach((el) => counterObserver.observe(el));
+
+      // ─── Pricing toggle ────────────────────────────────────────────────
+      let currentPricing = "monthly";
+
+      function setPricing(type) {
+        currentPricing = type;
+        const monthlyBtn = document.getElementById("toggle-monthly");
+        const annualBtn = document.getElementById("toggle-annual");
+        const activeClass = ["bg-ash-2", "text-snow", "border", "border-ash-3"];
+
+        if (type === "monthly") {
+          monthlyBtn.classList.add(...activeClass);
+          monthlyBtn.classList.remove("text-mist");
+          annualBtn.classList.remove(...activeClass);
+          annualBtn.classList.add("text-mist");
+        } else {
+          annualBtn.classList.add(...activeClass);
+          annualBtn.classList.remove("text-mist");
+          monthlyBtn.classList.remove(...activeClass);
+          monthlyBtn.classList.add("text-mist");
+        }
+
+        document.querySelectorAll(".price-value").forEach((el) => {
+          const val = el.dataset[type];
+          if (val !== undefined) {
+            el.textContent = val === "0" ? "Free" : "$" + val;
+          }
+        });
+      }
+
+      // Apply initial active style
+      document
+        .getElementById("toggle-monthly")
+        .classList.add("bg-ash-2", "text-snow", "border", "border-ash-3");
+
+      // ─── Accordion / FAQ ───────────────────────────────────────────────
+      document.querySelectorAll(".accordion-trigger").forEach((trigger) => {
+        trigger.addEventListener("click", () => {
+          const content = trigger.nextElementSibling;
+          const icon = trigger.querySelector(".accordion-icon");
+          const isOpen = content.classList.contains("open");
+
+          // Close all
+          document.querySelectorAll(".accordion-content.open").forEach((c) => {
+            c.classList.remove("open");
+            c.previousElementSibling.querySelector(
+              ".accordion-icon",
+            ).textContent = "+";
+            c.previousElementSibling.querySelector(
+              ".accordion-icon",
+            ).style.transform = "";
+            c.previousElementSibling.setAttribute("aria-expanded", false);
+          });
+
+          if (!isOpen) {
+            content.classList.add("open");
+            icon.textContent = "−";
+            icon.style.transform = "rotate(0deg)";
+            trigger.setAttribute("aria-expanded", true);
+          }
+        });
+      });
+
+      // ─── Rotating query demo text ──────────────────────────────────────
+      const queries = [
+        "Show revenue by channel this month",
+        "Which customers are at risk of churning?",
+        "Compare Q2 vs Q3 conversion rates",
+        "What drove the spike on July 14th?",
+        "Forecast next month's MRR",
+      ];
+      let queryIndex = 0;
+      const queryEl = document.getElementById("query-demo");
+
+      if (queryEl) {
+        setInterval(() => {
+          queryEl.style.opacity = "0";
+          queryEl.style.transform = "translateY(6px)";
+          queryEl.style.transition = "opacity 0.3s, transform 0.3s";
+          setTimeout(() => {
+            queryIndex = (queryIndex + 1) % queries.length;
+            queryEl.textContent = queries[queryIndex];
+            queryEl.style.opacity = "1";
+            queryEl.style.transform = "translateY(0)";
+          }, 320);
+        }, 2800);
+      }
+
+      // ─── Smooth scroll for all anchor links ───────────────────────────
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", (e) => {
+          const target = document.querySelector(anchor.getAttribute("href"));
+          if (target) {
+            e.preventDefault();
+            target.scrollIntoView({ behavior: "smooth", block: "start" });
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
