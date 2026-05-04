@@ -60,6 +60,36 @@
       };
     </script>
 
+    <!-- ============================================================
+       ANALYTICS PLACEHOLDERS
+  ============================================================ -->
+    <!-- Google Tag Manager — replace GTM-XXXXXXX with your container ID -->
+    <!--
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-XXXXXXX');</script>
+  -->
+
+    <!-- Segment Analytics — replace YOUR_WRITE_KEY -->
+    <!--
+  <script>
+    !function(){var analytics=window.analytics=window.analytics||[];
+    analytics.load("YOUR_WRITE_KEY");analytics.page();}();
+  </script>
+  -->
+
+    <!-- Hotjar — replace hjid and hjsv -->
+    <!--
+  <script>
+    (function(h,o,t,j,a,r){h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+    h._hjSettings={hjid:XXXXXXX,hjsv:6};a=o.getElementsByTagName('head')[0];
+    r=o.createElement('script');r.async=1;r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+    a.appendChild(r)})(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+  </script>
+  -->
+
     <style>
       /* ═══════════════════════════════════════════
        THEME TOKENS
@@ -620,8 +650,8 @@
         position: absolute;
         inset: 0;
         background: rgba(0, 0, 0, 0.72);
-        backdrop-filter: blur(6px);
         -webkit-backdrop-filter: blur(6px);
+        backdrop-filter: blur(6px);
       }
       #modal-panel {
         position: relative;
@@ -790,8 +820,8 @@
         width: 15px;
         height: 15px;
         flex-shrink: 0;
-        appearance: none;
         -webkit-appearance: none;
+        appearance: none;
         border: 1px solid var(--bdr2);
         border-radius: 4px;
         background: var(--bg);
@@ -896,6 +926,56 @@
         cursor: pointer;
         font: inherit;
         padding: 0;
+      }
+      /* ═══════════════════════════════════════════
+   SCROLL TO TOP BUTTON
+═══════════════════════════════════════════ */
+      #scroll-top-btn {
+        position: fixed;
+        right: 22px;
+        bottom: 22px;
+        width: 46px;
+        height: 46px;
+        border-radius: 50%;
+        border: 1px solid rgba(245, 158, 11, 0.25);
+        background: color-mix(in srgb, var(--bg2) 88%, transparent);
+        backdrop-filter: blur(10px);
+        color: var(--ember);
+        font-size: 18px;
+        cursor: pointer;
+        z-index: 7000;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(14px) scale(0.92);
+
+        transition:
+          opacity 0.28s ease,
+          transform 0.28s ease,
+          visibility 0.28s ease,
+          background 0.2s ease,
+          border-color 0.2s ease;
+      }
+
+      #scroll-top-btn.show {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0) scale(1);
+      }
+
+      #scroll-top-btn:hover {
+        background: var(--eg);
+        border-color: rgba(245, 158, 11, 0.5);
+        transform: translateY(-2px);
+        box-shadow: 0 10px 30px rgba(245, 158, 11, 0.18);
+      }
+
+      #scroll-top-btn:active {
+        transform: translateY(0);
       }
     </style>
 
@@ -2590,6 +2670,8 @@
       </div>
     </footer>
 
+    <button id="scroll-top-btn" aria-label="Scroll to top">↑</button>
+
     <!-- ═══════════ AUTH MODAL ═══════════ -->
     <div
       id="auth-modal"
@@ -3269,6 +3351,24 @@
           if (lbl) lbl.textContent = v.length ? labels[score - 1] || "" : "";
         });
       }
+    </script>
+    <script>
+      const scrollTopBtn = document.getElementById("scroll-top-btn");
+
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 400) {
+          scrollTopBtn.classList.add("show");
+        } else {
+          scrollTopBtn.classList.remove("show");
+        }
+      });
+
+      scrollTopBtn.addEventListener("click", () => {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
+      });
     </script>
   </body>
 </html>
