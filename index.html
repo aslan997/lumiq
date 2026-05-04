@@ -1,58 +1,23 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="dark">
   <head>
-    <!-- ============================================================
-       SEO & META
-  ============================================================ -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Lumiq — AI-powered analytics that turns raw data into decisions. Real-time insights, predictive intelligence, and beautiful dashboards for modern teams."
+      content="Lumiq — AI-powered analytics that turns raw data into decisions."
     />
-    <meta
-      name="keywords"
-      content="AI analytics, SaaS analytics, business intelligence, data insights, predictive analytics, dashboard"
-    />
-    <meta name="author" content="Lumiq Inc." />
-    <meta name="robots" content="index, follow" />
-    <meta name="theme-color" content="#0d0d0d" />
-
-    <!-- Open Graph -->
+    <meta name="theme-color" content="#0d0d0d" id="meta-theme-color" />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://lumiq.app/" />
     <meta property="og:title" content="Lumiq — Analytics That Think Ahead" />
-    <meta
-      property="og:description"
-      content="Turn raw data into strategic decisions with AI-powered analytics. Built for speed. Designed for clarity."
-    />
-    <meta property="og:image" content="https://lumiq.app/og-image.png" />
-
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@lumiqapp" />
-    <meta name="twitter:title" content="Lumiq — Analytics That Think Ahead" />
-    <meta
-      name="twitter:description"
-      content="Turn raw data into strategic decisions with AI-powered analytics."
-    />
-    <meta name="twitter:image" content="https://lumiq.app/twitter-card.png" />
-
-    <!-- Canonical -->
     <link rel="canonical" href="https://lumiq.app/" />
-
-    <!-- Favicon placeholder -->
     <link
       rel="icon"
       type="image/svg+xml"
       href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%23f59e0b'/><text y='24' x='4' font-size='22' font-family='sans-serif' font-weight='900' fill='%230d0d0d'>L</text></svg>"
     />
-
     <title>Lumiq — Analytics That Think Ahead</title>
 
-    <!-- ============================================================
-       FONTS
-  ============================================================ -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -60,9 +25,6 @@
       rel="stylesheet"
     />
 
-    <!-- ============================================================
-       TAILWIND CSS (CDN)
-  ============================================================ -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
@@ -84,26 +46,10 @@
               mist: "#a3a3a3",
               snow: "#f5f5f0",
             },
-            letterSpacing: {
-              widest2: "0.25em",
-              widest3: "0.35em",
-            },
             animation: {
-              "fade-up": "fadeUp 0.7s ease forwards",
-              "fade-in": "fadeIn 0.6s ease forwards",
-              "pulse-slow": "pulse 4s cubic-bezier(0.4,0,0.6,1) infinite",
-              "spin-slow": "spin 12s linear infinite",
               ticker: "ticker 28s linear infinite",
             },
             keyframes: {
-              fadeUp: {
-                "0%": { opacity: "0", transform: "translateY(28px)" },
-                "100%": { opacity: "1", transform: "translateY(0)" },
-              },
-              fadeIn: {
-                "0%": { opacity: "0" },
-                "100%": { opacity: "1" },
-              },
               ticker: {
                 "0%": { transform: "translateX(0)" },
                 "100%": { transform: "translateX(-50%)" },
@@ -114,41 +60,50 @@
       };
     </script>
 
-    <!-- ============================================================
-       ANALYTICS PLACEHOLDERS
-  ============================================================ -->
-    <!-- Google Tag Manager — replace GTM-XXXXXXX with your container ID -->
-    <!--
-  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-XXXXXXX');</script>
-  -->
-
-    <!-- Segment Analytics — replace YOUR_WRITE_KEY -->
-    <!--
-  <script>
-    !function(){var analytics=window.analytics=window.analytics||[];
-    analytics.load("YOUR_WRITE_KEY");analytics.page();}();
-  </script>
-  -->
-
-    <!-- Hotjar — replace hjid and hjsv -->
-    <!--
-  <script>
-    (function(h,o,t,j,a,r){h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
-    h._hjSettings={hjid:XXXXXXX,hjsv:6};a=o.getElementsByTagName('head')[0];
-    r=o.createElement('script');r.async=1;r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
-    a.appendChild(r)})(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
-  </script>
-  -->
-
-    <!-- ============================================================
-       PAGE STYLES
-  ============================================================ -->
     <style>
-      /* Base */
+      /* ═══════════════════════════════════════════
+       THEME TOKENS
+    ═══════════════════════════════════════════ */
+      :root {
+        --bg: #0d0d0d;
+        --bg2: #1a1a1a;
+        --bg3: #252525;
+        --bg4: #333333;
+        --fg: #f5f5f0;
+        --fg2: #a3a3a3;
+        --fg3: #555555;
+        --bdr: #252525;
+        --bdr2: #333333;
+        --ember: #f59e0b;
+        --ember-l: #fcd34d;
+        --eg: rgba(245, 158, 11, 0.1);
+        --eg2: rgba(245, 158, 11, 0.05);
+        --shadow: 0 4px 30px rgba(0, 0, 0, 0.55);
+        --card: rgba(255, 255, 255, 0.03);
+        --noise-op: 0.032;
+      }
+      [data-theme="light"] {
+        --bg: #fafaf8;
+        --bg2: #f0efe9;
+        --bg3: #e5e3dc;
+        --bg4: #d0cdc4;
+        --fg: #0d0d0d;
+        --fg2: #555555;
+        --fg3: #aaa9a3;
+        --bdr: #e0ddd5;
+        --bdr2: #ccc9c0;
+        --ember: #d97706;
+        --ember-l: #f59e0b;
+        --eg: rgba(217, 119, 6, 0.08);
+        --eg2: rgba(217, 119, 6, 0.04);
+        --shadow: 0 4px 30px rgba(0, 0, 0, 0.08);
+        --card: rgba(0, 0, 0, 0.02);
+        --noise-op: 0.015;
+      }
+
+      /* ═══════════════════════════════════════════
+       BASE
+    ═══════════════════════════════════════════ */
       *,
       *::before,
       *::after {
@@ -160,45 +115,301 @@
         scroll-behavior: smooth;
       }
       body {
-        background-color: #0d0d0d;
-        color: #f5f5f0;
+        background: var(--bg);
+        color: var(--fg);
         font-family: "Libre Baskerville", Georgia, serif;
         overflow-x: hidden;
+        transition:
+          background-color 0.35s ease,
+          color 0.35s ease;
       }
-
-      /* Noise overlay for texture */
       body::before {
         content: "";
         position: fixed;
         inset: 0;
-        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E");
-        opacity: 0.032;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+        opacity: var(--noise-op);
         pointer-events: none;
         z-index: 9999;
+        transition: opacity 0.35s;
       }
-
-      /* Scrollbar */
       ::-webkit-scrollbar {
         width: 4px;
       }
       ::-webkit-scrollbar-track {
-        background: #0d0d0d;
+        background: var(--bg);
       }
       ::-webkit-scrollbar-thumb {
-        background: #f59e0b;
+        background: var(--ember);
         border-radius: 2px;
       }
-
-      /* Selection */
       ::selection {
-        background: #f59e0b;
+        background: var(--ember);
         color: #0d0d0d;
       }
 
-      /* Reveal animation utility */
+      /* ═══════════════════════════════════════════
+       THEME TOGGLE PILL
+    ═══════════════════════════════════════════ */
+      .theme-toggle {
+        width: 48px;
+        height: 26px;
+        background: var(--bg3);
+        border: 1px solid var(--bdr2);
+        border-radius: 50px;
+        position: relative;
+        cursor: pointer;
+        flex-shrink: 0;
+        transition:
+          background 0.3s,
+          border-color 0.3s;
+      }
+      .theme-toggle-knob {
+        position: absolute;
+        top: 3px;
+        left: 3px;
+        width: 18px;
+        height: 18px;
+        border-radius: 50%;
+        background: var(--ember);
+        transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 10px;
+        line-height: 1;
+      }
+      [data-theme="light"] .theme-toggle-knob {
+        transform: translateX(22px);
+      }
+      .theme-icon-moon,
+      .theme-icon-sun {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 9px;
+        pointer-events: none;
+        transition: opacity 0.2s;
+      }
+      .theme-icon-moon {
+        left: 5px;
+      }
+      .theme-icon-sun {
+        right: 4px;
+      }
+      [data-theme="dark"] .theme-icon-moon {
+        opacity: 1;
+      }
+      [data-theme="dark"] .theme-icon-sun {
+        opacity: 0.3;
+      }
+      [data-theme="light"] .theme-icon-moon {
+        opacity: 0.3;
+      }
+      [data-theme="light"] .theme-icon-sun {
+        opacity: 1;
+      }
+
+      /* ═══════════════════════════════════════════
+       NAV
+    ═══════════════════════════════════════════ */
+      #navbar {
+        transition:
+          background 0.3s,
+          border-color 0.3s,
+          backdrop-filter 0.3s;
+      }
+      #navbar.scrolled {
+        background: color-mix(in srgb, var(--bg) 88%, transparent) !important;
+        backdrop-filter: blur(20px);
+        border-bottom: 1px solid var(--bdr);
+      }
+      .nav-link {
+        position: relative;
+        color: var(--fg2);
+        font-family: "DM Mono", monospace;
+        font-size: 0.78rem;
+        letter-spacing: 0.06em;
+        text-decoration: none;
+        transition: color 0.2s;
+      }
+      .nav-link::after {
+        content: "";
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 0;
+        height: 1px;
+        background: var(--ember);
+        transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      .nav-link:hover {
+        color: var(--fg);
+      }
+      .nav-link:hover::after {
+        width: 100%;
+      }
+
+      /* ═══════════════════════════════════════════
+       BUTTONS
+    ═══════════════════════════════════════════ */
+      .btn-primary {
+        background: var(--ember);
+        color: #0d0d0d;
+        font-family: "DM Mono", monospace;
+        font-weight: 500;
+        letter-spacing: 0.06em;
+        cursor: pointer;
+        border: none;
+        display: inline-block;
+        text-decoration: none;
+        text-align: center;
+        transition:
+          background 0.2s,
+          transform 0.15s,
+          box-shadow 0.2s;
+      }
+      .btn-primary:hover {
+        background: var(--ember-l);
+        transform: translateY(-1px);
+        box-shadow: 0 8px 28px rgba(245, 158, 11, 0.35);
+      }
+      .btn-primary:active {
+        transform: translateY(0);
+      }
+      .btn-ghost {
+        border: 1px solid rgba(245, 158, 11, 0.38);
+        color: var(--ember);
+        font-family: "DM Mono", monospace;
+        letter-spacing: 0.06em;
+        cursor: pointer;
+        display: inline-block;
+        text-decoration: none;
+        text-align: center;
+        transition:
+          border-color 0.2s,
+          background 0.2s;
+      }
+      .btn-ghost:hover {
+        border-color: var(--ember);
+        background: var(--eg);
+      }
+
+      /* ═══════════════════════════════════════════
+       CARDS — theme-aware
+    ═══════════════════════════════════════════ */
+      .stat-card {
+        background: var(--card);
+        border: 1px solid rgba(245, 158, 11, 0.15);
+        backdrop-filter: blur(12px);
+        transition:
+          border-color 0.3s,
+          background 0.3s;
+      }
+      .stat-card:hover {
+        border-color: rgba(245, 158, 11, 0.45);
+      }
+      .feature-card {
+        background: var(--bg2);
+        border: 1px solid var(--bdr);
+        transition:
+          border-color 0.3s,
+          transform 0.3s,
+          background 0.35s;
+      }
+      .feature-card:hover {
+        border-color: rgba(245, 158, 11, 0.35);
+        transform: translateY(-3px);
+      }
+      .pricing-card {
+        border: 1px solid var(--bdr);
+        background: var(--bg2);
+        transition:
+          border-color 0.3s,
+          transform 0.3s,
+          background 0.35s;
+      }
+      .pricing-card:hover {
+        transform: translateY(-4px);
+      }
+      .pricing-featured {
+        border-color: var(--ember) !important;
+        background: linear-gradient(160deg, var(--eg), var(--eg2)) !important;
+      }
+      .testimonial-card {
+        background: var(--bg2);
+        border: 1px solid var(--bdr);
+        transition:
+          border-color 0.3s,
+          background 0.35s;
+      }
+      .testimonial-card:hover {
+        border-color: rgba(245, 158, 11, 0.3);
+      }
+      .cta-bg {
+        background:
+          radial-gradient(
+            ellipse 70% 80% at 50% 50%,
+            var(--eg),
+            transparent 70%
+          ),
+          var(--bg2);
+        border: 1px solid var(--bdr);
+      }
+
+      /* mesh backgrounds */
+      .mesh-hero {
+        background:
+          radial-gradient(
+            ellipse 60% 50% at 20% 50%,
+            rgba(245, 158, 11, 0.12) 0%,
+            transparent 70%
+          ),
+          radial-gradient(
+            ellipse 40% 60% at 80% 20%,
+            rgba(245, 158, 11, 0.07) 0%,
+            transparent 60%
+          ),
+          var(--bg);
+      }
+      .mesh-subtle {
+        background:
+          radial-gradient(
+            ellipse 80% 50% at 50% 0%,
+            rgba(245, 158, 11, 0.06) 0%,
+            transparent 60%
+          ),
+          var(--bg);
+      }
+
+      /* ═══════════════════════════════════════════
+       GLOW DOT
+    ═══════════════════════════════════════════ */
+      .glow-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: var(--ember);
+        box-shadow: 0 0 8px 2px rgba(245, 158, 11, 0.6);
+        animation: gp 2.5s ease-in-out infinite;
+        flex-shrink: 0;
+      }
+      @keyframes gp {
+        0%,
+        100% {
+          box-shadow: 0 0 8px 2px rgba(245, 158, 11, 0.6);
+        }
+        50% {
+          box-shadow: 0 0 18px 6px rgba(245, 158, 11, 0.25);
+        }
+      }
+
+      /* ═══════════════════════════════════════════
+       SCROLL REVEAL
+    ═══════════════════════════════════════════ */
       .reveal {
         opacity: 0;
-        transform: translateY(30px);
+        transform: translateY(28px);
         transition:
           opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1),
           transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
@@ -223,246 +434,136 @@
         transition-delay: 0.6s;
       }
 
-      /* Gradient mesh backgrounds */
-      .mesh-amber {
-        background:
-          radial-gradient(
-            ellipse 60% 50% at 20% 50%,
-            rgba(245, 158, 11, 0.12) 0%,
-            transparent 70%
-          ),
-          radial-gradient(
-            ellipse 40% 60% at 80% 20%,
-            rgba(245, 158, 11, 0.07) 0%,
-            transparent 60%
-          ),
-          #0d0d0d;
-      }
-      .mesh-subtle {
-        background:
-          radial-gradient(
-            ellipse 80% 50% at 50% 0%,
-            rgba(245, 158, 11, 0.06) 0%,
-            transparent 60%
-          ),
-          #0d0d0d;
-      }
-
-      /* Ember glow line */
-      .ember-line {
-        height: 1px;
-        background: linear-gradient(
-          90deg,
-          transparent,
-          #f59e0b 40%,
-          #f59e0b 60%,
-          transparent
-        );
-      }
-
-      /* Hero display text */
-      .hero-title {
-        font-family: "Bebas Neue", cursive;
-        line-height: 0.92;
-        letter-spacing: 0.01em;
-      }
-
-      /* Floating stat cards */
-      .stat-card {
-        background: rgba(255, 255, 255, 0.03);
-        border: 1px solid rgba(245, 158, 11, 0.15);
-        backdrop-filter: blur(12px);
-        transition:
-          border-color 0.3s,
-          background 0.3s;
-      }
-      .stat-card:hover {
-        border-color: rgba(245, 158, 11, 0.5);
-        background: rgba(245, 158, 11, 0.04);
-      }
-
-      /* Feature card */
-      .feature-card {
-        background: #1a1a1a;
-        border: 1px solid #252525;
-        transition:
-          border-color 0.3s,
-          transform 0.3s;
-      }
-      .feature-card:hover {
-        border-color: rgba(245, 158, 11, 0.35);
-        transform: translateY(-3px);
-      }
-
-      /* Pricing cards */
-      .pricing-card {
-        border: 1px solid #252525;
-        transition:
-          border-color 0.3s,
-          transform 0.3s;
-      }
-      .pricing-card:hover {
-        transform: translateY(-4px);
-      }
-      .pricing-featured {
-        border-color: #f59e0b !important;
-        background: linear-gradient(
-          160deg,
-          rgba(245, 158, 11, 0.08) 0%,
-          rgba(245, 158, 11, 0.02) 100%
-        );
-      }
-
-      /* Testimonial */
-      .testimonial-card {
-        background: #1a1a1a;
-        border: 1px solid #252525;
-        transition: border-color 0.3s;
-      }
-      .testimonial-card:hover {
-        border-color: rgba(245, 158, 11, 0.3);
-      }
-
-      /* CTA section */
-      .cta-bg {
-        background:
-          radial-gradient(
-            ellipse 70% 80% at 50% 50%,
-            rgba(245, 158, 11, 0.1) 0%,
-            transparent 70%
-          ),
-          #111111;
-        border: 1px solid rgba(245, 158, 11, 0.12);
-      }
-
-      /* Navlink underline */
-      .nav-link {
-        position: relative;
-        transition: color 0.2s;
-      }
-      .nav-link::after {
-        content: "";
-        position: absolute;
-        bottom: -2px;
-        left: 0;
-        width: 0;
-        height: 1px;
-        background: #f59e0b;
-        transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-      }
-      .nav-link:hover::after {
-        width: 100%;
-      }
-      .nav-link:hover {
-        color: #f5f5f0;
-      }
-
-      /* Primary button */
-      .btn-primary {
-        background: #f59e0b;
-        color: #0d0d0d;
-        font-family: "DM Mono", monospace;
-        font-weight: 500;
-        letter-spacing: 0.06em;
-        transition:
-          background 0.2s,
-          transform 0.15s,
-          box-shadow 0.2s;
-      }
-      .btn-primary:hover {
-        background: #fcd34d;
-        transform: translateY(-1px);
-        box-shadow: 0 8px 30px rgba(245, 158, 11, 0.35);
-      }
-      .btn-primary:active {
-        transform: translateY(0);
-      }
-
-      /* Ghost button */
-      .btn-ghost {
-        border: 1px solid rgba(245, 158, 11, 0.4);
-        color: #f59e0b;
-        font-family: "DM Mono", monospace;
-        font-weight: 400;
-        letter-spacing: 0.06em;
-        transition:
-          border-color 0.2s,
-          background 0.2s,
-          color 0.2s;
-      }
-      .btn-ghost:hover {
-        border-color: #f59e0b;
-        background: rgba(245, 158, 11, 0.08);
-        color: #fcd34d;
-      }
-
-      /* Mobile menu */
-      #mobile-menu {
-        transition:
-          max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1),
-          opacity 0.3s;
-        max-height: 0;
-        opacity: 0;
-        overflow: hidden;
-      }
-      #mobile-menu.open {
-        max-height: 400px;
-        opacity: 1;
-      }
-
-      /* Divider dots */
-      .dot-divider::before {
-        content: "· · ·";
-        letter-spacing: 0.4em;
-        color: #f59e0b;
-        font-family: "DM Mono", monospace;
-      }
-
-      /* Horizontal ticker */
+      /* ═══════════════════════════════════════════
+       TICKER
+    ═══════════════════════════════════════════ */
       .ticker-inner {
         display: flex;
         width: max-content;
       }
 
-      /* Dashboard mockup lines */
-      .mock-bar {
-        background: linear-gradient(90deg, #f59e0b, rgba(245, 158, 11, 0.2));
-        border-radius: 2px;
-        transition: width 1.2s cubic-bezier(0.16, 1, 0.3, 1);
-      }
-
-      /* Glow dot */
-      .glow-dot {
-        width: 8px;
-        height: 8px;
-        border-radius: 50%;
-        background: #f59e0b;
-        box-shadow: 0 0 8px 2px rgba(245, 158, 11, 0.6);
-        animation: pulse 2s ease-in-out infinite;
-      }
-      @keyframes pulse {
-        0%,
-        100% {
-          box-shadow: 0 0 8px 2px rgba(245, 158, 11, 0.6);
-        }
-        50% {
-          box-shadow: 0 0 18px 6px rgba(245, 158, 11, 0.3);
-        }
-      }
-
-      /* Accordion */
-      .accordion-content {
+      /* ═══════════════════════════════════════════
+       MOBILE MENU
+    ═══════════════════════════════════════════ */
+      #mobile-menu {
         max-height: 0;
+        opacity: 0;
         overflow: hidden;
         transition:
           max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1),
-          padding 0.3s;
+          opacity 0.3s;
+        background: var(--bg2);
+        border-top: 1px solid var(--bdr);
       }
-      .accordion-content.open {
-        max-height: 300px;
+      #mobile-menu.open {
+        max-height: 420px;
+        opacity: 1;
       }
 
-      /* Step connector line */
+      /* ═══════════════════════════════════════════
+       ACCORDION — CSS grid trick (no JS height)
+    ═══════════════════════════════════════════ */
+      .accordion-item {
+        border: 1px solid var(--bdr);
+        border-radius: 10px;
+        overflow: hidden;
+        transition: border-color 0.3s;
+      }
+      .accordion-item.is-open {
+        border-color: rgba(245, 158, 11, 0.4);
+      }
+      .accordion-trigger {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1.2rem 1.5rem;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        text-align: left;
+        gap: 1rem;
+        transition: background 0.2s;
+      }
+      .accordion-trigger:hover {
+        background: var(--bg3);
+      }
+      /* The magic: grid-template-rows animates from 0fr → 1fr */
+      .accordion-body {
+        display: grid;
+        grid-template-rows: 0fr;
+        transition: grid-template-rows 0.42s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      .accordion-item.is-open .accordion-body {
+        grid-template-rows: 1fr;
+      }
+      .accordion-body-inner {
+        overflow: hidden;
+      }
+      .accordion-body-content {
+        padding: 0 1.5rem 1.25rem;
+        color: var(--fg2);
+        font-size: 0.9rem;
+        line-height: 1.75;
+      }
+      /* Icon */
+      .accordion-icon {
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        flex-shrink: 0;
+        border: 1px solid var(--bdr2);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition:
+          background 0.3s,
+          border-color 0.3s,
+          transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+        color: var(--ember);
+      }
+      .accordion-icon svg {
+        width: 11px;
+        height: 11px;
+        stroke: currentColor;
+        stroke-width: 2.5;
+        transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+      }
+      .accordion-item.is-open .accordion-icon {
+        background: var(--ember);
+        border-color: var(--ember);
+        color: #0d0d0d;
+      }
+      .accordion-item.is-open .accordion-icon svg {
+        transform: rotate(45deg);
+      }
+
+      /* ═══════════════════════════════════════════
+       PRICING TOGGLE
+    ═══════════════════════════════════════════ */
+      .pricing-toggle {
+        padding: 8px 18px;
+        border-radius: 8px;
+        font-family: "DM Mono", monospace;
+        font-size: 0.75rem;
+        letter-spacing: 0.05em;
+        border: none;
+        cursor: pointer;
+        background: transparent;
+        color: var(--fg2);
+        transition:
+          background 0.25s,
+          color 0.25s;
+      }
+      .pricing-toggle.active {
+        background: var(--bg);
+        color: var(--fg);
+        box-shadow: 0 1px 6px rgba(0, 0, 0, 0.2);
+      }
+
+      /* ═══════════════════════════════════════════
+       STEP LINE
+    ═══════════════════════════════════════════ */
       .step-line {
         position: absolute;
         top: 20px;
@@ -475,18 +576,329 @@
           rgba(245, 158, 11, 0.1)
         );
       }
-
       @media (max-width: 768px) {
         .hero-title {
-          font-size: clamp(4rem, 18vw, 10rem);
+          font-size: clamp(4rem, 18vw, 10rem) !important;
         }
         .step-line {
           display: none;
         }
       }
+
+      /* ═══════════════════════════════════════════
+       MOCK BAR
+    ═══════════════════════════════════════════ */
+      .mock-bar {
+        background: linear-gradient(
+          90deg,
+          var(--ember),
+          rgba(245, 158, 11, 0.2)
+        );
+        border-radius: 2px;
+      }
+
+      /* ═══════════════════════════════════════════
+       AUTH MODAL
+    ═══════════════════════════════════════════ */
+      #auth-modal {
+        position: fixed;
+        inset: 0;
+        z-index: 8000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.28s ease;
+      }
+      #auth-modal.is-open {
+        opacity: 1;
+        pointer-events: all;
+      }
+      #modal-backdrop {
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.72);
+        backdrop-filter: blur(6px);
+        -webkit-backdrop-filter: blur(6px);
+      }
+      #modal-panel {
+        position: relative;
+        width: 100%;
+        max-width: 420px;
+        border-radius: 20px;
+        overflow: hidden;
+        background: var(--bg2);
+        border: 1px solid var(--bdr);
+        box-shadow: 0 32px 80px rgba(0, 0, 0, 0.55);
+        transform: translateY(20px) scale(0.97);
+        transition: transform 0.32s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      #auth-modal.is-open #modal-panel {
+        transform: translateY(0) scale(1);
+      }
+      .modal-top-bar {
+        height: 3px;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          var(--ember) 40%,
+          var(--ember) 60%,
+          transparent
+        );
+      }
+      /* Tab switcher */
+      .modal-tabs {
+        display: flex;
+        border-bottom: 1px solid var(--bdr);
+        background: var(--bg3);
+      }
+      .modal-tab {
+        flex: 1;
+        padding: 15px;
+        border: none;
+        background: transparent;
+        cursor: pointer;
+        font-family: "DM Mono", monospace;
+        font-size: 0.75rem;
+        letter-spacing: 0.07em;
+        color: var(--fg2);
+        border-bottom: 2px solid transparent;
+        transition:
+          color 0.2s,
+          border-color 0.2s;
+      }
+      .modal-tab.active {
+        color: var(--ember);
+        border-bottom-color: var(--ember);
+      }
+      /* Forms slide */
+      .modal-forms {
+        overflow: hidden;
+      }
+      .modal-forms-track {
+        display: flex;
+        transition: transform 0.38s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      .modal-form {
+        width: 100%;
+        flex-shrink: 0;
+        padding: 28px;
+      }
+      /* Fields */
+      .field {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+      }
+      .field-label {
+        font-family: "DM Mono", monospace;
+        font-size: 0.68rem;
+        letter-spacing: 0.07em;
+        text-transform: uppercase;
+        color: var(--fg2);
+      }
+      .field-input {
+        width: 100%;
+        padding: 10px 13px;
+        border-radius: 9px;
+        border: 1px solid var(--bdr);
+        background: var(--bg);
+        color: var(--fg);
+        font-family: "DM Mono", monospace;
+        font-size: 0.82rem;
+        outline: none;
+        transition:
+          border-color 0.2s,
+          box-shadow 0.2s;
+      }
+      .field-input::placeholder {
+        color: var(--fg3);
+      }
+      .field-input:focus {
+        border-color: var(--ember);
+        box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.12);
+      }
+      /* Password wrapper */
+      .pw-wrap {
+        position: relative;
+      }
+      .pw-toggle {
+        position: absolute;
+        right: 11px;
+        top: 50%;
+        transform: translateY(-50%);
+        background: none;
+        border: none;
+        cursor: pointer;
+        color: var(--fg2);
+        padding: 2px;
+        transition: color 0.2s;
+        line-height: 0;
+      }
+      .pw-toggle:hover {
+        color: var(--ember);
+      }
+      /* Social */
+      .social-btn {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        padding: 10px;
+        border-radius: 9px;
+        border: 1px solid var(--bdr);
+        background: var(--bg3);
+        color: var(--fg);
+        cursor: pointer;
+        font-family: "DM Mono", monospace;
+        font-size: 0.72rem;
+        letter-spacing: 0.04em;
+        transition:
+          border-color 0.2s,
+          background 0.2s,
+          transform 0.15s;
+      }
+      .social-btn:hover {
+        border-color: var(--bdr2);
+        background: var(--bg4);
+        transform: translateY(-1px);
+      }
+      /* Divider */
+      .or-divider {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .or-divider::before,
+      .or-divider::after {
+        content: "";
+        flex: 1;
+        height: 1px;
+        background: var(--bdr);
+      }
+      .or-label {
+        font-family: "DM Mono", monospace;
+        font-size: 0.65rem;
+        color: var(--fg2);
+        letter-spacing: 0.06em;
+      }
+      /* Custom checkbox */
+      .custom-check {
+        width: 15px;
+        height: 15px;
+        flex-shrink: 0;
+        appearance: none;
+        -webkit-appearance: none;
+        border: 1px solid var(--bdr2);
+        border-radius: 4px;
+        background: var(--bg);
+        cursor: pointer;
+        position: relative;
+        transition:
+          background 0.2s,
+          border-color 0.2s;
+      }
+      .custom-check:checked {
+        background: var(--ember);
+        border-color: var(--ember);
+      }
+      .custom-check:checked::after {
+        content: "";
+        position: absolute;
+        top: 1px;
+        left: 4px;
+        width: 5px;
+        height: 9px;
+        border: 2px solid #0d0d0d;
+        border-top: none;
+        border-left: none;
+        transform: rotate(45deg);
+      }
+      /* Submit */
+      .modal-submit {
+        width: 100%;
+        padding: 12px;
+        border-radius: 9px;
+        border: none;
+        background: var(--ember);
+        color: #0d0d0d;
+        font-family: "DM Mono", monospace;
+        font-weight: 500;
+        font-size: 0.82rem;
+        letter-spacing: 0.06em;
+        cursor: pointer;
+        transition:
+          background 0.2s,
+          transform 0.15s,
+          box-shadow 0.2s;
+      }
+      .modal-submit:hover {
+        background: var(--ember-l);
+        transform: translateY(-1px);
+        box-shadow: 0 8px 28px rgba(245, 158, 11, 0.38);
+      }
+      .modal-submit:active {
+        transform: translateY(0);
+      }
+      /* Strength bar */
+      .str-bars {
+        display: flex;
+        gap: 4px;
+        margin-top: 6px;
+      }
+      .str-bar {
+        flex: 1;
+        height: 3px;
+        border-radius: 2px;
+        background: var(--bdr2);
+        transition: background 0.3s;
+      }
+      /* Modal close btn */
+      .modal-close {
+        position: absolute;
+        top: 12px;
+        right: 12px;
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
+        border: 1px solid var(--bdr);
+        background: var(--bg3);
+        color: var(--fg2);
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 14px;
+        line-height: 1;
+        transition:
+          color 0.2s,
+          border-color 0.2s;
+      }
+      .modal-close:hover {
+        color: var(--fg);
+        border-color: var(--bdr2);
+      }
+      /* Switch prompt */
+      .modal-switch {
+        font-family: "DM Mono", monospace;
+        font-size: 0.7rem;
+        color: var(--fg2);
+        text-align: center;
+        margin-top: 14px;
+      }
+      .modal-switch button {
+        background: none;
+        border: none;
+        color: var(--ember);
+        cursor: pointer;
+        font: inherit;
+        padding: 0;
+      }
     </style>
 
-    <!-- Structured Data / JSON-LD -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -494,12 +906,7 @@
         "name": "Lumiq",
         "applicationCategory": "BusinessApplication",
         "operatingSystem": "Web",
-        "description": "AI-powered analytics platform that turns raw data into strategic decisions in real time.",
-        "offers": {
-          "@type": "Offer",
-          "price": "49",
-          "priceCurrency": "USD"
-        },
+        "offers": { "@type": "Offer", "price": "49", "priceCurrency": "USD" },
         "aggregateRating": {
           "@type": "AggregateRating",
           "ratingValue": "4.9",
@@ -510,121 +917,99 @@
   </head>
 
   <body class="antialiased">
-    <!-- ============================================================
-       GTM NOSCRIPT (place immediately after <body>)
-  ============================================================ -->
-    <!-- <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX"
-  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript> -->
-
-    <!-- ============================================================
-       NAVIGATION
-  ============================================================ -->
-    <header
-      id="navbar"
-      class="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
-    >
+    <!-- ═══════════ NAV ═══════════ -->
+    <header id="navbar" class="fixed top-0 left-0 right-0 z-50" role="banner">
       <nav
         class="max-w-7xl mx-auto px-6 lg:px-8 py-5 flex items-center justify-between"
       >
-        <!-- Logo -->
-        <a
-          href="#"
-          class="flex items-center gap-2.5 group"
-          aria-label="Lumiq Home"
-        >
+        <a href="#" class="flex items-center gap-2.5" aria-label="Lumiq">
           <div
-            class="w-8 h-8 bg-ember rounded-md flex items-center justify-center"
+            class="w-8 h-8 rounded-md flex items-center justify-center"
+            style="background: var(--ember)"
           >
-            <span class="font-display text-obsidian text-xl leading-none"
+            <span
+              class="font-display text-xl leading-none"
+              style="color: #0d0d0d"
               >L</span
             >
           </div>
-          <span class="font-display text-2xl text-snow tracking-widest"
+          <span
+            class="font-display text-2xl tracking-widest"
+            style="color: var(--fg)"
             >LUMIQ</span
           >
         </a>
 
-        <!-- Desktop nav links -->
-        <ul
-          class="hidden md:flex items-center gap-8"
-          role="navigation"
-          aria-label="Main navigation"
-        >
-          <li>
-            <a
-              href="#features"
-              class="nav-link text-mist text-sm font-mono tracking-wide"
-              >Features</a
-            >
-          </li>
-          <li>
-            <a
-              href="#how-it-works"
-              class="nav-link text-mist text-sm font-mono tracking-wide"
-              >How It Works</a
-            >
-          </li>
-          <li>
-            <a
-              href="#pricing"
-              class="nav-link text-mist text-sm font-mono tracking-wide"
-              >Pricing</a
-            >
-          </li>
-          <li>
-            <a
-              href="#testimonials"
-              class="nav-link text-mist text-sm font-mono tracking-wide"
-              >Customers</a
-            >
-          </li>
-          <li>
-            <a
-              href="#faq"
-              class="nav-link text-mist text-sm font-mono tracking-wide"
-              >FAQ</a
-            >
-          </li>
+        <ul class="hidden md:flex items-center gap-8">
+          <li><a href="#features" class="nav-link">Features</a></li>
+          <li><a href="#how-it-works" class="nav-link">How It Works</a></li>
+          <li><a href="#pricing" class="nav-link">Pricing</a></li>
+          <li><a href="#testimonials" class="nav-link">Customers</a></li>
+          <li><a href="#faq" class="nav-link">FAQ</a></li>
         </ul>
 
-        <!-- Desktop CTA -->
         <div class="hidden md:flex items-center gap-4">
-          <a
-            href="#"
-            class="text-mist hover:text-snow text-sm font-mono tracking-wide transition-colors"
-            >Log in</a
+          <!-- Theme toggle -->
+          <button
+            class="theme-toggle"
+            id="theme-toggle"
+            aria-label="Toggle light/dark mode"
           >
+            <span class="theme-icon-moon">🌙</span>
+            <span class="theme-icon-sun">☀️</span>
+            <div class="theme-toggle-knob"></div>
+          </button>
+          <button
+            onclick="openModal('login')"
+            class="nav-link"
+            style="background: none; border: none; cursor: pointer"
+          >
+            Log in
+          </button>
           <a href="#pricing" class="btn-primary px-5 py-2.5 rounded-md text-sm"
             >Start free →</a
           >
         </div>
 
-        <!-- Mobile hamburger -->
-        <button
-          id="menu-toggle"
-          class="md:hidden flex flex-col gap-1.5 p-2"
-          aria-label="Toggle mobile menu"
-          aria-expanded="false"
-        >
-          <span
-            class="menu-bar block w-6 h-px bg-snow transition-all duration-300"
-          ></span>
-          <span
-            class="menu-bar block w-6 h-px bg-snow transition-all duration-300"
-          ></span>
-          <span
-            class="menu-bar block w-4 h-px bg-ember transition-all duration-300"
-          ></span>
-        </button>
+        <!-- Mobile right cluster -->
+        <div class="flex md:hidden items-center gap-3">
+          <button
+            class="theme-toggle"
+            id="theme-toggle-m"
+            aria-label="Toggle theme"
+          >
+            <span class="theme-icon-moon">🌙</span>
+            <span class="theme-icon-sun">☀️</span>
+            <div class="theme-toggle-knob"></div>
+          </button>
+          <button
+            id="menu-toggle"
+            class="flex flex-col gap-1.5 p-2"
+            aria-label="Menu"
+            aria-expanded="false"
+          >
+            <span
+              class="menu-bar block w-6 h-px transition-all duration-300"
+              style="background: var(--fg)"
+            ></span>
+            <span
+              class="menu-bar block w-6 h-px transition-all duration-300"
+              style="background: var(--fg)"
+            ></span>
+            <span
+              class="menu-bar block w-4 h-px transition-all duration-300"
+              style="background: var(--ember)"
+            ></span>
+          </button>
+        </div>
       </nav>
 
-      <!-- Mobile menu -->
-      <div id="mobile-menu" class="md:hidden bg-ash border-t border-ash-3 px-6">
-        <ul class="py-6 space-y-5">
+      <div id="mobile-menu">
+        <ul class="py-6 px-6 space-y-5">
           <li>
             <a
               href="#features"
-              class="block text-mist font-mono text-sm tracking-wide hover:text-snow transition-colors"
+              class="block nav-link"
               onclick="closeMobileMenu()"
               >Features</a
             >
@@ -632,7 +1017,7 @@
           <li>
             <a
               href="#how-it-works"
-              class="block text-mist font-mono text-sm tracking-wide hover:text-snow transition-colors"
+              class="block nav-link"
               onclick="closeMobileMenu()"
               >How It Works</a
             >
@@ -640,7 +1025,7 @@
           <li>
             <a
               href="#pricing"
-              class="block text-mist font-mono text-sm tracking-wide hover:text-snow transition-colors"
+              class="block nav-link"
               onclick="closeMobileMenu()"
               >Pricing</a
             >
@@ -648,20 +1033,27 @@
           <li>
             <a
               href="#testimonials"
-              class="block text-mist font-mono text-sm tracking-wide hover:text-snow transition-colors"
+              class="block nav-link"
               onclick="closeMobileMenu()"
               >Customers</a
             >
           </li>
           <li>
-            <a
-              href="#faq"
-              class="block text-mist font-mono text-sm tracking-wide hover:text-snow transition-colors"
-              onclick="closeMobileMenu()"
+            <a href="#faq" class="block nav-link" onclick="closeMobileMenu()"
               >FAQ</a
             >
           </li>
-          <li class="pt-2 border-t border-ash-3">
+          <li style="border-top: 1px solid var(--bdr); padding-top: 12px">
+            <button
+              onclick="
+                openModal('login');
+                closeMobileMenu();
+              "
+              class="block w-full text-left nav-link mb-3"
+              style="background: none; border: none; cursor: pointer"
+            >
+              Log in
+            </button>
             <a
               href="#pricing"
               class="btn-primary block text-center py-3 rounded-md text-sm"
@@ -673,14 +1065,11 @@
       </div>
     </header>
 
-    <!-- ============================================================
-       HERO
-  ============================================================ -->
+    <!-- ═══════════ HERO ═══════════ -->
     <section
-      class="mesh-amber min-h-screen flex flex-col justify-center pt-24 pb-16 relative overflow-hidden"
+      class="mesh-hero min-h-screen flex flex-col justify-center pt-24 pb-16 relative overflow-hidden"
       aria-labelledby="hero-heading"
     >
-      <!-- Background grid -->
       <div
         class="absolute inset-0 opacity-[0.035]"
         style="
@@ -690,8 +1079,6 @@
           background-size: 60px 60px;
         "
       ></div>
-
-      <!-- Floating ambient circles -->
       <div
         class="absolute top-32 right-12 w-72 h-72 rounded-full opacity-[0.06]"
         style="background: radial-gradient(circle, #f59e0b, transparent 70%)"
@@ -702,41 +1089,41 @@
       ></div>
 
       <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
-        <!-- Eyebrow -->
         <div class="reveal flex items-center gap-3 mb-8">
           <div class="glow-dot"></div>
-          <span class="font-mono text-ember text-xs tracking-widest3 uppercase"
+          <span
+            class="font-mono text-xs tracking-widest uppercase"
+            style="color: var(--ember); letter-spacing: 0.3em"
             >AI-Powered Analytics Platform</span
           >
         </div>
-
-        <!-- Main headline -->
         <h1
           id="hero-heading"
-          class="hero-title reveal reveal-delay-1 text-snow"
-          style="font-size: clamp(5rem, 14vw, 13rem)"
+          class="reveal reveal-delay-1 font-display"
+          style="
+            font-size: clamp(5rem, 14vw, 13rem);
+            line-height: 0.92;
+            letter-spacing: 0.01em;
+            color: var(--fg);
+          "
         >
-          Analytics<br />
-          <span class="text-ember">That Think</span><br />
-          Ahead.
+          Analytics<br /><span style="color: var(--ember)">That Think</span
+          ><br />Ahead.
         </h1>
-
-        <!-- Subheadline -->
         <p
-          class="reveal reveal-delay-2 mt-8 max-w-xl text-mist text-lg leading-relaxed font-serif italic"
+          class="reveal reveal-delay-2 mt-8 max-w-xl text-lg leading-relaxed font-serif italic"
+          style="color: var(--fg2)"
         >
           Lumiq transforms raw business data into clear, actionable
           intelligence—so your team spends less time querying and more time
           deciding.
         </p>
-
-        <!-- CTAs -->
         <div
           class="reveal reveal-delay-3 mt-10 flex flex-wrap items-center gap-4"
         >
-          <a href="#pricing" class="btn-primary px-8 py-4 rounded-md text-sm">
-            Start free — no card needed
-          </a>
+          <a href="#pricing" class="btn-primary px-8 py-4 rounded-md text-sm"
+            >Start free — no card needed</a
+          >
           <a
             href="#how-it-works"
             class="btn-ghost px-7 py-4 rounded-md text-sm flex items-center gap-2"
@@ -751,123 +1138,172 @@
             See how it works
           </a>
         </div>
-
-        <!-- Social proof bar -->
         <div
-          class="reveal reveal-delay-4 mt-16 flex flex-wrap items-center gap-6"
+          class="reveal reveal-delay-4 mt-14 flex flex-wrap items-center gap-6"
         >
           <div class="flex -space-x-2">
-            <!-- Avatar initials -->
             <div
-              class="w-9 h-9 rounded-full bg-ash-2 border-2 border-obsidian flex items-center justify-center font-mono text-xs text-ember"
+              class="w-9 h-9 rounded-full border-2 flex items-center justify-center font-mono text-xs"
+              style="
+                background: var(--bg3);
+                border-color: var(--bg);
+                color: var(--ember);
+              "
             >
               AK
             </div>
             <div
-              class="w-9 h-9 rounded-full bg-ash-3 border-2 border-obsidian flex items-center justify-center font-mono text-xs text-snow"
+              class="w-9 h-9 rounded-full border-2 flex items-center justify-center font-mono text-xs"
+              style="
+                background: var(--bg4);
+                border-color: var(--bg);
+                color: var(--fg);
+              "
             >
               MR
             </div>
             <div
-              class="w-9 h-9 rounded-full bg-ash-2 border-2 border-obsidian flex items-center justify-center font-mono text-xs text-ember"
+              class="w-9 h-9 rounded-full border-2 flex items-center justify-center font-mono text-xs"
+              style="
+                background: var(--bg3);
+                border-color: var(--bg);
+                color: var(--ember);
+              "
             >
               SL
             </div>
             <div
-              class="w-9 h-9 rounded-full bg-ash-3 border-2 border-obsidian flex items-center justify-center font-mono text-xs text-snow"
+              class="w-9 h-9 rounded-full border-2 flex items-center justify-center font-mono text-xs"
+              style="
+                background: var(--bg4);
+                border-color: var(--bg);
+                color: var(--fg);
+              "
             >
               +
             </div>
           </div>
           <div>
-            <div class="flex items-center gap-1 mb-0.5">
-              <span class="text-ember text-sm">★★★★★</span>
-            </div>
-            <p class="text-mist text-xs font-mono">
-              <span class="text-snow font-medium">4,200+ teams</span> already
-              use Lumiq
+            <div class="text-sm" style="color: var(--ember)">★★★★★</div>
+            <p class="font-mono text-xs" style="color: var(--fg2)">
+              <span style="color: var(--fg); font-weight: 500"
+                >4,200+ teams</span
+              >
+              already use Lumiq
             </p>
           </div>
-          <div class="h-8 w-px bg-ash-3 hidden sm:block"></div>
+          <div
+            class="hidden sm:block h-8 w-px"
+            style="background: var(--bdr2)"
+          ></div>
           <div class="hidden sm:flex items-center gap-2">
-            <svg
-              class="w-4 h-4 text-ember"
-              fill="currentColor"
-              viewBox="0 0 20 20"
-            >
+            <svg class="w-4 h-4" fill="var(--ember)" viewBox="0 0 20 20">
               <path
                 fill-rule="evenodd"
                 d="M10 1l2.39 4.843L18 6.927l-4 3.897.944 5.506L10 13.902l-4.944 2.428L6 10.824 2 6.927l5.61-1.084L10 1z"
                 clip-rule="evenodd"
               />
             </svg>
-            <span class="text-mist text-xs font-mono"
-              ><span class="text-snow">#1 Product of the Month</span> — Product
-              Hunt</span
+            <span class="font-mono text-xs" style="color: var(--fg2)"
+              ><span style="color: var(--fg)">#1 Product of the Month</span> —
+              Product Hunt</span
             >
           </div>
         </div>
       </div>
 
-      <!-- Dashboard mockup floating -->
+      <!-- Dashboard mockup -->
       <div
         class="reveal reveal-delay-5 max-w-7xl mx-auto px-6 lg:px-8 mt-20 relative z-10"
       >
         <div class="relative max-w-4xl">
-          <!-- Mock browser frame -->
           <div
-            class="bg-ash-2 rounded-xl border border-ash-3 overflow-hidden shadow-2xl"
+            class="rounded-xl overflow-hidden"
             style="
+              background: var(--bg3);
+              border: 1px solid var(--bdr);
               box-shadow:
-                0 40px 80px rgba(0, 0, 0, 0.6),
+                0 40px 80px rgba(0, 0, 0, 0.5),
                 0 0 0 1px rgba(245, 158, 11, 0.08);
             "
           >
-            <!-- Browser chrome -->
             <div
-              class="bg-ash border-b border-ash-3 px-4 py-3 flex items-center gap-3"
+              class="flex items-center gap-3 px-4 py-3"
+              style="
+                background: var(--bg2);
+                border-bottom: 1px solid var(--bdr);
+              "
             >
               <div class="flex gap-1.5">
-                <div class="w-3 h-3 rounded-full bg-ash-3"></div>
-                <div class="w-3 h-3 rounded-full bg-ash-3"></div>
-                <div class="w-3 h-3 rounded-full bg-ash-3"></div>
+                <div
+                  class="w-3 h-3 rounded-full"
+                  style="background: var(--bg4)"
+                ></div>
+                <div
+                  class="w-3 h-3 rounded-full"
+                  style="background: var(--bg4)"
+                ></div>
+                <div
+                  class="w-3 h-3 rounded-full"
+                  style="background: var(--bg4)"
+                ></div>
               </div>
               <div
-                class="flex-1 bg-obsidian rounded-md px-3 py-1 font-mono text-xs text-mist"
+                class="flex-1 rounded-md px-3 py-1 font-mono text-xs"
+                style="background: var(--bg); color: var(--fg2)"
               >
                 app.lumiq.io/dashboard
               </div>
               <div class="glow-dot"></div>
             </div>
-
-            <!-- Dashboard content -->
             <div class="p-5 md:p-7 grid grid-cols-3 gap-4">
-              <!-- Stat tiles -->
               <div class="stat-card rounded-lg p-4">
-                <p class="font-mono text-mist text-xs tracking-wide mb-1">
+                <p
+                  class="font-mono text-xs tracking-wide mb-1"
+                  style="color: var(--fg2)"
+                >
                   Revenue (MTD)
                 </p>
-                <p class="font-display text-3xl text-snow">$284K</p>
-                <p class="font-mono text-xs text-green-400 mt-1">↑ 18.4%</p>
+                <p class="font-display text-3xl" style="color: var(--fg)">
+                  $284K
+                </p>
+                <p class="font-mono text-xs mt-1" style="color: #22c55e">
+                  ↑ 18.4%
+                </p>
               </div>
               <div class="stat-card rounded-lg p-4">
-                <p class="font-mono text-mist text-xs tracking-wide mb-1">
+                <p
+                  class="font-mono text-xs tracking-wide mb-1"
+                  style="color: var(--fg2)"
+                >
                   Active Users
                 </p>
-                <p class="font-display text-3xl text-snow">12,841</p>
-                <p class="font-mono text-xs text-green-400 mt-1">↑ 7.2%</p>
+                <p class="font-display text-3xl" style="color: var(--fg)">
+                  12,841
+                </p>
+                <p class="font-mono text-xs mt-1" style="color: #22c55e">
+                  ↑ 7.2%
+                </p>
               </div>
               <div class="stat-card rounded-lg p-4">
-                <p class="font-mono text-mist text-xs tracking-wide mb-1">
+                <p
+                  class="font-mono text-xs tracking-wide mb-1"
+                  style="color: var(--fg2)"
+                >
                   Churn Rate
                 </p>
-                <p class="font-display text-3xl text-ember">1.8%</p>
-                <p class="font-mono text-xs text-green-400 mt-1">↓ 0.3%</p>
+                <p class="font-display text-3xl" style="color: var(--ember)">
+                  1.8%
+                </p>
+                <p class="font-mono text-xs mt-1" style="color: #22c55e">
+                  ↓ 0.3%
+                </p>
               </div>
-
-              <!-- Bar chart mock (spans 2 cols) -->
               <div class="col-span-2 stat-card rounded-lg p-4">
-                <p class="font-mono text-mist text-xs tracking-wide mb-4">
+                <p
+                  class="font-mono text-xs tracking-wide mb-4"
+                  style="color: var(--fg2)"
+                >
                   Weekly Revenue
                 </p>
                 <div class="flex items-end gap-2 h-20">
@@ -880,12 +1316,14 @@
                   <div class="flex-1 mock-bar" style="height: 75%"></div>
                 </div>
                 <div class="flex justify-between mt-2">
-                  <span class="font-mono text-xs text-ash-3">Mon</span>
-                  <span class="font-mono text-xs text-ash-3">Sun</span>
+                  <span class="font-mono text-xs" style="color: var(--fg3)"
+                    >Mon</span
+                  >
+                  <span class="font-mono text-xs" style="color: var(--fg3)"
+                    >Sun</span
+                  >
                 </div>
               </div>
-
-              <!-- AI insight card (spans 1 col) -->
               <div
                 class="col-span-1 rounded-lg p-4"
                 style="
@@ -895,168 +1333,183 @@
               >
                 <div class="flex items-center gap-2 mb-3">
                   <div
-                    class="w-5 h-5 bg-ember rounded flex items-center justify-center"
+                    class="w-5 h-5 rounded flex items-center justify-center"
+                    style="background: var(--ember)"
                   >
                     <svg
-                      class="w-3 h-3 text-obsidian"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
+                      class="w-3 h-3"
+                      fill="none"
+                      stroke="#0d0d0d"
+                      stroke-width="2.5"
+                      viewBox="0 0 24 24"
                     >
-                      <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z"
+                      />
                     </svg>
                   </div>
-                  <span class="font-mono text-ember text-xs">AI Insight</span>
+                  <span class="font-mono text-xs" style="color: var(--ember)"
+                    >AI Insight</span
+                  >
                 </div>
-                <p class="text-snow text-xs leading-relaxed font-serif">
+                <p
+                  class="font-serif text-xs leading-relaxed"
+                  style="color: var(--fg)"
+                >
                   Thursday conversions are
-                  <strong class="text-ember">2.3×</strong> higher. Consider
-                  shifting ad spend mid-week.
+                  <strong style="color: var(--ember)">2.3×</strong> higher.
+                  Shift ad spend mid-week.
                 </p>
               </div>
             </div>
           </div>
-
-          <!-- Decorative glow under mockup -->
-          <div
-            class="absolute -bottom-8 left-1/2 -translate-x-1/2 w-3/4 h-16 opacity-20"
-            style="
-              background: radial-gradient(ellipse, #f59e0b, transparent 70%);
-              filter: blur(20px);
-            "
-          ></div>
         </div>
       </div>
     </section>
 
-    <!-- ============================================================
-       TICKER / LOGOS
-  ============================================================ -->
+    <!-- ═══════════ TICKER ═══════════ -->
     <div
-      class="border-y border-ash-3 py-5 overflow-hidden bg-ash"
+      class="overflow-hidden py-5"
+      style="
+        border-top: 1px solid var(--bdr);
+        border-bottom: 1px solid var(--bdr);
+        background: var(--bg2);
+      "
       aria-hidden="true"
     >
       <div class="ticker-inner animate-ticker select-none">
         <div class="flex items-center gap-16 px-8 whitespace-nowrap">
-          <span class="font-mono text-ash-3 text-sm tracking-widest uppercase"
+          <span
+            class="font-mono text-xs tracking-widest uppercase"
+            style="color: var(--fg3)"
             >Trusted by</span
           >
-          <span class="font-display text-2xl text-ash-3 tracking-widest"
+          <span
+            class="font-display text-2xl tracking-widest"
+            style="color: var(--fg3)"
             >MERIDIAN</span
-          >
-          <span class="text-ash-3">·</span>
-          <span class="font-display text-2xl text-ash-3 tracking-widest"
+          ><span style="color: var(--fg3)">·</span>
+          <span
+            class="font-display text-2xl tracking-widest"
+            style="color: var(--fg3)"
             >VECTARA</span
-          >
-          <span class="text-ash-3">·</span>
-          <span class="font-display text-2xl text-ash-3 tracking-widest"
+          ><span style="color: var(--fg3)">·</span>
+          <span
+            class="font-display text-2xl tracking-widest"
+            style="color: var(--fg3)"
             >FOLIO</span
-          >
-          <span class="text-ash-3">·</span>
-          <span class="font-display text-2xl text-ash-3 tracking-widest"
+          ><span style="color: var(--fg3)">·</span>
+          <span
+            class="font-display text-2xl tracking-widest"
+            style="color: var(--fg3)"
             >KRESCENT</span
-          >
-          <span class="text-ash-3">·</span>
-          <span class="font-display text-2xl text-ash-3 tracking-widest"
+          ><span style="color: var(--fg3)">·</span>
+          <span
+            class="font-display text-2xl tracking-widest"
+            style="color: var(--fg3)"
             >AXELION</span
-          >
-          <span class="text-ash-3">·</span>
-          <span class="font-display text-2xl text-ash-3 tracking-widest"
-            >PHASIO</span
-          >
-          <span class="text-ash-3">·</span>
-          <span class="font-display text-2xl text-ash-3 tracking-widest"
+          ><span style="color: var(--fg3)">·</span>
+          <span
+            class="font-display text-2xl tracking-widest"
+            style="color: var(--fg3)"
             >STRATUM</span
-          >
-          <span class="text-ash-3">·</span>
-          <span class="font-display text-2xl text-ash-3 tracking-widest"
+          ><span style="color: var(--fg3)">·</span>
+          <span
+            class="font-display text-2xl tracking-widest"
+            style="color: var(--fg3)"
             >NOVAQ</span
-          >
-          <span class="text-ash-3">·</span>
+          ><span style="color: var(--fg3)">·</span>
         </div>
-        <!-- Duplicate for seamless loop -->
         <div
           class="flex items-center gap-16 px-8 whitespace-nowrap"
           aria-hidden="true"
         >
-          <span class="font-mono text-ash-3 text-sm tracking-widest uppercase"
+          <span
+            class="font-mono text-xs tracking-widest uppercase"
+            style="color: var(--fg3)"
             >Trusted by</span
           >
-          <span class="font-display text-2xl text-ash-3 tracking-widest"
+          <span
+            class="font-display text-2xl tracking-widest"
+            style="color: var(--fg3)"
             >MERIDIAN</span
-          >
-          <span class="text-ash-3">·</span>
-          <span class="font-display text-2xl text-ash-3 tracking-widest"
+          ><span style="color: var(--fg3)">·</span>
+          <span
+            class="font-display text-2xl tracking-widest"
+            style="color: var(--fg3)"
             >VECTARA</span
-          >
-          <span class="text-ash-3">·</span>
-          <span class="font-display text-2xl text-ash-3 tracking-widest"
+          ><span style="color: var(--fg3)">·</span>
+          <span
+            class="font-display text-2xl tracking-widest"
+            style="color: var(--fg3)"
             >FOLIO</span
-          >
-          <span class="text-ash-3">·</span>
-          <span class="font-display text-2xl text-ash-3 tracking-widest"
+          ><span style="color: var(--fg3)">·</span>
+          <span
+            class="font-display text-2xl tracking-widest"
+            style="color: var(--fg3)"
             >KRESCENT</span
-          >
-          <span class="text-ash-3">·</span>
-          <span class="font-display text-2xl text-ash-3 tracking-widest"
+          ><span style="color: var(--fg3)">·</span>
+          <span
+            class="font-display text-2xl tracking-widest"
+            style="color: var(--fg3)"
             >AXELION</span
-          >
-          <span class="text-ash-3">·</span>
-          <span class="font-display text-2xl text-ash-3 tracking-widest"
-            >PHASIO</span
-          >
-          <span class="text-ash-3">·</span>
-          <span class="font-display text-2xl text-ash-3 tracking-widest"
+          ><span style="color: var(--fg3)">·</span>
+          <span
+            class="font-display text-2xl tracking-widest"
+            style="color: var(--fg3)"
             >STRATUM</span
-          >
-          <span class="text-ash-3">·</span>
-          <span class="font-display text-2xl text-ash-3 tracking-widest"
+          ><span style="color: var(--fg3)">·</span>
+          <span
+            class="font-display text-2xl tracking-widest"
+            style="color: var(--fg3)"
             >NOVAQ</span
-          >
-          <span class="text-ash-3">·</span>
+          ><span style="color: var(--fg3)">·</span>
         </div>
       </div>
     </div>
 
-    <!-- ============================================================
-       FEATURES
-  ============================================================ -->
+    <!-- ═══════════ FEATURES ═══════════ -->
     <section
       id="features"
       class="py-28 lg:py-36 max-w-7xl mx-auto px-6 lg:px-8"
       aria-labelledby="features-heading"
     >
-      <!-- Section header -->
       <div class="max-w-2xl mb-20">
         <p
-          class="reveal font-mono text-ember text-xs tracking-widest3 uppercase mb-4"
+          class="reveal font-mono text-xs tracking-widest uppercase mb-4"
+          style="color: var(--ember); letter-spacing: 0.28em"
         >
           What you get
         </p>
         <h2
           id="features-heading"
-          class="reveal reveal-delay-1 font-display text-5xl md:text-6xl lg:text-7xl text-snow leading-none tracking-wide"
+          class="reveal reveal-delay-1 font-display text-5xl md:text-7xl leading-none tracking-wide"
+          style="color: var(--fg)"
         >
           Everything your<br />data deserves.
         </h2>
-        <p class="reveal reveal-delay-2 mt-6 text-mist leading-relaxed">
+        <p
+          class="reveal reveal-delay-2 mt-6 leading-relaxed"
+          style="color: var(--fg2)"
+        >
           A complete intelligence layer for your business—from ingestion to
           prediction, all under one roof.
         </p>
       </div>
-
-      <!-- Feature grid -->
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
-        <!-- Feature 1 -->
         <div class="feature-card reveal rounded-xl p-7 lg:col-span-2">
           <div
-            class="w-11 h-11 rounded-lg bg-ash-3 flex items-center justify-center mb-6"
+            class="w-11 h-11 rounded-lg flex items-center justify-center mb-6"
+            style="background: var(--bg3)"
           >
             <svg
-              class="w-5 h-5 text-ember"
+              class="w-5 h-5"
               fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
+              stroke="var(--ember)"
               stroke-width="1.5"
+              viewBox="0 0 24 24"
             >
               <path
                 stroke-linecap="round"
@@ -1065,36 +1518,44 @@
               />
             </svg>
           </div>
-          <h3 class="font-display text-3xl text-snow tracking-wide mb-3">
+          <h3
+            class="font-display text-3xl tracking-wide mb-3"
+            style="color: var(--fg)"
+          >
             Real-Time Intelligence
           </h3>
-          <p class="text-mist leading-relaxed">
+          <p class="leading-relaxed" style="color: var(--fg2)">
             Data streams process in under 200ms. Every dashboard refreshes live,
             so decisions are based on what's happening now—not an hour ago.
           </p>
           <div class="mt-6 flex items-center gap-3">
             <span
-              class="font-mono text-xs text-ember bg-ember/10 px-3 py-1 rounded-full border border-ember/20"
+              class="font-mono text-xs px-3 py-1 rounded-full"
+              style="
+                color: var(--ember);
+                background: var(--eg);
+                border: 1px solid rgba(245, 158, 11, 0.2);
+              "
               >&lt;200ms latency</span
             >
             <span
-              class="font-mono text-xs text-mist bg-ash-3/40 px-3 py-1 rounded-full"
+              class="font-mono text-xs px-3 py-1 rounded-full"
+              style="color: var(--fg2); background: var(--bg3)"
               >Always live</span
             >
           </div>
         </div>
-
-        <!-- Feature 2 -->
         <div class="feature-card reveal reveal-delay-1 rounded-xl p-7">
           <div
-            class="w-11 h-11 rounded-lg bg-ash-3 flex items-center justify-center mb-6"
+            class="w-11 h-11 rounded-lg flex items-center justify-center mb-6"
+            style="background: var(--bg3)"
           >
             <svg
-              class="w-5 h-5 text-ember"
+              class="w-5 h-5"
               fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
+              stroke="var(--ember)"
               stroke-width="1.5"
+              viewBox="0 0 24 24"
             >
               <path
                 stroke-linecap="round"
@@ -1103,54 +1564,58 @@
               />
             </svg>
           </div>
-          <h3 class="font-display text-2xl text-snow tracking-wide mb-3">
+          <h3
+            class="font-display text-2xl tracking-wide mb-3"
+            style="color: var(--fg)"
+          >
             Predictive AI
           </h3>
-          <p class="text-mist leading-relaxed text-sm">
-            Lumiq's models forecast churn, revenue, and anomalies before they
-            impact your business.
+          <p class="text-sm leading-relaxed" style="color: var(--fg2)">
+            Forecast churn, revenue, and anomalies before they impact your
+            business.
           </p>
         </div>
-
-        <!-- Feature 3 -->
         <div class="feature-card reveal reveal-delay-2 rounded-xl p-7">
           <div
-            class="w-11 h-11 rounded-lg bg-ash-3 flex items-center justify-center mb-6"
+            class="w-11 h-11 rounded-lg flex items-center justify-center mb-6"
+            style="background: var(--bg3)"
           >
             <svg
-              class="w-5 h-5 text-ember"
+              class="w-5 h-5"
               fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
+              stroke="var(--ember)"
               stroke-width="1.5"
+              viewBox="0 0 24 24"
             >
               <path
                 stroke-linecap="round"
                 stroke-linejoin="round"
-                d="M13.5 16.875h3.375m0 0h3.375m-3.375 0V13.5m0 3.375v3.375M6 10.5h2.25a2.25 2.25 0 002.25-2.25V6a2.25 2.25 0 00-2.25-2.25H6A2.25 2.25 0 003.75 6v2.25A2.25 2.25 0 006 10.5zm0 9.75h2.25A2.25 2.25 0 0010.5 18v-2.25a2.25 2.25 0 00-2.25-2.25H6a2.25 2.25 0 00-2.25 2.25V18A2.25 2.25 0 006 20.25zm9.75-9.75H18a2.25 2.25 0 002.25-2.25V6A2.25 2.25 0 0018 3.75h-2.25A2.25 2.25 0 0013.5 6v2.25a2.25 2.25 0 002.25 2.25z"
+                d="M13.5 16.875h3.375m0 0h3.375m-3.375 0V13.5m0 3.375v3.375M6 10.5h2.25a2.25 2.25 0 002.25-2.25V6a2.25 2.25 0 00-2.25-2.25H6A2.25 2.25 0 003.75 6v2.25A2.25 2.25 0 006 10.5z"
               />
             </svg>
           </div>
-          <h3 class="font-display text-2xl text-snow tracking-wide mb-3">
+          <h3
+            class="font-display text-2xl tracking-wide mb-3"
+            style="color: var(--fg)"
+          >
             250+ Integrations
           </h3>
-          <p class="text-mist leading-relaxed text-sm">
-            Connect Salesforce, Stripe, Shopify, PostgreSQL, Hubspot and 245
-            more in minutes—no engineering required.
+          <p class="text-sm leading-relaxed" style="color: var(--fg2)">
+            Connect Salesforce, Stripe, Shopify, PostgreSQL, and 246 more in
+            minutes.
           </p>
         </div>
-
-        <!-- Feature 4 -->
         <div class="feature-card reveal reveal-delay-1 rounded-xl p-7">
           <div
-            class="w-11 h-11 rounded-lg bg-ash-3 flex items-center justify-center mb-6"
+            class="w-11 h-11 rounded-lg flex items-center justify-center mb-6"
+            style="background: var(--bg3)"
           >
             <svg
-              class="w-5 h-5 text-ember"
+              class="w-5 h-5"
               fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
+              stroke="var(--ember)"
               stroke-width="1.5"
+              viewBox="0 0 24 24"
             >
               <path
                 stroke-linecap="round"
@@ -1159,26 +1624,28 @@
               />
             </svg>
           </div>
-          <h3 class="font-display text-2xl text-snow tracking-wide mb-3">
+          <h3
+            class="font-display text-2xl tracking-wide mb-3"
+            style="color: var(--fg)"
+          >
             Custom Dashboards
           </h3>
-          <p class="text-mist leading-relaxed text-sm">
-            Drag, drop, and publish dashboards in minutes. Share with
-            stakeholders with a single link—no logins needed for viewers.
+          <p class="text-sm leading-relaxed" style="color: var(--fg2)">
+            Drag, drop, and publish dashboards. Share via a single link—no
+            logins for viewers.
           </p>
         </div>
-
-        <!-- Feature 5 -->
         <div class="feature-card reveal reveal-delay-2 rounded-xl p-7">
           <div
-            class="w-11 h-11 rounded-lg bg-ash-3 flex items-center justify-center mb-6"
+            class="w-11 h-11 rounded-lg flex items-center justify-center mb-6"
+            style="background: var(--bg3)"
           >
             <svg
-              class="w-5 h-5 text-ember"
+              class="w-5 h-5"
               fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
+              stroke="var(--ember)"
               stroke-width="1.5"
+              viewBox="0 0 24 24"
             >
               <path
                 stroke-linecap="round"
@@ -1187,28 +1654,30 @@
               />
             </svg>
           </div>
-          <h3 class="font-display text-2xl text-snow tracking-wide mb-3">
+          <h3
+            class="font-display text-2xl tracking-wide mb-3"
+            style="color: var(--fg)"
+          >
             SOC 2 Compliant
           </h3>
-          <p class="text-mist leading-relaxed text-sm">
-            Enterprise-grade security baked in. Role-based access, audit logs,
-            SSO, and data residency controls included on every plan.
+          <p class="text-sm leading-relaxed" style="color: var(--fg2)">
+            Enterprise-grade security—role-based access, audit logs, SSO, data
+            residency.
           </p>
         </div>
-
-        <!-- Feature 6 — wide -->
         <div
           class="feature-card reveal lg:col-span-3 rounded-xl p-7 flex flex-col md:flex-row gap-8 items-start"
         >
           <div
-            class="flex-shrink-0 w-11 h-11 rounded-lg bg-ash-3 flex items-center justify-center"
+            class="w-11 h-11 rounded-lg flex items-center justify-center flex-shrink-0"
+            style="background: var(--bg3)"
           >
             <svg
-              class="w-5 h-5 text-ember"
+              class="w-5 h-5"
               fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
+              stroke="var(--ember)"
               stroke-width="1.5"
+              viewBox="0 0 24 24"
             >
               <path
                 stroke-linecap="round"
@@ -1218,84 +1687,107 @@
             </svg>
           </div>
           <div class="flex-1">
-            <h3 class="font-display text-3xl text-snow tracking-wide mb-3">
+            <h3
+              class="font-display text-3xl tracking-wide mb-3"
+              style="color: var(--fg)"
+            >
               Ask Lumiq Anything
             </h3>
-            <p class="text-mist leading-relaxed max-w-2xl">
-              Our natural language query engine means anyone on your team can
-              get answers. Type
-              <span class="font-mono text-ember text-sm"
-                >"What drove churn in Q3?"</span
-              >
-              and get a chart—no SQL required.
+            <p class="leading-relaxed max-w-2xl" style="color: var(--fg2)">
+              Natural language queries — type in plain English, get a chart
+              back. No SQL required.
             </p>
           </div>
-          <!-- Query demo pill -->
           <div
-            class="bg-obsidian border border-ash-3 rounded-xl px-5 py-4 font-mono text-sm min-w-64"
+            class="rounded-xl px-5 py-4 font-mono text-sm min-w-64"
+            style="background: var(--bg); border: 1px solid var(--bdr)"
           >
-            <p class="text-mist text-xs mb-2">Ask Lumiq:</p>
-            <p class="text-snow" id="query-demo">
+            <p class="text-xs mb-2" style="color: var(--fg2)">Ask Lumiq:</p>
+            <p id="query-demo" style="color: var(--fg)">
               Show revenue by channel this month
             </p>
-            <div class="mt-3 h-px bg-ash-3"></div>
-            <p class="text-ember text-xs mt-2">↳ Chart generated in 0.8s</p>
+            <div class="mt-3 h-px" style="background: var(--bdr)"></div>
+            <p class="text-xs mt-2" style="color: var(--ember)">
+              ↳ Chart generated in 0.8s
+            </p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ============================================================
-       STATS BAND
-  ============================================================ -->
-    <div class="border-y border-ash-3 bg-ash py-14">
+    <!-- ═══════════ STATS ═══════════ -->
+    <div
+      style="
+        border-top: 1px solid var(--bdr);
+        border-bottom: 1px solid var(--bdr);
+        background: var(--bg2);
+        padding: 56px 0;
+      "
+    >
       <div class="max-w-7xl mx-auto px-6 lg:px-8">
         <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
           <div class="reveal">
             <p
-              class="font-display text-5xl text-ember tracking-wide"
+              class="font-display text-5xl"
+              style="color: var(--ember)"
               data-count="4200"
               data-suffix="+"
             >
               0+
             </p>
-            <p class="font-mono text-mist text-xs tracking-wide mt-2 uppercase">
+            <p
+              class="font-mono text-xs tracking-wide mt-2 uppercase"
+              style="color: var(--fg2)"
+            >
               Teams
             </p>
           </div>
           <div class="reveal reveal-delay-1">
             <p
-              class="font-display text-5xl text-ember tracking-wide"
+              class="font-display text-5xl"
+              style="color: var(--ember)"
               data-count="98"
               data-suffix="%"
             >
               0%
             </p>
-            <p class="font-mono text-mist text-xs tracking-wide mt-2 uppercase">
+            <p
+              class="font-mono text-xs tracking-wide mt-2 uppercase"
+              style="color: var(--fg2)"
+            >
               Uptime SLA
             </p>
           </div>
           <div class="reveal reveal-delay-2">
             <p
-              class="font-display text-5xl text-ember tracking-wide"
+              class="font-display text-5xl"
+              style="color: var(--ember)"
               data-count="200"
               data-suffix="ms"
+              data-prefix="<"
             >
-              &lt;0ms
+              0ms
             </p>
-            <p class="font-mono text-mist text-xs tracking-wide mt-2 uppercase">
+            <p
+              class="font-mono text-xs tracking-wide mt-2 uppercase"
+              style="color: var(--fg2)"
+            >
               Query Latency
             </p>
           </div>
           <div class="reveal reveal-delay-3">
             <p
-              class="font-display text-5xl text-ember tracking-wide"
+              class="font-display text-5xl"
+              style="color: var(--ember)"
               data-count="250"
               data-suffix="+"
             >
               0+
             </p>
-            <p class="font-mono text-mist text-xs tracking-wide mt-2 uppercase">
+            <p
+              class="font-mono text-xs tracking-wide mt-2 uppercase"
+              style="color: var(--fg2)"
+            >
               Integrations
             </p>
           </div>
@@ -1303,97 +1795,113 @@
       </div>
     </div>
 
-    <!-- ============================================================
-       HOW IT WORKS
-  ============================================================ -->
+    <!-- ═══════════ HOW IT WORKS ═══════════ -->
     <section
       id="how-it-works"
       class="py-28 lg:py-36 mesh-subtle"
       aria-labelledby="how-heading"
     >
       <div class="max-w-7xl mx-auto px-6 lg:px-8">
-        <!-- Header -->
         <div class="max-w-xl mb-20">
           <p
-            class="reveal font-mono text-ember text-xs tracking-widest3 uppercase mb-4"
+            class="reveal font-mono text-xs tracking-widest uppercase mb-4"
+            style="color: var(--ember); letter-spacing: 0.28em"
           >
             Process
           </p>
           <h2
             id="how-heading"
-            class="reveal reveal-delay-1 font-display text-5xl md:text-6xl text-snow leading-none tracking-wide"
+            class="reveal reveal-delay-1 font-display text-5xl md:text-6xl leading-none tracking-wide"
+            style="color: var(--fg)"
           >
             Up and running<br />in 15 minutes.
           </h2>
         </div>
-
-        <!-- Steps -->
         <div class="grid md:grid-cols-4 gap-8 relative">
           <div class="reveal step relative">
             <div class="step-line hidden md:block"></div>
             <div
-              class="w-10 h-10 rounded-full border border-ember/40 flex items-center justify-center font-mono text-ember text-sm mb-5 relative z-10 bg-obsidian"
+              class="w-10 h-10 rounded-full flex items-center justify-center font-mono text-sm mb-5 relative z-10"
+              style="
+                border: 1px solid rgba(245, 158, 11, 0.4);
+                color: var(--ember);
+                background: var(--bg);
+              "
             >
               01
             </div>
-            <h3 class="font-display text-2xl text-snow tracking-wide mb-3">
+            <h3
+              class="font-display text-2xl tracking-wide mb-3"
+              style="color: var(--fg)"
+            >
               Connect
             </h3>
-            <p class="text-mist text-sm leading-relaxed">
-              Pick from 250+ native integrations or bring your own via REST API
-              or webhook.
+            <p class="text-sm leading-relaxed" style="color: var(--fg2)">
+              Pick from 250+ native integrations or bring your own via REST API.
             </p>
           </div>
-
           <div class="reveal reveal-delay-1 step relative">
             <div class="step-line hidden md:block"></div>
             <div
-              class="w-10 h-10 rounded-full border border-ember/40 flex items-center justify-center font-mono text-ember text-sm mb-5 relative z-10 bg-obsidian"
+              class="w-10 h-10 rounded-full flex items-center justify-center font-mono text-sm mb-5 relative z-10"
+              style="
+                border: 1px solid rgba(245, 158, 11, 0.4);
+                color: var(--ember);
+                background: var(--bg);
+              "
             >
               02
             </div>
-            <h3 class="font-display text-2xl text-snow tracking-wide mb-3">
+            <h3
+              class="font-display text-2xl tracking-wide mb-3"
+              style="color: var(--fg)"
+            >
               Model
             </h3>
-            <p class="text-mist text-sm leading-relaxed">
-              Lumiq auto-maps your schema and suggests KPIs based on your
-              industry and data shape.
+            <p class="text-sm leading-relaxed" style="color: var(--fg2)">
+              Lumiq auto-maps your schema and suggests KPIs for your industry.
             </p>
           </div>
-
           <div class="reveal reveal-delay-2 step relative">
             <div class="step-line hidden md:block"></div>
             <div
-              class="w-10 h-10 rounded-full border border-ember/40 flex items-center justify-center font-mono text-ember text-sm mb-5 relative z-10 bg-obsidian"
+              class="w-10 h-10 rounded-full flex items-center justify-center font-mono text-sm mb-5 relative z-10"
+              style="
+                border: 1px solid rgba(245, 158, 11, 0.4);
+                color: var(--ember);
+                background: var(--bg);
+              "
             >
               03
             </div>
-            <h3 class="font-display text-2xl text-snow tracking-wide mb-3">
+            <h3
+              class="font-display text-2xl tracking-wide mb-3"
+              style="color: var(--fg)"
+            >
               Visualise
             </h3>
-            <p class="text-mist text-sm leading-relaxed">
-              Build dashboards with drag-and-drop or let AI generate them
-              instantly from a description.
+            <p class="text-sm leading-relaxed" style="color: var(--fg2)">
+              Build dashboards drag-and-drop or from an AI description.
             </p>
           </div>
-
           <div class="reveal reveal-delay-3 step">
             <div
-              class="w-10 h-10 rounded-full bg-ember flex items-center justify-center font-mono text-obsidian text-sm mb-5 font-medium"
+              class="w-10 h-10 rounded-full flex items-center justify-center font-mono text-sm mb-5 font-medium"
+              style="background: var(--ember); color: #0d0d0d"
             >
               04
             </div>
-            <h3 class="font-display text-2xl text-snow tracking-wide mb-3">
+            <h3
+              class="font-display text-2xl tracking-wide mb-3"
+              style="color: var(--fg)"
+            >
               Decide
             </h3>
-            <p class="text-mist text-sm leading-relaxed">
-              Get AI-generated summaries, alerts, and predictions delivered to
-              your inbox or Slack.
+            <p class="text-sm leading-relaxed" style="color: var(--fg2)">
+              AI summaries and alerts delivered to your inbox or Slack.
             </p>
           </div>
         </div>
-
-        <!-- CTA beneath steps -->
         <div class="mt-16 reveal">
           <a
             href="#pricing"
@@ -1404,9 +1912,7 @@
       </div>
     </section>
 
-    <!-- ============================================================
-       TESTIMONIALS
-  ============================================================ -->
+    <!-- ═══════════ TESTIMONIALS ═══════════ -->
     <section
       id="testimonials"
       class="py-28 lg:py-36 max-w-7xl mx-auto px-6 lg:px-8"
@@ -1414,154 +1920,181 @@
     >
       <div class="mb-16">
         <p
-          class="reveal font-mono text-ember text-xs tracking-widest3 uppercase mb-4"
+          class="reveal font-mono text-xs tracking-widest uppercase mb-4"
+          style="color: var(--ember); letter-spacing: 0.28em"
         >
           Customers
         </p>
         <h2
           id="testimonials-heading"
-          class="reveal reveal-delay-1 font-display text-5xl md:text-6xl text-snow leading-none tracking-wide"
+          class="reveal reveal-delay-1 font-display text-5xl md:text-6xl leading-none tracking-wide"
+          style="color: var(--fg)"
         >
           Real teams.<br />Real results.
         </h2>
       </div>
-
       <div class="grid md:grid-cols-3 gap-5">
         <div class="testimonial-card reveal rounded-xl p-7">
-          <div class="flex items-center gap-1 mb-5 text-ember text-sm">
+          <div class="flex gap-1 mb-5 text-sm" style="color: var(--ember)">
             ★★★★★
           </div>
-          <blockquote class="font-serif italic text-snow leading-relaxed mb-6">
+          <blockquote
+            class="font-serif italic leading-relaxed mb-6"
+            style="color: var(--fg)"
+          >
             "We cut our weekly reporting cycle from two days to under an hour.
             Lumiq surfaced a pricing issue we'd been missing for months."
           </blockquote>
           <div class="flex items-center gap-3">
             <div
-              class="w-9 h-9 rounded-full bg-ash-3 flex items-center justify-center font-mono text-xs text-ember"
+              class="w-9 h-9 rounded-full flex items-center justify-center font-mono text-xs"
+              style="background: var(--bg3); color: var(--ember)"
             >
               SB
             </div>
             <div>
-              <p class="text-snow text-sm font-medium">Sarah Bloom</p>
-              <p class="text-mist text-xs font-mono">VP Growth · Meridian</p>
+              <p class="text-sm font-medium" style="color: var(--fg)">
+                Sarah Bloom
+              </p>
+              <p class="font-mono text-xs" style="color: var(--fg2)">
+                VP Growth · Meridian
+              </p>
             </div>
           </div>
         </div>
-
         <div
           class="testimonial-card reveal reveal-delay-1 rounded-xl p-7"
-          style="border-color: rgba(245, 158, 11, 0.25)"
+          style="border-color: rgba(245, 158, 11, 0.25) !important"
         >
-          <div class="flex items-center gap-1 mb-5 text-ember text-sm">
+          <div class="flex gap-1 mb-5 text-sm" style="color: var(--ember)">
             ★★★★★
           </div>
-          <blockquote class="font-serif italic text-snow leading-relaxed mb-6">
+          <blockquote
+            class="font-serif italic leading-relaxed mb-6"
+            style="color: var(--fg)"
+          >
             "The AI insight cards are genuinely magical. It's like having a data
             analyst in every meeting who already read the numbers."
           </blockquote>
           <div class="flex items-center gap-3">
             <div
-              class="w-9 h-9 rounded-full bg-ash-3 flex items-center justify-center font-mono text-xs text-ember"
+              class="w-9 h-9 rounded-full flex items-center justify-center font-mono text-xs"
+              style="background: var(--bg3); color: var(--ember)"
             >
               MR
             </div>
             <div>
-              <p class="text-snow text-sm font-medium">Marcus Reid</p>
-              <p class="text-mist text-xs font-mono">CEO · Folio Labs</p>
+              <p class="text-sm font-medium" style="color: var(--fg)">
+                Marcus Reid
+              </p>
+              <p class="font-mono text-xs" style="color: var(--fg2)">
+                CEO · Folio Labs
+              </p>
             </div>
           </div>
         </div>
-
         <div class="testimonial-card reveal reveal-delay-2 rounded-xl p-7">
-          <div class="flex items-center gap-1 mb-5 text-ember text-sm">
+          <div class="flex gap-1 mb-5 text-sm" style="color: var(--ember)">
             ★★★★★
           </div>
-          <blockquote class="font-serif italic text-snow leading-relaxed mb-6">
+          <blockquote
+            class="font-serif italic leading-relaxed mb-6"
+            style="color: var(--fg)"
+          >
             "Switched from a BI tool we'd used for three years. Onboarding the
-            whole team took an afternoon. The dashboards are just beautiful."
+            whole team took an afternoon. The dashboards are beautiful."
           </blockquote>
           <div class="flex items-center gap-3">
             <div
-              class="w-9 h-9 rounded-full bg-ash-3 flex items-center justify-center font-mono text-xs text-ember"
+              class="w-9 h-9 rounded-full flex items-center justify-center font-mono text-xs"
+              style="background: var(--bg3); color: var(--ember)"
             >
               AL
             </div>
             <div>
-              <p class="text-snow text-sm font-medium">Amara Leke</p>
-              <p class="text-mist text-xs font-mono">Head of Ops · Stratum</p>
+              <p class="text-sm font-medium" style="color: var(--fg)">
+                Amara Leke
+              </p>
+              <p class="font-mono text-xs" style="color: var(--fg2)">
+                Head of Ops · Stratum
+              </p>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ============================================================
-       PRICING
-  ============================================================ -->
+    <!-- ═══════════ PRICING ═══════════ -->
     <section
       id="pricing"
-      class="py-28 lg:py-36 bg-ash border-y border-ash-3"
+      class="py-28 lg:py-36"
+      style="
+        background: var(--bg2);
+        border-top: 1px solid var(--bdr);
+        border-bottom: 1px solid var(--bdr);
+      "
       aria-labelledby="pricing-heading"
     >
       <div class="max-w-7xl mx-auto px-6 lg:px-8">
-        <!-- Header -->
         <div class="text-center mb-16">
           <p
-            class="reveal font-mono text-ember text-xs tracking-widest3 uppercase mb-4"
+            class="reveal font-mono text-xs tracking-widest uppercase mb-4"
+            style="color: var(--ember); letter-spacing: 0.28em"
           >
             Pricing
           </p>
           <h2
             id="pricing-heading"
-            class="reveal reveal-delay-1 font-display text-5xl md:text-6xl text-snow leading-none tracking-wide"
+            class="reveal reveal-delay-1 font-display text-5xl md:text-6xl leading-none tracking-wide"
+            style="color: var(--fg)"
           >
             Simple. Transparent.<br />No surprises.
           </h2>
-          <p class="reveal reveal-delay-2 mt-5 text-mist max-w-lg mx-auto">
+          <p
+            class="reveal reveal-delay-2 mt-5 max-w-lg mx-auto leading-relaxed"
+            style="color: var(--fg2)"
+          >
             Start free and upgrade when you're ready. All plans include a 14-day
-            trial of our Pro features.
+            Pro trial.
           </p>
-
-          <!-- Toggle -->
           <div
-            class="reveal reveal-delay-3 mt-8 inline-flex items-center gap-3 bg-ash-2 border border-ash-3 rounded-lg p-1.5"
+            class="reveal reveal-delay-3 mt-8 inline-flex items-center gap-1 rounded-xl p-1.5"
+            style="background: var(--bg3); border: 1px solid var(--bdr2)"
           >
             <button
               id="toggle-monthly"
-              class="pricing-toggle active px-4 py-2 rounded-md font-mono text-xs tracking-wide transition-all"
+              class="pricing-toggle active"
               onclick="setPricing('monthly')"
             >
               Monthly
             </button>
             <button
               id="toggle-annual"
-              class="pricing-toggle px-4 py-2 rounded-md font-mono text-xs tracking-wide text-mist transition-all"
+              class="pricing-toggle"
               onclick="setPricing('annual')"
             >
-              Annual <span class="text-green-400">−20%</span>
+              Annual <span style="color: #22c55e">−20%</span>
             </button>
           </div>
         </div>
-
-        <!-- Cards -->
         <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-          <!-- Starter -->
-          <div class="pricing-card reveal rounded-xl p-8 bg-obsidian">
+          <div class="pricing-card reveal rounded-xl p-8">
             <p
-              class="font-mono text-mist text-xs tracking-widest uppercase mb-3"
+              class="font-mono text-xs tracking-widest uppercase mb-3"
+              style="color: var(--fg2)"
             >
               Starter
             </p>
             <div class="flex items-end gap-1 mb-1">
               <span
-                class="font-display text-5xl text-snow tracking-wide price-value"
+                class="font-display text-5xl price-value"
                 data-monthly="0"
                 data-annual="0"
-                >$0</span
+                style="color: var(--fg)"
+                >Free</span
               >
-              <span class="font-mono text-mist text-sm mb-2">/mo</span>
             </div>
-            <p class="text-mist text-xs font-mono mb-7">
+            <p class="font-mono text-xs mb-7" style="color: var(--fg3)">
               Up to 3 seats · 5 dashboards
             </p>
             <a
@@ -1569,98 +2102,95 @@
               class="btn-ghost block text-center py-3 rounded-md text-sm mb-8"
               >Get started free</a
             >
-            <ul class="space-y-3 text-sm text-mist">
+            <ul class="space-y-3 text-sm" style="color: var(--fg2)">
               <li class="flex gap-2">
-                <span class="text-ember">✓</span> 3 data sources
-              </li>
-              <li class="flex gap-2">
-                <span class="text-ember">✓</span> 5 dashboards
+                <span style="color: var(--ember)">✓</span> 3 data sources
               </li>
               <li class="flex gap-2">
-                <span class="text-ember">✓</span> 7-day data history
+                <span style="color: var(--ember)">✓</span> 5 dashboards
               </li>
               <li class="flex gap-2">
-                <span class="text-ember">✓</span> Community support
+                <span style="color: var(--ember)">✓</span> 7-day data history
               </li>
-              <li class="flex gap-2 line-through opacity-40">
-                <span>✗</span> AI Insights
+              <li class="flex gap-2">
+                <span style="color: var(--ember)">✓</span> Community support
               </li>
-              <li class="flex gap-2 line-through opacity-40">
+              <li class="flex gap-2 opacity-35"><span>✗</span> AI Insights</li>
+              <li class="flex gap-2 opacity-35">
                 <span>✗</span> Predictive models
               </li>
             </ul>
           </div>
-
-          <!-- Pro (featured) -->
           <div
             class="pricing-card pricing-featured reveal reveal-delay-1 rounded-xl p-8 relative"
           >
             <div
-              class="absolute -top-3 left-1/2 -translate-x-1/2 bg-ember text-obsidian font-mono text-xs px-4 py-1 rounded-full tracking-wide"
+              class="absolute -top-3 left-1/2 -translate-x-1/2 font-mono text-xs px-4 py-1 rounded-full"
+              style="background: var(--ember); color: #0d0d0d"
             >
               Most popular
             </div>
             <p
-              class="font-mono text-ember text-xs tracking-widest uppercase mb-3"
+              class="font-mono text-xs tracking-widest uppercase mb-3"
+              style="color: var(--ember)"
             >
               Pro
             </p>
             <div class="flex items-end gap-1 mb-1">
               <span
-                class="font-display text-5xl text-snow tracking-wide price-value"
+                class="font-display text-5xl price-value"
                 data-monthly="49"
                 data-annual="39"
+                style="color: var(--fg)"
                 >$49</span
+              ><span class="font-mono text-sm mb-2" style="color: var(--fg2)"
+                >/mo</span
               >
-              <span class="font-mono text-mist text-sm mb-2">/mo</span>
             </div>
-            <p class="text-mist text-xs font-mono mb-7">
-              Up to 10 seats · Unlimited dashboards
+            <p class="font-mono text-xs mb-7" style="color: var(--fg3)">
+              Up to 10 seats · Unlimited
             </p>
             <a
               href="#"
               class="btn-primary block text-center py-3 rounded-md text-sm mb-8"
               >Start 14-day trial</a
             >
-            <ul class="space-y-3 text-sm text-mist">
+            <ul class="space-y-3 text-sm" style="color: var(--fg2)">
               <li class="flex gap-2">
-                <span class="text-ember">✓</span> Unlimited sources
+                <span style="color: var(--ember)">✓</span> Unlimited sources
               </li>
               <li class="flex gap-2">
-                <span class="text-ember">✓</span> Unlimited dashboards
+                <span style="color: var(--ember)">✓</span> Unlimited dashboards
               </li>
               <li class="flex gap-2">
-                <span class="text-ember">✓</span> 2-year data history
+                <span style="color: var(--ember)">✓</span> 2-year data history
               </li>
               <li class="flex gap-2">
-                <span class="text-ember">✓</span>
-                <span class="text-snow">AI Insights & Alerts</span>
+                <span style="color: var(--ember)">✓</span>
+                <span style="color: var(--fg)">AI Insights & Alerts</span>
               </li>
               <li class="flex gap-2">
-                <span class="text-ember">✓</span>
-                <span class="text-snow">Predictive models</span>
+                <span style="color: var(--ember)">✓</span>
+                <span style="color: var(--fg)">Predictive models</span>
               </li>
               <li class="flex gap-2">
-                <span class="text-ember">✓</span> Priority support
+                <span style="color: var(--ember)">✓</span> Priority support
               </li>
             </ul>
           </div>
-
-          <!-- Enterprise -->
-          <div
-            class="pricing-card reveal reveal-delay-2 rounded-xl p-8 bg-obsidian"
-          >
+          <div class="pricing-card reveal reveal-delay-2 rounded-xl p-8">
             <p
-              class="font-mono text-mist text-xs tracking-widest uppercase mb-3"
+              class="font-mono text-xs tracking-widest uppercase mb-3"
+              style="color: var(--fg2)"
             >
               Enterprise
             </p>
             <div class="flex items-end gap-1 mb-1">
-              <span class="font-display text-5xl text-snow tracking-wide"
+              <span class="font-display text-5xl" style="color: var(--fg)"
                 >Custom</span
               >
             </div>
-            <p class="text-mist text-xs font-mono mb-7">
+            <p class="font-mono text-xs mb-7" style="color: var(--fg3)">
               Unlimited seats · SLA guaranteed
             </p>
             <a
@@ -1668,24 +2198,24 @@
               class="btn-ghost block text-center py-3 rounded-md text-sm mb-8"
               >Talk to sales</a
             >
-            <ul class="space-y-3 text-sm text-mist">
+            <ul class="space-y-3 text-sm" style="color: var(--fg2)">
               <li class="flex gap-2">
-                <span class="text-ember">✓</span> Everything in Pro
+                <span style="color: var(--ember)">✓</span> Everything in Pro
               </li>
               <li class="flex gap-2">
-                <span class="text-ember">✓</span> Custom integrations
+                <span style="color: var(--ember)">✓</span> Custom integrations
               </li>
               <li class="flex gap-2">
-                <span class="text-ember">✓</span> SSO / SAML
+                <span style="color: var(--ember)">✓</span> SSO / SAML
               </li>
               <li class="flex gap-2">
-                <span class="text-ember">✓</span> Data residency controls
+                <span style="color: var(--ember)">✓</span> Data residency
               </li>
               <li class="flex gap-2">
-                <span class="text-ember">✓</span> SOC 2 audit docs
+                <span style="color: var(--ember)">✓</span> SOC 2 audit docs
               </li>
               <li class="flex gap-2">
-                <span class="text-ember">✓</span> Dedicated CSM
+                <span style="color: var(--ember)">✓</span> Dedicated CSM
               </li>
             </ul>
           </div>
@@ -1693,9 +2223,7 @@
       </div>
     </section>
 
-    <!-- ============================================================
-       FAQ
-  ============================================================ -->
+    <!-- ═══════════ FAQ ═══════════ -->
     <section
       id="faq"
       class="py-28 lg:py-36 max-w-4xl mx-auto px-6 lg:px-8"
@@ -1703,151 +2231,143 @@
     >
       <div class="mb-16">
         <p
-          class="reveal font-mono text-ember text-xs tracking-widest3 uppercase mb-4"
+          class="reveal font-mono text-xs tracking-widest uppercase mb-4"
+          style="color: var(--ember); letter-spacing: 0.28em"
         >
           FAQ
         </p>
         <h2
           id="faq-heading"
-          class="reveal reveal-delay-1 font-display text-5xl md:text-6xl text-snow leading-none tracking-wide"
+          class="reveal reveal-delay-1 font-display text-5xl md:text-6xl leading-none tracking-wide"
+          style="color: var(--fg)"
         >
           Got questions?
         </h2>
       </div>
-
-      <div class="space-y-2" id="faq-list">
-        <div
-          class="accordion-item border border-ash-3 rounded-lg overflow-hidden"
-        >
-          <button
-            class="accordion-trigger w-full flex items-center justify-between px-6 py-5 text-left hover:bg-ash transition-colors"
-            aria-expanded="false"
-          >
-            <span class="font-serif text-snow"
+      <div class="space-y-2">
+        <div class="accordion-item">
+          <button class="accordion-trigger" aria-expanded="false">
+            <span class="font-serif" style="color: var(--fg)"
               >Do I need to know SQL or code to use Lumiq?</span
             >
-            <span
-              class="accordion-icon text-ember font-mono text-xl flex-shrink-0 ml-4 transition-transform"
-              >+</span
-            >
+            <div class="accordion-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round">
+                <line x1="12" y1="5" x2="12" y2="19" />
+                <line x1="5" y1="12" x2="19" y2="12" />
+              </svg>
+            </div>
           </button>
-          <div class="accordion-content">
-            <p class="px-6 pb-5 text-mist leading-relaxed text-sm">
-              Not at all. Lumiq is built for business users and analysts alike.
-              You can ask questions in plain English, use drag-and-drop to build
-              dashboards, and connect data sources without writing a single line
-              of code. SQL access is available for power users who want it.
-            </p>
+          <div class="accordion-body">
+            <div class="accordion-body-inner">
+              <div class="accordion-body-content">
+                Not at all. Lumiq is built for business users and analysts
+                alike. Ask questions in plain English, use drag-and-drop to
+                build dashboards, and connect data sources without writing a
+                single line of code. SQL access is available for power users who
+                want it.
+              </div>
+            </div>
           </div>
         </div>
 
-        <div
-          class="accordion-item border border-ash-3 rounded-lg overflow-hidden"
-        >
-          <button
-            class="accordion-trigger w-full flex items-center justify-between px-6 py-5 text-left hover:bg-ash transition-colors"
-            aria-expanded="false"
-          >
-            <span class="font-serif text-snow"
+        <div class="accordion-item">
+          <button class="accordion-trigger" aria-expanded="false">
+            <span class="font-serif" style="color: var(--fg)"
               >How does the free plan work?</span
             >
-            <span
-              class="accordion-icon text-ember font-mono text-xl flex-shrink-0 ml-4 transition-transform"
-              >+</span
-            >
+            <div class="accordion-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round">
+                <line x1="12" y1="5" x2="12" y2="19" />
+                <line x1="5" y1="12" x2="19" y2="12" />
+              </svg>
+            </div>
           </button>
-          <div class="accordion-content">
-            <p class="px-6 pb-5 text-mist leading-relaxed text-sm">
-              The free Starter plan gives you up to 3 seats, 3 data source
-              connections, and 5 dashboards with 7 days of data history—forever
-              free, no credit card required. When you sign up, you also
-              automatically start a 14-day trial of Pro features so you can
-              explore everything before committing.
-            </p>
+          <div class="accordion-body">
+            <div class="accordion-body-inner">
+              <div class="accordion-body-content">
+                The Starter plan gives you up to 3 seats, 3 data source
+                connections, and 5 dashboards with 7 days of history — forever
+                free, no credit card required. You also automatically start a
+                14-day Pro trial when you sign up.
+              </div>
+            </div>
           </div>
         </div>
 
-        <div
-          class="accordion-item border border-ash-3 rounded-lg overflow-hidden"
-        >
-          <button
-            class="accordion-trigger w-full flex items-center justify-between px-6 py-5 text-left hover:bg-ash transition-colors"
-            aria-expanded="false"
-          >
-            <span class="font-serif text-snow">Is my data secure?</span>
-            <span
-              class="accordion-icon text-ember font-mono text-xl flex-shrink-0 ml-4 transition-transform"
-              >+</span
+        <div class="accordion-item">
+          <button class="accordion-trigger" aria-expanded="false">
+            <span class="font-serif" style="color: var(--fg)"
+              >Is my data secure?</span
             >
+            <div class="accordion-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round">
+                <line x1="12" y1="5" x2="12" y2="19" />
+                <line x1="5" y1="12" x2="19" y2="12" />
+              </svg>
+            </div>
           </button>
-          <div class="accordion-content">
-            <p class="px-6 pb-5 text-mist leading-relaxed text-sm">
-              Yes. Lumiq is SOC 2 Type II certified. All data is encrypted at
-              rest (AES-256) and in transit (TLS 1.3). We support role-based
-              access control, audit logs, SSO/SAML on Enterprise, and data
-              residency options for EU and APAC regions. We never sell or share
-              your data with third parties.
-            </p>
+          <div class="accordion-body">
+            <div class="accordion-body-inner">
+              <div class="accordion-body-content">
+                Yes. Lumiq is SOC 2 Type II certified. All data is encrypted at
+                rest (AES-256) and in transit (TLS 1.3). We support role-based
+                access, audit logs, SSO/SAML on Enterprise, and data residency
+                for EU and APAC. We never sell your data.
+              </div>
+            </div>
           </div>
         </div>
 
-        <div
-          class="accordion-item border border-ash-3 rounded-lg overflow-hidden"
-        >
-          <button
-            class="accordion-trigger w-full flex items-center justify-between px-6 py-5 text-left hover:bg-ash transition-colors"
-            aria-expanded="false"
-          >
-            <span class="font-serif text-snow"
+        <div class="accordion-item">
+          <button class="accordion-trigger" aria-expanded="false">
+            <span class="font-serif" style="color: var(--fg)"
               >Can I migrate from another BI tool?</span
             >
-            <span
-              class="accordion-icon text-ember font-mono text-xl flex-shrink-0 ml-4 transition-transform"
-              >+</span
-            >
+            <div class="accordion-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round">
+                <line x1="12" y1="5" x2="12" y2="19" />
+                <line x1="5" y1="12" x2="19" y2="12" />
+              </svg>
+            </div>
           </button>
-          <div class="accordion-content">
-            <p class="px-6 pb-5 text-mist leading-relaxed text-sm">
-              We offer dedicated migration support for teams coming from
-              Tableau, Looker, Power BI, or Metabase. Our onboarding team will
-              help you map your existing dashboards and data models to Lumiq.
-              Enterprise customers get a white-glove migration service included
-              at no extra cost.
-            </p>
+          <div class="accordion-body">
+            <div class="accordion-body-inner">
+              <div class="accordion-body-content">
+                We offer migration support from Tableau, Looker, Power BI, and
+                Metabase. Enterprise customers get a white-glove migration
+                service at no extra cost.
+              </div>
+            </div>
           </div>
         </div>
 
-        <div
-          class="accordion-item border border-ash-3 rounded-lg overflow-hidden"
-        >
-          <button
-            class="accordion-trigger w-full flex items-center justify-between px-6 py-5 text-left hover:bg-ash transition-colors"
-            aria-expanded="false"
-          >
-            <span class="font-serif text-snow"
+        <div class="accordion-item">
+          <button class="accordion-trigger" aria-expanded="false">
+            <span class="font-serif" style="color: var(--fg)"
               >What integrations are available?</span
             >
-            <span
-              class="accordion-icon text-ember font-mono text-xl flex-shrink-0 ml-4 transition-transform"
-              >+</span
-            >
+            <div class="accordion-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round">
+                <line x1="12" y1="5" x2="12" y2="19" />
+                <line x1="5" y1="12" x2="19" y2="12" />
+              </svg>
+            </div>
           </button>
-          <div class="accordion-content">
-            <p class="px-6 pb-5 text-mist leading-relaxed text-sm">
-              Lumiq supports 250+ native integrations including Salesforce,
-              HubSpot, Stripe, Shopify, PostgreSQL, MySQL, BigQuery, Snowflake,
-              Google Analytics, Facebook Ads, and more. We also offer a REST API
-              and webhook support for custom data sources. New integrations are
-              added monthly.
-            </p>
+          <div class="accordion-body">
+            <div class="accordion-body-inner">
+              <div class="accordion-body-content">
+                250+ native integrations including Salesforce, HubSpot, Stripe,
+                Shopify, PostgreSQL, MySQL, BigQuery, Snowflake, Google
+                Analytics, and more. REST API and webhook support for custom
+                sources. New integrations added monthly.
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ============================================================
-       CTA SECTION
-  ============================================================ -->
+    <!-- ═══════════ CTA ═══════════ -->
     <section
       class="py-16 px-6 lg:px-8 mb-16 max-w-7xl mx-auto"
       aria-labelledby="cta-heading"
@@ -1855,119 +2375,114 @@
       <div
         class="cta-bg rounded-2xl px-8 md:px-16 py-16 md:py-20 text-center reveal"
       >
-        <p class="font-mono text-ember text-xs tracking-widest3 uppercase mb-5">
+        <p
+          class="font-mono text-xs tracking-widest uppercase mb-5"
+          style="color: var(--ember); letter-spacing: 0.28em"
+        >
           Ready to see it?
         </p>
-
         <h2
           id="cta-heading"
-          class="font-display text-5xl md:text-7xl text-snow leading-none tracking-wide mb-6"
+          class="font-display text-5xl md:text-7xl leading-none tracking-wide mb-6"
+          style="color: var(--fg)"
         >
-          Your data has<br />
-          <span class="text-ember">answers waiting.</span>
+          Your data has<br /><span style="color: var(--ember)"
+            >answers waiting.</span
+          >
         </h2>
-
-        <p class="text-mist max-w-lg mx-auto leading-relaxed mb-10">
+        <p
+          class="max-w-lg mx-auto leading-relaxed mb-10"
+          style="color: var(--fg2)"
+        >
           Join 4,200+ teams who replaced guesswork with clarity. Start free
-          today—no credit card, no setup calls, no nonsense.
+          today—no credit card, no setup calls.
         </p>
-
         <div
           class="flex flex-col sm:flex-row items-center justify-center gap-4"
         >
           <a
             href="#pricing"
             class="btn-primary px-10 py-4 rounded-md text-sm w-full sm:w-auto"
+            >Start free — takes 2 minutes</a
           >
-            Start free — takes 2 minutes
-          </a>
           <a
             href="#"
             class="btn-ghost px-8 py-4 rounded-md text-sm w-full sm:w-auto"
+            >Book a demo</a
           >
-            Book a demo
-          </a>
         </div>
-
-        <p class="mt-6 font-mono text-mist text-xs">
+        <p class="mt-6 font-mono text-xs" style="color: var(--fg2)">
           No credit card · 14-day Pro trial · Cancel anytime
         </p>
       </div>
     </section>
 
-    <!-- ============================================================
-       FOOTER
-  ============================================================ -->
-    <footer class="border-t border-ash-3 bg-obsidian" role="contentinfo">
-      <!-- Main footer grid -->
+    <!-- ═══════════ FOOTER ═══════════ -->
+    <footer
+      style="border-top: 1px solid var(--bdr); background: var(--bg)"
+      role="contentinfo"
+    >
       <div
         class="max-w-7xl mx-auto px-6 lg:px-8 py-16 grid grid-cols-2 md:grid-cols-5 gap-10"
       >
-        <!-- Brand col -->
         <div class="col-span-2">
-          <a
-            href="#"
-            class="flex items-center gap-2.5 mb-5"
-            aria-label="Lumiq Home"
-          >
+          <a href="#" class="flex items-center gap-2.5 mb-5" aria-label="Lumiq">
             <div
-              class="w-7 h-7 bg-ember rounded-md flex items-center justify-center"
+              class="w-7 h-7 rounded-md flex items-center justify-center"
+              style="background: var(--ember)"
             >
-              <span class="font-display text-obsidian text-lg leading-none"
+              <span
+                class="font-display text-lg leading-none"
+                style="color: #0d0d0d"
                 >L</span
               >
             </div>
-            <span class="font-display text-xl text-snow tracking-widest"
+            <span
+              class="font-display text-xl tracking-widest"
+              style="color: var(--fg)"
               >LUMIQ</span
             >
           </a>
-          <p class="text-mist text-sm leading-relaxed max-w-xs">
+          <p class="text-sm leading-relaxed max-w-xs" style="color: var(--fg2)">
             AI-powered analytics for teams that move fast and decide smart.
           </p>
           <div class="flex items-center gap-4 mt-6">
-            <!-- Twitter/X -->
             <a
               href="#"
-              class="text-mist hover:text-ember transition-colors"
-              aria-label="Lumiq on Twitter"
-            >
-              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+              style="color: var(--fg2)"
+              class="hover:text-ember transition-colors"
+              aria-label="Twitter"
+              ><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
                 <path
                   d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"
-                />
-              </svg>
-            </a>
-            <!-- LinkedIn -->
+                /></svg
+            ></a>
             <a
               href="#"
-              class="text-mist hover:text-ember transition-colors"
-              aria-label="Lumiq on LinkedIn"
-            >
-              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+              style="color: var(--fg2)"
+              class="hover:text-ember transition-colors"
+              aria-label="LinkedIn"
+              ><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
                 <path
                   d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
-                />
-              </svg>
-            </a>
-            <!-- GitHub -->
+                /></svg
+            ></a>
             <a
               href="#"
-              class="text-mist hover:text-ember transition-colors"
-              aria-label="Lumiq on GitHub"
-            >
-              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+              style="color: var(--fg2)"
+              class="hover:text-ember transition-colors"
+              aria-label="GitHub"
+              ><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
                 <path
                   d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"
-                />
-              </svg>
-            </a>
+                /></svg
+            ></a>
           </div>
         </div>
-
-        <!-- Product -->
         <div>
           <h3
-            class="font-mono text-snow text-xs tracking-widest uppercase mb-5"
+            class="font-mono text-xs tracking-widest uppercase mb-5"
+            style="color: var(--fg)"
           >
             Product
           </h3>
@@ -1975,191 +2490,585 @@
             <li>
               <a
                 href="#features"
-                class="text-mist hover:text-snow text-sm transition-colors"
+                class="text-sm transition-colors"
+                style="color: var(--fg2)"
                 >Features</a
               >
             </li>
             <li>
               <a
                 href="#pricing"
-                class="text-mist hover:text-snow text-sm transition-colors"
+                class="text-sm transition-colors"
+                style="color: var(--fg2)"
                 >Pricing</a
               >
             </li>
             <li>
               <a
                 href="#"
-                class="text-mist hover:text-snow text-sm transition-colors"
+                class="text-sm transition-colors"
+                style="color: var(--fg2)"
                 >Changelog</a
               >
             </li>
             <li>
               <a
                 href="#"
-                class="text-mist hover:text-snow text-sm transition-colors"
+                class="text-sm transition-colors"
+                style="color: var(--fg2)"
                 >Roadmap</a
-              >
-            </li>
-            <li>
-              <a
-                href="#"
-                class="text-mist hover:text-snow text-sm transition-colors"
-                >Status</a
               >
             </li>
           </ul>
         </div>
-
-        <!-- Company -->
         <div>
           <h3
-            class="font-mono text-snow text-xs tracking-widest uppercase mb-5"
+            class="font-mono text-xs tracking-widest uppercase mb-5"
+            style="color: var(--fg)"
           >
             Company
           </h3>
           <ul class="space-y-3">
             <li>
-              <a
-                href="#"
-                class="text-mist hover:text-snow text-sm transition-colors"
-                >About</a
-              >
+              <a href="#" class="text-sm" style="color: var(--fg2)">About</a>
             </li>
             <li>
-              <a
-                href="#"
-                class="text-mist hover:text-snow text-sm transition-colors"
-                >Blog</a
-              >
+              <a href="#" class="text-sm" style="color: var(--fg2)">Blog</a>
             </li>
             <li>
-              <a
-                href="#"
-                class="text-mist hover:text-snow text-sm transition-colors"
-                >Careers</a
-              >
+              <a href="#" class="text-sm" style="color: var(--fg2)">Careers</a>
             </li>
             <li>
-              <a
-                href="#"
-                class="text-mist hover:text-snow text-sm transition-colors"
-                >Press</a
-              >
-            </li>
-            <li>
-              <a
-                href="#"
-                class="text-mist hover:text-snow text-sm transition-colors"
-                >Contact</a
-              >
+              <a href="#" class="text-sm" style="color: var(--fg2)">Contact</a>
             </li>
           </ul>
         </div>
-
-        <!-- Legal -->
         <div>
           <h3
-            class="font-mono text-snow text-xs tracking-widest uppercase mb-5"
+            class="font-mono text-xs tracking-widest uppercase mb-5"
+            style="color: var(--fg)"
           >
             Legal
           </h3>
           <ul class="space-y-3">
             <li>
-              <a
-                href="#"
-                class="text-mist hover:text-snow text-sm transition-colors"
-                >Privacy Policy</a
-              >
+              <a href="#" class="text-sm" style="color: var(--fg2)">Privacy</a>
             </li>
             <li>
-              <a
-                href="#"
-                class="text-mist hover:text-snow text-sm transition-colors"
-                >Terms of Service</a
-              >
+              <a href="#" class="text-sm" style="color: var(--fg2)">Terms</a>
             </li>
             <li>
-              <a
-                href="#"
-                class="text-mist hover:text-snow text-sm transition-colors"
-                >Cookie Policy</a
-              >
+              <a href="#" class="text-sm" style="color: var(--fg2)">Cookies</a>
             </li>
             <li>
-              <a
-                href="#"
-                class="text-mist hover:text-snow text-sm transition-colors"
-                >DPA</a
-              >
-            </li>
-            <li>
-              <a
-                href="#"
-                class="text-mist hover:text-snow text-sm transition-colors"
-                >Security</a
-              >
+              <a href="#" class="text-sm" style="color: var(--fg2)">Security</a>
             </li>
           </ul>
         </div>
       </div>
-
-      <!-- Bottom bar -->
-      <div class="border-t border-ash-3">
+      <div style="border-top: 1px solid var(--bdr)">
         <div
           class="max-w-7xl mx-auto px-6 lg:px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-3"
         >
-          <p class="font-mono text-mist text-xs">
+          <p class="font-mono text-xs" style="color: var(--fg2)">
             © 2025 Lumiq Inc. All rights reserved.
           </p>
-          <p class="font-mono text-mist text-xs">
-            Built for teams who move fast.
-          </p>
+          <button
+            onclick="toggleTheme()"
+            class="font-mono text-xs px-3 py-1.5 rounded-full transition-colors"
+            style="
+              border: 1px solid var(--bdr);
+              color: var(--fg2);
+              background: var(--bg3);
+              cursor: pointer;
+            "
+            id="footer-theme-btn"
+          >
+            ☀️ Light mode
+          </button>
         </div>
       </div>
     </footer>
 
-    <!-- ============================================================
-       JAVASCRIPT
-  ============================================================ -->
+    <!-- ═══════════ AUTH MODAL ═══════════ -->
+    <div
+      id="auth-modal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="modal-title"
+    >
+      <div id="modal-backdrop" onclick="closeModal()"></div>
+      <div id="modal-panel">
+        <div class="modal-top-bar"></div>
+
+        <!-- Tabs -->
+        <div class="modal-tabs">
+          <button
+            class="modal-tab active"
+            id="tab-login"
+            onclick="switchTab('login')"
+          >
+            LOG IN
+          </button>
+          <button
+            class="modal-tab"
+            id="tab-signup"
+            onclick="switchTab('signup')"
+          >
+            SIGN UP
+          </button>
+        </div>
+
+        <!-- Sliding forms track -->
+        <div class="modal-forms">
+          <div class="modal-forms-track" id="forms-track">
+            <!-- LOGIN FORM -->
+            <div class="modal-form">
+              <!-- Brand -->
+              <div
+                style="
+                  display: flex;
+                  align-items: center;
+                  gap: 10px;
+                  margin-bottom: 22px;
+                "
+              >
+                <div
+                  style="
+                    width: 30px;
+                    height: 30px;
+                    background: var(--ember);
+                    border-radius: 7px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                  "
+                >
+                  <span
+                    class="font-display"
+                    style="font-size: 1.1rem; color: #0d0d0d; line-height: 1"
+                    >L</span
+                  >
+                </div>
+                <div>
+                  <p
+                    id="modal-title"
+                    class="font-display"
+                    style="
+                      font-size: 1.3rem;
+                      letter-spacing: 0.1em;
+                      color: var(--fg);
+                      line-height: 1;
+                    "
+                  >
+                    LUMIQ
+                  </p>
+                  <p
+                    id="modal-subtitle"
+                    class="font-mono"
+                    style="
+                      font-size: 0.62rem;
+                      color: var(--fg2);
+                      letter-spacing: 0.06em;
+                    "
+                  >
+                    Welcome back
+                  </p>
+                </div>
+              </div>
+              <!-- Social -->
+              <div style="display: flex; gap: 10px; margin-bottom: 18px">
+                <button class="social-btn">
+                  <svg width="15" height="15" viewBox="0 0 24 24">
+                    <path
+                      fill="#4285F4"
+                      d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+                    />
+                    <path
+                      fill="#34A853"
+                      d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+                    />
+                    <path
+                      fill="#FBBC05"
+                      d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"
+                    />
+                    <path
+                      fill="#EA4335"
+                      d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
+                    />
+                  </svg>
+                  Continue with Google
+                </button>
+              </div>
+              <div class="or-divider" style="margin-bottom: 18px">
+                <span class="or-label">OR</span>
+              </div>
+              <!-- Fields -->
+              <div
+                style="
+                  display: flex;
+                  flex-direction: column;
+                  gap: 13px;
+                  margin-bottom: 14px;
+                "
+              >
+                <div class="field">
+                  <label class="field-label">Email</label
+                  ><input
+                    type="email"
+                    class="field-input"
+                    placeholder="you@company.com"
+                    autocomplete="email"
+                  />
+                </div>
+                <div class="field">
+                  <label class="field-label">Password</label>
+                  <div class="pw-wrap">
+                    <input
+                      type="password"
+                      class="field-input"
+                      id="pw-login"
+                      placeholder="••••••••"
+                      autocomplete="current-password"
+                    />
+                    <button
+                      class="pw-toggle"
+                      onclick="togglePw('pw-login', this)"
+                      aria-label="Show password"
+                      type="button"
+                    >
+                      <svg
+                        width="15"
+                        height="15"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <path
+                          d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"
+                        />
+                        <circle cx="12" cy="12" r="3" />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div
+                style="
+                  display: flex;
+                  justify-content: space-between;
+                  align-items: center;
+                  margin-bottom: 20px;
+                "
+              >
+                <label
+                  style="
+                    display: flex;
+                    align-items: center;
+                    gap: 7px;
+                    cursor: pointer;
+                    font-family: &quot;DM Mono&quot;, monospace;
+                    font-size: 0.7rem;
+                    color: var(--fg2);
+                  "
+                >
+                  <input type="checkbox" class="custom-check" /> Remember me
+                </label>
+                <button
+                  style="
+                    font-family: &quot;DM Mono&quot;, monospace;
+                    font-size: 0.7rem;
+                    color: var(--ember);
+                    background: none;
+                    border: none;
+                    cursor: pointer;
+                    padding: 0;
+                  "
+                  type="button"
+                >
+                  Forgot password?
+                </button>
+              </div>
+              <button class="modal-submit" type="button">Continue →</button>
+              <p class="modal-switch">
+                No account?
+                <button onclick="switchTab('signup')" type="button">
+                  Sign up free
+                </button>
+              </p>
+            </div>
+
+            <!-- SIGNUP FORM -->
+            <div class="modal-form">
+              <div
+                style="
+                  display: flex;
+                  align-items: center;
+                  gap: 10px;
+                  margin-bottom: 22px;
+                "
+              >
+                <div
+                  style="
+                    width: 30px;
+                    height: 30px;
+                    background: var(--ember);
+                    border-radius: 7px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                  "
+                >
+                  <span
+                    class="font-display"
+                    style="font-size: 1.1rem; color: #0d0d0d; line-height: 1"
+                    >L</span
+                  >
+                </div>
+                <div>
+                  <p
+                    class="font-display"
+                    style="
+                      font-size: 1.3rem;
+                      letter-spacing: 0.1em;
+                      color: var(--fg);
+                      line-height: 1;
+                    "
+                  >
+                    LUMIQ
+                  </p>
+                  <p
+                    class="font-mono"
+                    style="
+                      font-size: 0.62rem;
+                      color: var(--fg2);
+                      letter-spacing: 0.06em;
+                    "
+                  >
+                    Create your account
+                  </p>
+                </div>
+              </div>
+              <div style="display: flex; gap: 10px; margin-bottom: 18px">
+                <button class="social-btn">
+                  <svg width="15" height="15" viewBox="0 0 24 24">
+                    <path
+                      fill="#4285F4"
+                      d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+                    />
+                    <path
+                      fill="#34A853"
+                      d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+                    />
+                    <path
+                      fill="#FBBC05"
+                      d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"
+                    />
+                    <path
+                      fill="#EA4335"
+                      d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
+                    />
+                  </svg>
+                  Sign up with Google
+                </button>
+              </div>
+              <div class="or-divider" style="margin-bottom: 18px">
+                <span class="or-label">OR</span>
+              </div>
+              <div
+                style="
+                  display: flex;
+                  flex-direction: column;
+                  gap: 13px;
+                  margin-bottom: 14px;
+                "
+              >
+                <div class="field">
+                  <label class="field-label">Full name</label
+                  ><input
+                    type="text"
+                    class="field-input"
+                    placeholder="Jane Smith"
+                    autocomplete="name"
+                  />
+                </div>
+                <div class="field">
+                  <label class="field-label">Work email</label
+                  ><input
+                    type="email"
+                    class="field-input"
+                    placeholder="jane@company.com"
+                    autocomplete="email"
+                  />
+                </div>
+                <div class="field">
+                  <label class="field-label">Password</label>
+                  <div class="pw-wrap">
+                    <input
+                      type="password"
+                      class="field-input"
+                      id="pw-signup"
+                      placeholder="Min. 8 characters"
+                      autocomplete="new-password"
+                    />
+                    <button
+                      class="pw-toggle"
+                      onclick="togglePw('pw-signup', this)"
+                      aria-label="Show password"
+                      type="button"
+                    >
+                      <svg
+                        width="15"
+                        height="15"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <path
+                          d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"
+                        />
+                        <circle cx="12" cy="12" r="3" />
+                      </svg>
+                    </button>
+                  </div>
+                  <div class="str-bars" id="str-bars">
+                    <div class="str-bar"></div>
+                    <div class="str-bar"></div>
+                    <div class="str-bar"></div>
+                    <div class="str-bar"></div>
+                  </div>
+                  <p
+                    id="str-label"
+                    style="
+                      font-family: &quot;DM Mono&quot;, monospace;
+                      font-size: 0.62rem;
+                      color: var(--fg2);
+                      margin-top: 3px;
+                      min-height: 14px;
+                    "
+                  ></p>
+                </div>
+              </div>
+              <label
+                style="
+                  display: flex;
+                  align-items: flex-start;
+                  gap: 8px;
+                  margin-bottom: 18px;
+                  cursor: pointer;
+                  font-family: &quot;DM Mono&quot;, monospace;
+                  font-size: 0.68rem;
+                  color: var(--fg2);
+                  line-height: 1.5;
+                "
+              >
+                <input
+                  type="checkbox"
+                  class="custom-check"
+                  style="margin-top: 2px"
+                />
+                I agree to Lumiq's
+                <span style="color: var(--ember); margin-left: 3px">Terms</span>
+                &amp;
+                <span style="color: var(--ember); margin-left: 3px"
+                  >Privacy Policy</span
+                >
+              </label>
+              <button class="modal-submit" type="button">
+                Create account →
+              </button>
+              <p class="modal-switch">
+                Already have an account?
+                <button onclick="switchTab('login')" type="button">
+                  Log in
+                </button>
+              </p>
+            </div>
+          </div>
+          <!-- /forms-track -->
+        </div>
+        <!-- /modal-forms -->
+
+        <button class="modal-close" onclick="closeModal()" aria-label="Close">
+          ✕
+        </button>
+      </div>
+      <!-- /modal-panel -->
+    </div>
+    <!-- /auth-modal -->
+
+    <!-- ═══════════ JAVASCRIPT — zero dependencies ═══════════ -->
     <script>
-      // ─── Scroll-spy: navbar background ────────────────────────────────
-      const navbar = document.getElementById("navbar");
+      // ── THEME ────────────────────────────────────────────────────
+      var html = document.documentElement;
+      var isDark = true;
+
+      function applyTheme(dark) {
+        isDark = dark;
+        html.setAttribute("data-theme", dark ? "dark" : "light");
+        var btn = document.getElementById("footer-theme-btn");
+        if (btn) btn.textContent = dark ? "☀️ Light mode" : "🌙 Dark mode";
+        var meta = document.getElementById("meta-theme-color");
+        if (meta) meta.content = dark ? "#0d0d0d" : "#fafaf8";
+        localStorage.setItem("lumiq-theme", dark ? "dark" : "light");
+      }
+
+      function toggleTheme() {
+        applyTheme(!isDark);
+      }
+
+      // Both toggle buttons
+      document
+        .getElementById("theme-toggle")
+        .addEventListener("click", toggleTheme);
+      document
+        .getElementById("theme-toggle-m")
+        .addEventListener("click", toggleTheme);
+
+      // Load saved preference
+      var saved = localStorage.getItem("lumiq-theme");
+      if (saved) {
+        applyTheme(saved === "dark");
+      } else if (
+        window.matchMedia &&
+        window.matchMedia("(prefers-color-scheme: light)").matches
+      ) {
+        applyTheme(false);
+      }
+
+      // ── NAVBAR SCROLL ────────────────────────────────────────────
+      var navbar = document.getElementById("navbar");
       window.addEventListener(
         "scroll",
-        () => {
-          if (window.scrollY > 60) {
-            navbar.style.background = "rgba(13,13,13,0.92)";
-            navbar.style.backdropFilter = "blur(16px)";
-            navbar.style.borderBottom = "1px solid rgba(37,37,37,0.8)";
-          } else {
-            navbar.style.background = "transparent";
-            navbar.style.backdropFilter = "none";
-            navbar.style.borderBottom = "none";
-          }
+        function () {
+          navbar.classList.toggle("scrolled", window.scrollY > 60);
         },
         { passive: true },
       );
 
-      // ─── Mobile menu toggle ────────────────────────────────────────────
-      const menuToggle = document.getElementById("menu-toggle");
-      const mobileMenu = document.getElementById("mobile-menu");
-      let menuOpen = false;
+      // ── MOBILE MENU ──────────────────────────────────────────────
+      var menuToggle = document.getElementById("menu-toggle");
+      var mobileMenu = document.getElementById("mobile-menu");
+      var menuOpen = false;
 
-      menuToggle.addEventListener("click", () => {
+      menuToggle.addEventListener("click", function () {
         menuOpen = !menuOpen;
         mobileMenu.classList.toggle("open", menuOpen);
         menuToggle.setAttribute("aria-expanded", menuOpen);
-        const bars = menuToggle.querySelectorAll(".menu-bar");
+        var bars = menuToggle.querySelectorAll(".menu-bar");
         if (menuOpen) {
           bars[0].style.transform = "translateY(6px) rotate(45deg)";
           bars[1].style.opacity = "0";
           bars[2].style.transform = "translateY(-6px) rotate(-45deg)";
           bars[2].style.width = "24px";
         } else {
-          bars[0].style.transform = "";
-          bars[1].style.opacity = "1";
-          bars[2].style.transform = "";
-          bars[2].style.width = "";
+          bars.forEach(function (b) {
+            b.style.transform = "";
+            b.style.opacity = "1";
+            b.style.width = "";
+          });
         }
       });
 
@@ -2167,163 +3076,199 @@
         menuOpen = false;
         mobileMenu.classList.remove("open");
         menuToggle.setAttribute("aria-expanded", false);
-        const bars = menuToggle.querySelectorAll(".menu-bar");
-        bars.forEach((b) => {
+        menuToggle.querySelectorAll(".menu-bar").forEach(function (b) {
           b.style.transform = "";
           b.style.opacity = "1";
           b.style.width = "";
         });
       }
 
-      // ─── Intersection Observer: scroll reveal ─────────────────────────
-      const revealObserver = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add("visible");
-              revealObserver.unobserve(entry.target);
+      // ── SCROLL REVEAL ────────────────────────────────────────────
+      var revealObs = new IntersectionObserver(
+        function (entries) {
+          entries.forEach(function (e) {
+            if (e.isIntersecting) {
+              e.target.classList.add("visible");
+              revealObs.unobserve(e.target);
             }
           });
         },
-        { threshold: 0.12 },
+        { threshold: 0.1 },
       );
+      document.querySelectorAll(".reveal").forEach(function (el) {
+        revealObs.observe(el);
+      });
 
-      document
-        .querySelectorAll(".reveal")
-        .forEach((el) => revealObserver.observe(el));
-
-      // ─── Counter animation ─────────────────────────────────────────────
-      function animateCounter(el) {
-        const target = parseInt(el.dataset.count, 10);
-        const suffix = el.dataset.suffix || "";
-        const prefix = el.dataset.prefix || "";
-        const duration = 1800;
-        const start = performance.now();
-
-        function update(now) {
-          const elapsed = now - start;
-          const progress = Math.min(elapsed / duration, 1);
-          const eased = 1 - Math.pow(1 - progress, 3);
-          const current = Math.round(eased * target);
-          el.textContent = prefix + current.toLocaleString() + suffix;
-          if (progress < 1) requestAnimationFrame(update);
-        }
-        requestAnimationFrame(update);
+      // ── COUNTERS ─────────────────────────────────────────────────
+      function runCounter(el) {
+        var target = parseInt(el.dataset.count, 10);
+        var suffix = el.dataset.suffix || "";
+        var prefix = el.dataset.prefix || "";
+        var dur = 1800,
+          t0 = performance.now();
+        (function tick(now) {
+          var p = Math.min((now - t0) / dur, 1);
+          var e = 1 - Math.pow(1 - p, 3);
+          el.textContent =
+            prefix + Math.round(e * target).toLocaleString() + suffix;
+          if (p < 1) requestAnimationFrame(tick);
+        })(t0);
       }
-
-      const counterObserver = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              animateCounter(entry.target);
-              counterObserver.unobserve(entry.target);
+      var cObs = new IntersectionObserver(
+        function (es) {
+          es.forEach(function (e) {
+            if (e.isIntersecting) {
+              runCounter(e.target);
+              cObs.unobserve(e.target);
             }
           });
         },
         { threshold: 0.5 },
       );
+      document.querySelectorAll("[data-count]").forEach(function (el) {
+        cObs.observe(el);
+      });
 
+      // ── ACCORDION ────────────────────────────────────────────────
+      // Pure CSS grid-template-rows trick — JS only toggles the class
       document
-        .querySelectorAll("[data-count]")
-        .forEach((el) => counterObserver.observe(el));
+        .querySelectorAll(".accordion-trigger")
+        .forEach(function (trigger) {
+          trigger.addEventListener("click", function () {
+            var item = trigger.closest(".accordion-item");
+            var isOpen = item.classList.contains("is-open");
+            // Close all
+            document
+              .querySelectorAll(".accordion-item.is-open")
+              .forEach(function (o) {
+                o.classList.remove("is-open");
+                o.querySelector(".accordion-trigger").setAttribute(
+                  "aria-expanded",
+                  false,
+                );
+              });
+            // Open this one if it was closed
+            if (!isOpen) {
+              item.classList.add("is-open");
+              trigger.setAttribute("aria-expanded", true);
+            }
+          });
+        });
 
-      // ─── Pricing toggle ────────────────────────────────────────────────
-      let currentPricing = "monthly";
-
+      // ── PRICING TOGGLE ───────────────────────────────────────────
       function setPricing(type) {
-        currentPricing = type;
-        const monthlyBtn = document.getElementById("toggle-monthly");
-        const annualBtn = document.getElementById("toggle-annual");
-        const activeClass = ["bg-ash-2", "text-snow", "border", "border-ash-3"];
-
-        if (type === "monthly") {
-          monthlyBtn.classList.add(...activeClass);
-          monthlyBtn.classList.remove("text-mist");
-          annualBtn.classList.remove(...activeClass);
-          annualBtn.classList.add("text-mist");
-        } else {
-          annualBtn.classList.add(...activeClass);
-          annualBtn.classList.remove("text-mist");
-          monthlyBtn.classList.remove(...activeClass);
-          monthlyBtn.classList.add("text-mist");
-        }
-
-        document.querySelectorAll(".price-value").forEach((el) => {
-          const val = el.dataset[type];
-          if (val !== undefined) {
-            el.textContent = val === "0" ? "Free" : "$" + val;
-          }
+        document
+          .getElementById("toggle-monthly")
+          .classList.toggle("active", type === "monthly");
+        document
+          .getElementById("toggle-annual")
+          .classList.toggle("active", type === "annual");
+        document.querySelectorAll(".price-value").forEach(function (el) {
+          var val = el.dataset[type];
+          if (val === undefined) return;
+          el.textContent = val === "0" ? "Free" : "$" + val;
         });
       }
 
-      // Apply initial active style
-      document
-        .getElementById("toggle-monthly")
-        .classList.add("bg-ash-2", "text-snow", "border", "border-ash-3");
-
-      // ─── Accordion / FAQ ───────────────────────────────────────────────
-      document.querySelectorAll(".accordion-trigger").forEach((trigger) => {
-        trigger.addEventListener("click", () => {
-          const content = trigger.nextElementSibling;
-          const icon = trigger.querySelector(".accordion-icon");
-          const isOpen = content.classList.contains("open");
-
-          // Close all
-          document.querySelectorAll(".accordion-content.open").forEach((c) => {
-            c.classList.remove("open");
-            c.previousElementSibling.querySelector(
-              ".accordion-icon",
-            ).textContent = "+";
-            c.previousElementSibling.querySelector(
-              ".accordion-icon",
-            ).style.transform = "";
-            c.previousElementSibling.setAttribute("aria-expanded", false);
-          });
-
-          if (!isOpen) {
-            content.classList.add("open");
-            icon.textContent = "−";
-            icon.style.transform = "rotate(0deg)";
-            trigger.setAttribute("aria-expanded", true);
-          }
-        });
-      });
-
-      // ─── Rotating query demo text ──────────────────────────────────────
-      const queries = [
+      // ── QUERY DEMO ROTATION ──────────────────────────────────────
+      var queries = [
         "Show revenue by channel this month",
         "Which customers are at risk of churning?",
         "Compare Q2 vs Q3 conversion rates",
         "What drove the spike on July 14th?",
         "Forecast next month's MRR",
       ];
-      let queryIndex = 0;
-      const queryEl = document.getElementById("query-demo");
-
-      if (queryEl) {
-        setInterval(() => {
-          queryEl.style.opacity = "0";
-          queryEl.style.transform = "translateY(6px)";
-          queryEl.style.transition = "opacity 0.3s, transform 0.3s";
-          setTimeout(() => {
-            queryIndex = (queryIndex + 1) % queries.length;
-            queryEl.textContent = queries[queryIndex];
-            queryEl.style.opacity = "1";
-            queryEl.style.transform = "translateY(0)";
-          }, 320);
+      var qi = 0;
+      var qEl = document.getElementById("query-demo");
+      if (qEl) {
+        setInterval(function () {
+          qEl.style.cssText +=
+            ";opacity:0;transform:translateY(5px);transition:opacity .25s,transform .25s";
+          setTimeout(function () {
+            qi = (qi + 1) % queries.length;
+            qEl.textContent = queries[qi];
+            qEl.style.cssText += ";opacity:1;transform:translateY(0)";
+          }, 260);
         }, 2800);
       }
 
-      // ─── Smooth scroll for all anchor links ───────────────────────────
-      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-        anchor.addEventListener("click", (e) => {
-          const target = document.querySelector(anchor.getAttribute("href"));
-          if (target) {
+      // ── SMOOTH SCROLL ────────────────────────────────────────────
+      document.querySelectorAll('a[href^="#"]').forEach(function (a) {
+        a.addEventListener("click", function (e) {
+          var t = document.querySelector(a.getAttribute("href"));
+          if (t) {
             e.preventDefault();
-            target.scrollIntoView({ behavior: "smooth", block: "start" });
+            t.scrollIntoView({ behavior: "smooth", block: "start" });
           }
         });
       });
+
+      // ── AUTH MODAL ───────────────────────────────────────────────
+      var currentTab = "login"; // track which tab is showing
+
+      function openModal(tab) {
+        var modal = document.getElementById("auth-modal");
+        switchTab(tab || "login");
+        modal.classList.add("is-open");
+        document.body.style.overflow = "hidden";
+      }
+
+      function closeModal() {
+        var modal = document.getElementById("auth-modal");
+        modal.classList.remove("is-open");
+        document.body.style.overflow = "";
+      }
+
+      function switchTab(tab) {
+        currentTab = tab;
+
+        var tl = document.getElementById("tab-login");
+        var ts = document.getElementById("tab-signup");
+        var track = document.getElementById("forms-track");
+
+        if (tab === "login") {
+          track.style.transform = "translateX(0%)";
+          tl.classList.add("active");
+          ts.classList.remove("active");
+        } else {
+          track.style.transform = "translateX(-100%)";
+          tl.classList.remove("active");
+          ts.classList.add("active");
+        }
+      }
+
+      // Close on Escape
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") closeModal();
+      });
+
+      function togglePw(id, btn) {
+        var inp = document.getElementById(id);
+        var showing = inp.type === "text";
+        inp.type = showing ? "password" : "text";
+        btn.style.color = showing ? "" : "var(--ember)";
+      }
+
+      // Password strength
+      var pwSignup = document.getElementById("pw-signup");
+      if (pwSignup) {
+        pwSignup.addEventListener("input", function () {
+          var v = pwSignup.value,
+            score = 0;
+          if (v.length >= 8) score++;
+          if (/[A-Z]/.test(v)) score++;
+          if (/[0-9]/.test(v)) score++;
+          if (/[^A-Za-z0-9]/.test(v)) score++;
+          var bars = document.querySelectorAll(".str-bar");
+          var colors = ["#ef4444", "#f59e0b", "#3b82f6", "#22c55e"];
+          var labels = ["Weak", "Fair", "Good", "Strong"];
+          bars.forEach(function (b, i) {
+            b.style.background = i < score ? colors[score - 1] : "var(--bdr2)";
+          });
+          var lbl = document.getElementById("str-label");
+          if (lbl) lbl.textContent = v.length ? labels[score - 1] || "" : "";
+        });
+      }
     </script>
   </body>
 </html>
